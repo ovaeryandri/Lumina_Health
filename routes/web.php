@@ -17,7 +17,7 @@ use App\Models\center_history;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('layout');
 });
 
 Route::resource('aboutstaff', aboutstaffController::class);
