@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\Hash;
 
 class adminController extends Controller
 {
+
     public function index(){
         $admin = admin::all();
         return view('admin.index', compact('admin'));
@@ -27,6 +28,11 @@ class adminController extends Controller
             "password" => Hash::make($request->password),
         ]);
         return redirect()->route('admin.index')->with('success', 'Admin Berhasil Ditambah');
+
+
+    function index()
+    {
+        return view('admin.layout');
 
     }
 }
