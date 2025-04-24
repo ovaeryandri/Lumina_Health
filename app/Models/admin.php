@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 class admin extends Model
 {
     use HasFactory;
-    protected $table = 'admin';
+    protected $table = 'admins';
 
     protected $fillable = [
         'nama',
