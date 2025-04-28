@@ -276,11 +276,45 @@
 
     </main>
 
+    <main class="w-full h-max flex flex-col px-28 mt-20" data-aos="fade-up" data-aos-offset="200"
+        data-aos-delay="50" data-aos-duration="700" data-aos-easing="ease-in-out" data-aos-mirror="true"
+        data-aos-once="false" data-aos-anchor-placement="top-start">
+        <section
+            class="flex justify-center items-center gap-x-2 px-4 py-1 mb-10 rounded-full border border-teal-400  w-max h-max">
+            <img src="/images/superior.png" alt="heart" class="w-5 h-5">
+            <P class="font-semibold text-teal-400">Workshop</P>
+        </section>
 
+        <section class="flex w-full h-max justify-between">
+            <h1 class="text-4xl text-teal-500 font-bold">Workshop Kami</h1>
+            <div class="flex flex-col text-teal-600">
+                <p>Workshop kami tersedia di berbagai tempat dan daerah</p>
+                <p>yang bisa Anda kunjungi sesuai dengan jam kerja Kami.</p>
+            </div>
+        </section>
+
+        <section class="flex flex-wrap w-full mt-16">
+            <div class="grid md:grid-cols-3 gap-5">
+
+                <x-workshop-card image="/images/consultation-1.jpg" location="Pangkalpinang, Bangka Belitung"
+                    title="Medical Care Need To Be Trustworthy" quota="50 orang" date="28 April s/d 10 Mei 2025" />
+
+                <x-workshop-card image="/images/consultation-1.jpg" location="Pangkalpinang, Bangka Belitung"
+                    title="Must Read Safety Guide For Swine Flu Season" quota="50 orang"
+                    date="28 April s/d 10 Mei 2025" />
+
+                <x-workshop-card image="/images/consultation-1.jpg" location="Pangkalpinang, Bangka Belitung"
+                    title="Best Gynecologists Surgeons In Hospital" quota="50 orang"
+                    date="28 April s/d 10 Mei 2025" />
+
+            </div>
+        </section>
+
+    </main>
 
     <main data-aos="fade-up" data-aos-offset="200" data-aos-delay="50" data-aos-duration="700"
         data-aos-easing="ease-in-out" data-aos-mirror="true" data-aos-once="false"
-        data-aos-anchor-placement="top-start" class="w-full h-max flex flex-col items-center mt-32 pb-10 bg-teal-500">
+        data-aos-anchor-placement="top-start" class="w-full h-max flex flex-col items-center mt-20 pb-10 bg-teal-500">
         <section class="w-full flex gap-x-20 items-center justify-center py-12 bg-teal-300">
             <div class="flex items-center gap-x-4 ml-72">
                 <img src="/images/heart.png" alt="" class="w-24 h-24">
@@ -289,7 +323,6 @@
                     <h1 class="text-lg font-semibold opacity-80">Untuk kesehatan terbaik Anda</h1>
                 </div>
             </div>
-
 
             <button
                 class="w-max h-max rounded-full px-7 py-4 cursor-pointer text-white border border-white bg-teal-500 hover:bg-teal-700 duration-200">
@@ -319,42 +352,42 @@
                 <h1 class="mb-5 text-white font-bold text-xl">Workshop Kami</h1>
                 <div class="flex gap-x-20 text-lg text-white font-semibold">
                     <p class="cursor-pointer hover:text-teal-300 duration-200">
-                        ➜ Jepang
+                        ➜ Pangkalpinang, Bangka Belitung
                     </p>
                     <p class="cursor-pointer hover:text-teal-300 duration-200">
-                        ➜ Jepang
-                    </p>
-                </div>
-                <div class="flex gap-x-20 text-lg text-white font-semibold">
-                    <p class="cursor-pointer hover:text-teal-300 duration-200">
-                        ➜ Jepang
-                    </p>
-                    <p class="cursor-pointer hover:text-teal-300 duration-200">
-                        ➜ Jepang
+                        ➜ Pangkalpinang, Bangka Belitung
                     </p>
                 </div>
                 <div class="flex gap-x-20 text-lg text-white font-semibold">
                     <p class="cursor-pointer hover:text-teal-300 duration-200">
-                        ➜ Jepang
+                        ➜ Pangkalpinang, Bangka Belitung
                     </p>
                     <p class="cursor-pointer hover:text-teal-300 duration-200">
-                        ➜ Jepang
-                    </p>
-                </div>
-                <div class="flex gap-x-20 text-lg text-white font-semibold">
-                    <p class="cursor-pointer hover:text-teal-300 duration-200">
-                        ➜ Jepang
-                    </p>
-                    <p class="cursor-pointer hover:text-teal-300 duration-200">
-                        ➜ Jepang
+                        ➜ Pangkalpinang, Bangka Belitung
                     </p>
                 </div>
                 <div class="flex gap-x-20 text-lg text-white font-semibold">
                     <p class="cursor-pointer hover:text-teal-300 duration-200">
-                        ➜ Jepang
+                        ➜ Pangkalpinang, Bangka Belitung
                     </p>
                     <p class="cursor-pointer hover:text-teal-300 duration-200">
-                        ➜ Jepang
+                        ➜ Pangkalpinang, Bangka Belitung
+                    </p>
+                </div>
+                <div class="flex gap-x-20 text-lg text-white font-semibold">
+                    <p class="cursor-pointer hover:text-teal-300 duration-200">
+                        ➜ Pangkalpinang, Bangka Belitung
+                    </p>
+                    <p class="cursor-pointer hover:text-teal-300 duration-200">
+                        ➜ Pangkalpinang, Bangka Belitung
+                    </p>
+                </div>
+                <div class="flex gap-x-20 text-lg text-white font-semibold">
+                    <p class="cursor-pointer hover:text-teal-300 duration-200">
+                        ➜ Pangkalpinang, Bangka Belitung
+                    </p>
+                    <p class="cursor-pointer hover:text-teal-300 duration-200">
+                        ➜ Pangkalpinang, Bangka Belitung
                     </p>
                 </div>
             </div>
@@ -367,7 +400,7 @@
                 </div>
 
                 <div class="flex flex-col gap-y-2 text-lg text-white font-semibold">
-                    <p>Lokasi: Jepang</p>
+                    <p>Lokasi: Pangkalpinang, Bangka Belitung</p>
                     <p>Email: ngetes@gmail.com</p>
                     <p>Telepon: +62 812-3456-7890</p>
                 </div>

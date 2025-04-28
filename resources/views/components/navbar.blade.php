@@ -24,12 +24,12 @@
                         class="absolute left-4 bottom-1 h-0.5 w-0 bg-white transition-all duration-300 group-hover/sub:w-[calc(100%-2rem)]">
                     </span>
                 </li>
-                <li class="px-4 py-2 relative cursor-pointer group/sub opacity-50 hover:opacity-100 duration-200">
+                {{-- <li class="px-4 py-2 relative cursor-pointer group/sub opacity-50 hover:opacity-100 duration-200">
                     Struktur Organisasi
                     <span
                         class="absolute left-4 bottom-1 h-0.5 w-0 bg-white transition-all duration-300 group-hover/sub:w-[calc(100%-2rem)]">
                     </span>
-                </li>
+                </li> --}}
                 <li class="px-4 py-2 relative cursor-pointer group/sub opacity-50 hover:opacity-100 duration-200">
                     Sejarah
                     <span
@@ -57,8 +57,14 @@
             <!-- Submenu -->
             <ul
                 class="absolute top-10 left-0 w-60 p-5 bg-teal-200 backdrop-blur-lg text-teal-800 rounded-lg shadow-lg opacity-100 group-hover:opacity-100 scale-y-0 group-hover:scale-y-100 origin-top transition-all duration-300 z-50">
-                <li class="px-4 py-2 relative cursor-pointer group/sub opacity-50 hover:opacity-100 duration-200">
+                {{-- <li class="px-4 py-2 relative cursor-pointer group/sub opacity-50 hover:opacity-100 duration-200">
                     Berita
+                    <span
+                        class="absolute left-4 bottom-1 h-0.5 w-0 bg-white transition-all duration-300 group-hover/sub:w-[calc(100%-2rem)]">
+                    </span>
+                </li> --}}
+                <li class="px-4 py-2 relative cursor-pointer group/sub opacity-50 hover:opacity-100 duration-200">
+                    Blog
                     <span
                         class="absolute left-4 bottom-1 h-0.5 w-0 bg-white transition-all duration-300 group-hover/sub:w-[calc(100%-2rem)]">
                     </span>
@@ -75,12 +81,7 @@
                         class="absolute left-4 bottom-1 h-0.5 w-0 bg-white transition-all duration-300 group-hover/sub:w-[calc(100%-2rem)]">
                     </span>
                 </li>
-                <li class="px-4 py-2 relative cursor-pointer group/sub opacity-50 hover:opacity-100 duration-200">
-                    Blog
-                    <span
-                        class="absolute left-4 bottom-1 h-0.5 w-0 bg-white transition-all duration-300 group-hover/sub:w-[calc(100%-2rem)]">
-                    </span>
-                </li>
+
             </ul>
         </li>
 
