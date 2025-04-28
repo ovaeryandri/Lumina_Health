@@ -176,21 +176,42 @@
             </button>
         </section>
 
-        <section class="flex flex-wrap w-full gap-x-5 gap-y-5 mt-16">
+        <section class="grid grid-cols-3 gap-x-5 gap-y-5 mt-16">
             @foreach ($program as $programs)
-                <x-card :nomor="$loop->iteration">
-                    <x-slot:judul>
-                        <h1 class="text-teal-700 text-2xl font-semibold leading-4">{{ $programs->judul }}</h1>
-                    </x-slot:judul>
+                @php
+                    $tgl_mulai = \Carbon\Carbon::parse($programs->tgl_mulai);
+                    $tgl_selesai = \Carbon\Carbon::parse($programs->tgl_selesai);
+                    $today = \Carbon\Carbon::today();
+                @endphp
 
-                    <x-slot:logo>
-                        <img src="{{ Storage::url($programs->gambar) }}" class="w-28 h-28">
-                    </x-slot:logo>
+                @if ($today->lt($tgl_selesai))
+                    <x-card nomor="{{ $loop->iteration }}">
+                        <x-slot:judul class="line-clamp-1">
+                            <div class="flex items-center justify-between gap-5">
+                                <h1 class="text-teal-700 text-2xl font-semibold">{{ $programs->judul }}</h1>
+                                <span class="bg-teal-300 text-white px-2 py-2 rounded-full">
+                                    @php
+                                        $daysLeft = $today->diffInDays($tgl_selesai);
+                                    @endphp
 
-                    <x-slot:deskripsi>
-                        <p>{{ $programs->deskripsi }}</p>
-                    </x-slot:deskripsi>
-                </x-card>
+                                    @if ($daysLeft > 1)
+                                        Berakhir {{ $daysLeft }} hari lagi
+                                    @elseif ($daysLeft == 1)
+                                        Berakhir besok
+                                    @endif
+                                </span>
+                            </div>
+                        </x-slot:judul>
+
+                        <x-slot:logo>
+                            <img src="{{ Storage::url($programs->gambar) }}" class="w-52 h-52">
+                        </x-slot:logo>
+
+                        <x-slot:deskripsi class="line-clamp-1">
+                            <p class="line-clamp-1">{{ $programs->deskripsi }}</p>
+                        </x-slot:deskripsi>
+                    </x-card>
+                @endif
             @endforeach
         </section>
 
