@@ -23,8 +23,18 @@ Route::get('/', function () {
 
 Route::get('/admin', function () {
     return view('admin.layout');
-
 });
+
+Route::get('/login', [userController::class, 'login'])->name('login.layout');
+Route::get('/register', [userController::class, 'register'])->name('register.layout');
+
+// Route::get('/login', function () {
+//     return view('login.layout');
+// });
+
+// Route::get('/register', function () {
+//     return view('register.layout');
+// });
 
 Route::resource('aboutstaff', aboutstaffController::class);
 Route::resource('admin', adminController::class);
