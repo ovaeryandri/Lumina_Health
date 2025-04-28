@@ -203,75 +203,22 @@
         </section>
 
         <section class="flex flex-wrap w-full gap-x-5 gap-y-5 mt-16">
+            @foreach ($program as $programs)
 
-            <x-card nomor="01">
+            <x-card :nomor="$loop->iteration">
                 <x-slot:judul>
-                    <h1 class="text-teal-700 text-2xl font-semibold leading-4">Konsultasi</h1>
-                    <h1 class="text-teal-700 text-2xl font-semibold">Kesehatan</h1>
+                    <h1 class="text-teal-700 text-2xl font-semibold leading-4">{{ $programs->judul }}</h1>
                 </x-slot:judul>
 
                 <x-slot:logo>
-                    <img src="/images/consultation.png" alt="Konsultasi" class="w-28 h-28">
+                    <img src="{{ Storage::url($programs->gambar) }}" class="w-28 h-28">
                 </x-slot:logo>
 
                 <x-slot:deskripsi>
-                    <p>Layanan konsultasi mengenai</p>
-                    <p>kesehatan atau saran</p>
-                    <p>kesehatan lainnya.</p>
+                    <p>{{ $programs->deskripsi }}</p>
                 </x-slot:deskripsi>
             </x-card>
-
-            <x-card nomor="01">
-                <x-slot:judul>
-                    <h1 class="text-teal-700 text-2xl font-semibold leading-4">Konsultasi</h1>
-                    <h1 class="text-teal-700 text-2xl font-semibold">Kesehatan</h1>
-                </x-slot:judul>
-
-                <x-slot:logo>
-                    <img src="/images/consultation.png" alt="Konsultasi" class="w-28 h-28">
-                </x-slot:logo>
-
-                <x-slot:deskripsi>
-                    <p>Layanan konsultasi mengenai</p>
-                    <p>kesehatan atau saran</p>
-                    <p>kesehatan lainnya.</p>
-                </x-slot:deskripsi>
-            </x-card>
-
-            <x-card nomor="01">
-                <x-slot:judul>
-                    <h1 class="text-teal-700 text-2xl font-semibold leading-4">Konsultasi</h1>
-                    <h1 class="text-teal-700 text-2xl font-semibold">Kesehatan</h1>
-                </x-slot:judul>
-
-                <x-slot:logo>
-                    <img src="/images/consultation.png" alt="Konsultasi" class="w-28 h-28">
-                </x-slot:logo>
-
-                <x-slot:deskripsi>
-                    <p>Layanan konsultasi mengenai</p>
-                    <p>kesehatan atau saran</p>
-                    <p>kesehatan lainnya.</p>
-                </x-slot:deskripsi>
-            </x-card>
-
-            <x-card nomor="01">
-                <x-slot:judul>
-                    <h1 class="text-teal-700 text-2xl font-semibold leading-4">Konsultasi</h1>
-                    <h1 class="text-teal-700 text-2xl font-semibold">Kesehatan</h1>
-                </x-slot:judul>
-
-                <x-slot:logo>
-                    <img src="/images/consultation.png" alt="Konsultasi" class="w-28 h-28">
-                </x-slot:logo>
-
-                <x-slot:deskripsi>
-                    <p>Layanan konsultasi mengenai</p>
-                    <p>kesehatan atau saran</p>
-                    <p>kesehatan lainnya.</p>
-                </x-slot:deskripsi>
-            </x-card>
-
+            @endforeach
         </section>
 
     </main>

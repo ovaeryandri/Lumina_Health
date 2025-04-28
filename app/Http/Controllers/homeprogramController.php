@@ -18,6 +18,7 @@ class homeprogramController extends Controller
     }
 
     public function create(){
+        $program = home_program::all();
         return view('home_program.create', compact('program'));
     }
 
@@ -27,7 +28,7 @@ class homeprogramController extends Controller
             'deskripsi' => 'required|min:5|string',
             'gambar' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048',
             'tgl_mulai' => 'required|date',
-            'tgl_selesai' => 'required|date',
+            'tgl_selesai' => 'required|date|after_or_equal:tgl_mulai',
         ]);
         $filePath = $request->file('gambar')->store('program_files','public');
 
@@ -58,7 +59,7 @@ class homeprogramController extends Controller
         'deskripsi' => 'required|min:5|string',
         'gambar' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
         'tgl_mulai' => 'required|date',
-        'tgl_selesai' => 'required|date',
+        'tgl_selesai' => 'required|date|after_or_equal:tgl_mulai',
     ]);
 
     $data = [

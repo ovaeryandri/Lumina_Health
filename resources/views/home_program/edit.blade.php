@@ -41,7 +41,7 @@
 
             <div class="mb-4">
                 <label for="tgl_mulai" class="block text-gray-700 font-medium mb-2">tanggal mulai Program</label>
-                <input type="date" name="tgl_mulai" id="tgl_mulai" value="{{ \Carbon\Carbon::parse($program->tgl_mulai)->format('Y-m-d') }}">
+                <input type="date" name="tgl_mulai" id="tgl_mulai" value="{{ \Carbon\Carbon::parse($program->tgl_mulai)->format('d F Y') }}">
 
                     <p class="text-red-500 text-sm mt-1"></p>
 
@@ -49,7 +49,7 @@
 
             <div class="mb-4">
                 <label for="tgl_selesai" class="block text-gray-700 font-medium mb-2">Tanggal selesai Program</label>
-                <input type="date" name="tgl_selesai" id="tgl_selesai" value="{{ \Carbon\Carbon::parse($program->tgl_selesai)->format('Y-m-d') }}">
+                <input type="date" name="tgl_selesai" id="tgl_selesai" value="{{ \Carbon\Carbon::parse($program->tgl_selesai)->format('d F Y') }}">
 
                     <p class="text-red-500 text-sm mt-1"></p>
 

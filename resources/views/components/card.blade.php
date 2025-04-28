@@ -1,5 +1,5 @@
 <div
-    class="flex flex-col max-w-lg py-7 px-7 bg-white rounded-3xl hover:shadow-2xl hover:shadow-teal-200 duration-300 hover:-translate-y-3 relative">
+    class="flex flex-col  py-7 px-7 bg-white rounded-3xl hover:shadow-2xl hover:shadow-teal-200 duration-300 hover:-translate-y-3 relative">
 
     <div class="flex items-center gap-x-5">
         <div
