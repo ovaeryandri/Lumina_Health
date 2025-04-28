@@ -16,14 +16,10 @@ use App\Http\Controllers\userController;
 use App\Models\center_history;
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', function () {
-
-    return view('home');
-});
+Route::get('/', [homeprogramController::class, 'show']);
 
 Route::get('/admin', function () {
     return view('admin.layout');
-
 });
 
 Route::resource('aboutstaff', aboutstaffController::class);
