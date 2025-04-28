@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class home_workshop extends Model
 {
     use HasFactory;
-    protected $table = 'home_workshop';
+    protected $table = 'home_workshops';
 
     protected $fillable = [
         'judul',
@@ -19,5 +19,4 @@ class home_workshop extends Model
         'maks_kapasitas',
         'gambar',
     ];
-
 }
