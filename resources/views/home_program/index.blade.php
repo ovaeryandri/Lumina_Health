@@ -51,11 +51,11 @@
                             </td>
 
                             <td class="p-3 border border-gray-200">
-                                {{ $programs->tgl_mulai }}
+                                {{ \Carbon\Carbon::parse($programs->tgl_mulai)->format('d F Y') }}
                             </td>
 
                             <td class="p-3 border border-gray-200">
-                                {{ $programs->tgl_selesai }}
+                                {{ \Carbon\Carbon::parse($programs->tgl_selesai)->format('d F Y') }}
                             </td>
 
                                 <td class="p-3 border border-gray-200">

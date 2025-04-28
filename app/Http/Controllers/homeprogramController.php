@@ -1,35 +1,41 @@
 <?php
 
 namespace App\Http\Controllers;
+
 use App\Models\home_program;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 
 class homeprogramController extends Controller
 {
-    public function index(){
+    public function index()
+    {
         $program = home_program::all();
         return view('home_program.index', compact('program'));
     }
 
-    public function show(){
+    public function show()
+    {
         $program = home_program::all();
         return view('home', compact('program'));
     }
 
-    public function create(){
+    public function create()
+    {
+        $program = home_program::all();
         return view('home_program.create', compact('program'));
     }
 
-    public function store(Request $request){
+    public function store(Request $request)
+    {
         $request->validate([
             'judul' => 'required|min:5|string',
             'deskripsi' => 'required|min:5|string',
             'gambar' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048',
             'tgl_mulai' => 'required|date',
-            'tgl_selesai' => 'required|date',
+            'tgl_selesai' => 'required|date|after_or_equal:tgl_mulai',
         ]);
-        $filePath = $request->file('gambar')->store('program_files','public');
+        $filePath = $request->file('gambar')->store('program_files', 'public');
 
         home_program::create([
             "judul" => $request->judul,
@@ -40,60 +46,59 @@ class homeprogramController extends Controller
 
         ]);
         return redirect()->route('homeprogram.index')->with('success', 'Program Berhasil Ditambah');
+    }
 
-}
-
-    public function edit($id){
+    public function edit($id)
+    {
         $program = home_program::find($id);
         return view('home_program.edit', compact('program'));
-
     }
 
     public function update(Request $request, $id)
-{
-    $program = home_program::findOrFail($id);
+    {
+        $program = home_program::findOrFail($id);
 
-    $request->validate([
-        'judul' => 'required|min:5|string',
-        'deskripsi' => 'required|min:5|string',
-        'gambar' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
-        'tgl_mulai' => 'required|date',
-        'tgl_selesai' => 'required|date',
-    ]);
+        $request->validate([
+            'judul' => 'required|min:5|string',
+            'deskripsi' => 'required|min:5|string',
+            'gambar' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
+            'tgl_mulai' => 'required|date',
+            'tgl_selesai' => 'required|date|after_or_equal:tgl_mulai',
+        ]);
 
-    $data = [
-        "judul" => $request->judul,
-        "deskripsi" => $request->deskripsi,
-        "tgl_mulai" => $request->tgl_mulai,
-        "tgl_selesai" => $request->tgl_selesai,
-    ];
+        $data = [
+            "judul" => $request->judul,
+            "deskripsi" => $request->deskripsi,
+            "tgl_mulai" => $request->tgl_mulai,
+            "tgl_selesai" => $request->tgl_selesai,
+        ];
 
-    if ($request->hasFile('gambar')) {
-        if ($program->gambar) {
-            Storage::disk('public')->delete($program->gambar);
+        if ($request->hasFile('gambar')) {
+            if ($program->gambar) {
+                Storage::disk('public')->delete($program->gambar);
+            }
+            $filePath = $request->file('gambar')->store('program_files', 'public');
+            $data['gambar'] = $filePath;
         }
-        $filePath = $request->file('gambar')->store('program_files', 'public');
-        $data['gambar'] = $filePath;
+
+        $program->update($data);
+
+        return redirect()->route('homeprogram.index')->with('success', 'Program Berhasil Diubah');
     }
-
-    $program->update($data);
-
-    return redirect()->route('homeprogram.index')->with('success', 'Program Berhasil Diubah');
-}
 
 
 
     public function destroy($id)
-{
-    $program = home_program::findOrFail($id);
+    {
+        $program = home_program::findOrFail($id);
 
 
-    if ($program->gambar) {
-        Storage::disk('public')->delete($program->gambar);
+        if ($program->gambar) {
+            Storage::disk('public')->delete($program->gambar);
+        }
+
+        $program->delete();
+
+        return redirect()->route('homeprogram.index')->with('success', 'Program berhasil dihapus.');
     }
-
-    $program->delete();
-
-    return redirect()->route('homeprogram.index')->with('success', 'Program berhasil dihapus.');
-}
 }
