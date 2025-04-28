@@ -222,7 +222,7 @@
 
     </main>
 
-    <main data-aos="fade-up" data-aos-offset="200" data-aos-delay="50" data-aos-duration="700"
+    {{-- <main data-aos="fade-up" data-aos-offset="200" data-aos-delay="50" data-aos-duration="700"
         data-aos-easing="ease-in-out" data-aos-mirror="true" data-aos-once="false"
         data-aos-anchor-placement="top-start" class="w-full h-max flex flex-col items-center px-28 pt-60">
         <section
@@ -301,7 +301,7 @@
                 class="absolute -z-50 right-28 rounded-2xl w-3xl h-96 mt-64">
 
         </section>
-    </main>
+    </main> --}}
 
 
     {{-- <main data-aos="fade-up" data-aos-offset="200" data-aos-delay="50" data-aos-duration="700"
