@@ -37,7 +37,7 @@
                                 {{ $programs->judul }}
                             </td>
 
-                            <td class="p-3 border border-gray-200">
+                            <td class="p-3 border border-gray-200 max-w-xs truncate" title="{{ $programs->deskripsi }}">
                                 {{ $programs->deskripsi }}
                             </td>
 

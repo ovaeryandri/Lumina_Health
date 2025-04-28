@@ -25,25 +25,52 @@
         <form class="w-full h-full rounded-r-2xl flex flex-col items-center px-20 py-8 pb-12">
             <h1 class="text-black font-bold text-2xl">Buat Akun Baru</h1>
 
-            <div class="flex flex-col w-full mt-10 relative">
-                <label for="name" class="text-black font-semibold text-sm mb-1">Nama</label>
-                <img src="/images/user.png" alt="user" class="absolute left-3 top-8 flex items-center w-6 h-6">
-                <input type="text" name="name" id="" required placeholder="Masukkan Nama"
-                    class="w-full h-max py-2 px-11 rounded-lg border border-slate-300 focus:outline-none focus:ring-2 focus:ring-teal-500 focus:border-transparent">
+            <div class="flex w-full gap-x-3 h-max mt-10">
+                <div class="flex flex-col w-full relative">
+                    <label for="nama" class="text-black font-semibold text-sm mb-1">Nama</label>
+                    <img src="/images/user.png" alt="user" class="absolute left-3 top-8 flex items-center w-6 h-6">
+                    <input type="text" name="nama" id="" required placeholder="Nama Anda"
+                        class="w-full h-max py-2 pl-11 pr-3 rounded-lg border border-slate-300 focus:outline-none focus:ring-2 focus:ring-teal-500 focus:border-transparent">
+                </div>
+
+                <div class="flex flex-col w-full relative">
+                    <label for="umur" class="text-black font-semibold text-sm mb-1">Umur</label>
+                    <img src="/images/user.png" alt="user" class="absolute left-3 top-8 flex items-center w-6 h-6">
+                    <input type="text" name="umur" id="" required placeholder="Umur Anda"
+                        class="w-full h-max py-2 pl-11 pr-3 rounded-lg border border-slate-300 focus:outline-none focus:ring-2 focus:ring-teal-500 focus:border-transparent">
+                </div>
             </div>
+
+            <div class="flex flex-col w-full relative mt-3">
+                <label for="jenis_kelamin" class="text-black font-semibold text-sm mb-1">Jenis Kelamin</label>
+                <img src="/images/gender.png" alt="" class="absolute left-3 top-8 flex items-center w-6 h-6">
+                <select name="jenis_kelamin" id="jenis_kelamin" required
+                    class="w-full h-max py-2 pl-11 pr-3 rounded-lg border border-slate-300 focus:outline-none focus:ring-2 focus:ring-teal-500 focus:border-transparent">
+                    <option value="" disabled selected>Pilih Jenis Kelamin</option>
+                    <option value="Laki-laki">Pria</option>
+                    <option value="Perempuan">Wanita</option>
+                </select>
+            </div>
+
+            {{-- <div class="flex flex-col w-full relative mt-3">
+                <label for="no_hp" class="text-black font-semibold text-sm mb-1">No. Hp</label>
+                <img src="/images/phone.png" alt="" class="absolute left-3 top-8 flex items-center w-6 h-6">
+                <input type="text" name="no_hp" id="" required placeholder="No. Hp Anda"
+                    class="w-full h-max py-2 pl-11 pr-3 rounded-lg border border-slate-300 focus:outline-none focus:ring-2 focus:ring-teal-500 focus:border-transparent">
+            </div> --}}
 
             <div class="flex flex-col w-full mt-3 relative">
                 <label for="email" class="text-black font-semibold text-sm mb-1">Email</label>
                 <img src="/images/email-2.png" alt="email" class="absolute left-3 top-8 flex items-center w-6 h-6">
-                <input type="email" name="email" id="" required placeholder="Masukkan Email"
-                    class="w-full h-max py-2 px-11 rounded-lg border border-slate-300 focus:outline-none focus:ring-2 focus:ring-teal-500 focus:border-transparent">
+                <input type="email" name="email" id="" required placeholder="Email Anda"
+                    class="w-full h-max py-2 pl-11 pr-3 rounded-lg border border-slate-300 focus:outline-none focus:ring-2 focus:ring-teal-500 focus:border-transparent">
             </div>
 
             <div class="flex flex-col w-full mt-3 relative">
                 <label for="password" class="text-black font-semibold text-sm mb-1">Kata Sandi</label>
                 <img src="/images/lock.png" alt="lock" class="absolute left-3 top-8 flex items-center w-6 h-6">
-                <input type="password" name="password" id="passwordInput" required placeholder="Masukkan Kata Sandi"
-                    class="w-full h-max py-2 px-11 rounded-lg border border-slate-300 focus:outline-none focus:ring-2 focus:ring-teal-500 focus:border-transparent">
+                <input type="password" name="password" id="passwordInput" required placeholder="Kata Sandi Anda"
+                    class="w-full h-max py-2 pl-11 pr-3 rounded-lg border border-slate-300 focus:outline-none focus:ring-2 focus:ring-teal-500 focus:border-transparent">
                 <button type="button" id="togglePassword"
                     class="absolute right-3 top-9 text-gray-400 hover:text-gray-600">
                     <!-- Icon Mata -->
@@ -57,15 +84,14 @@
                 </button>
             </div>
 
-            <div class="flex flex-col w-full mt-3 relative">
+            {{-- <div class="flex flex-col w-full mt-3 relative">
                 <label for="confirm_password" class="text-black font-semibold text-sm mb-1">Kata Sandi</label>
                 <img src="/images/lock.png" alt="lock" class="absolute left-3 top-8 flex items-center w-6 h-6">
                 <input type="password" name="confirm_password" id="passwordConfirmInput" required
                     placeholder="Masukkan Ulang Kata Sandi"
-                    class="w-full h-max py-2 px-11 rounded-lg border border-slate-300 focus:outline-none focus:ring-2 focus:ring-teal-500 focus:border-transparent">
+                    class="w-full h-max py-2 pl-11 pr-3 rounded-lg border border-slate-300 focus:outline-none focus:ring-2 focus:ring-teal-500 focus:border-transparent">
                 <button type="button" id="toggleConfirmPassword"
                     class="absolute right-3 top-9 text-gray-400 hover:text-gray-600">
-                    <!-- Icon Mata -->
                     <svg id="eyeIcon" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none"
                         viewBox="0 0 24 24" stroke="currentColor">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -74,11 +100,12 @@
                             d="M2.458 12C3.732 7.943 7.523 5 12 5c4.477 0 8.268 2.943 9.542 7-1.274 4.057-5.065 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
                     </svg>
                 </button>
-            </div>
+            </div> --}}
 
-            <div class="flex w-full mt-5">
+            <div class="flex w-full mt-3">
                 <input type="checkbox" required class="mr-1">
-                <p class="text-sm text-slate-600 font-semibold cursor-default">Saya setuju dengan syarat & ketentuan</p>
+                <p class="text-sm text-slate-600 font-semibold cursor-default">Saya setuju dengan syarat & ketentuan
+                </p>
             </div>
 
             <button
@@ -107,15 +134,15 @@
         });
 
         // Untuk konfirmasi password
-        const passwordConfirmInput = document.getElementById('passwordConfirmInput');
-        const toggleConfirmPassword = document.getElementById('toggleConfirmPassword');
-        const eyeConfirmIcon = document.getElementById('eyeConfirmIcon');
+        // const passwordConfirmInput = document.getElementById('passwordConfirmInput');
+        // const toggleConfirmPassword = document.getElementById('toggleConfirmPassword');
+        // const eyeConfirmIcon = document.getElementById('eyeConfirmIcon');
 
-        toggleConfirmPassword.addEventListener('click', function() {
-            const type = passwordConfirmInput.getAttribute('type') === 'password' ? 'text' : 'password';
-            passwordConfirmInput.setAttribute('type', type);
-            eyeConfirmIcon.setAttribute('stroke', type === 'text' ? 'teal' : 'currentColor');
-        });
+        // toggleConfirmPassword.addEventListener('click', function() {
+        //     const type = passwordConfirmInput.getAttribute('type') === 'password' ? 'text' : 'password';
+        //     passwordConfirmInput.setAttribute('type', type);
+        //     eyeConfirmIcon.setAttribute('stroke', type === 'text' ? 'teal' : 'currentColor');
+        // });
     </script>
 
 </body>

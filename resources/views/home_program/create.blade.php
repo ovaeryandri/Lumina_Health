@@ -37,12 +37,6 @@
             <div class="mb-4">
                 <label for="tgl_mulai" class="block text-gray-700 font-medium mb-2">tanggal mulai Program</label>
                 <input type="date" name="tgl_mulai" id="tgl_mulai" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-teal-300" value="{{ old('tgl_mulai') }}" required>
-                @if ($errors->has('tanggal_mulai'))
-            <div class="text-red-500 text-sm mt-1">
-                {{ $errors->first('tanggal_mulai') }}
-            </div>
-        @endif
-
 
             </div>
 
@@ -50,11 +44,11 @@
                 <label for="tgl_selesai" class="block text-gray-700 font-medium mb-2">Tanggal selesai Program</label>
                 <input type="date" name="tgl_selesai" id="tgl_selesai" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-teal-300" value="{{ old('tgl_selesai') }}" required>
 
-                @if ($errors->has('tanggal_selesai'))
-                <div class="text-red-500 text-sm mt-1">
-                    {{ $errors->first('tanggal_selesai') }}
+                @error('tgl_selesai')
+                <div class="text-red-500 mt-1 text-sm">
+                    {{ $message }}
                 </div>
-            @endif
+            @enderror
 
             </div>
 
