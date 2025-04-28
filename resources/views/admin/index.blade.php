@@ -32,12 +32,17 @@
                             <td class="p-3 border border-gray-200">
                                 {{ $admins->nama }}
                             </td>
-                            <td class="p-3 border border-gray-200">
-                                <div class="flex space-x-2">
-                                    <a href="" class="px-3 py-1 bg-teal-300 hover:bg-teal-400 text-teal-800 rounded">Edit</a>
-                                    <button type="button" class="px-3 py-1 bg-red-300 hover:bg-red-400 text-red-800 rounded">Hapus</button>
-                                </div>
-                            </td>
+                                <td class="p-3 border border-gray-200">
+                                    <div class="flex space-x-2">
+                                        <a href="{{ route('admin.edit', $admins->id) }}" class="px-3 py-1 bg-teal-300 hover:bg-teal-400 text-teal-800 rounded">Edit</a>
+
+                           <form action="{{ route('admin.destroy', $admins->id) }}" method="POST">
+                                            @csrf
+                                            @method('DELETE')
+                                        <button type="submit" class="px-3 py-1 bg-red-300 hover:bg-red-400 text-red-800 rounded">Hapus</button>
+                                    </form>
+                                    </div>
+                                </td>
                         </tr>
                         @endforeach
 

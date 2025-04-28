@@ -29,10 +29,31 @@ class adminController extends Controller
         ]);
         return redirect()->route('admin.index')->with('success', 'Admin Berhasil Ditambah');
 
+}
 
-    function index()
-    {
-        return view('admin.layout');
+    public function edit(admin $admin){
+        return view('admin.edit', compact('admin'));
+    }
 
+    public function update(Request $request, admin $admin){
+        $request->validate([
+            'nama' => 'required|min:5|string',
+            'password' => 'nullable|min:5|string',
+        ]);
+
+        $admin->nama = $request->nama;
+
+        if ($request->filled('password')) {
+            $admin->password = Hash::make($request->password);
+        }
+
+        $admin->save();
+
+        return redirect()->route('admin.index')->with('success', 'Admin Berhasil Diubah');
+    }
+
+    public function destroy(admin $admin){
+        $admin->delete();
+        return redirect()->route('admin.index')->with('success', 'Admin Berhasil Dihapus');
     }
 }

@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class home_program extends Model
 {
     use HasFactory;
-    protected $table = 'home_program';
+    protected $table = 'home_programs';
 
     protected $fillable = [
         'judul',
