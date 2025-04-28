@@ -8,15 +8,9 @@
 
         <li class="relative group flex items-center gap-x-1 cursor-pointer">
             Tentang Kami
-            <svg xmlns="http://www.w3.org/2000/svg"
-                class="w-4 h-4 text-white mt-1 transition-transform duration-300 group-hover:rotate-180" fill="none"
-                viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
-            </svg>
             <span
                 class="absolute left-0 bottom-0 h-0.5 w-0 bg-white transition-all duration-300 group-hover:w-full"></span>
-            <!-- Submenu -->
-            <ul
+            {{-- <ul
                 class="absolute top-10 left-0 w-60 p-5 bg-teal-200 backdrop-blur-lg text-teal-800 rounded-lg shadow-lg opacity-100 group-hover:opacity-100 scale-y-0 group-hover:scale-y-100 origin-top transition-all duration-300 z-50">
                 <li class="px-4 py-2 relative cursor-pointer group/sub opacity-50 hover:opacity-100 duration-200">
                     Visi & Misi
@@ -24,25 +18,19 @@
                         class="absolute left-4 bottom-1 h-0.5 w-0 bg-white transition-all duration-300 group-hover/sub:w-[calc(100%-2rem)]">
                     </span>
                 </li>
-                {{-- <li class="px-4 py-2 relative cursor-pointer group/sub opacity-50 hover:opacity-100 duration-200">
+                <li class="px-4 py-2 relative cursor-pointer group/sub opacity-50 hover:opacity-100 duration-200">
                     Struktur Organisasi
                     <span
                         class="absolute left-4 bottom-1 h-0.5 w-0 bg-white transition-all duration-300 group-hover/sub:w-[calc(100%-2rem)]">
                     </span>
-                </li> --}}
+                </li>
                 <li class="px-4 py-2 relative cursor-pointer group/sub opacity-50 hover:opacity-100 duration-200">
                     Sejarah
                     <span
                         class="absolute left-4 bottom-1 h-0.5 w-0 bg-white transition-all duration-300 group-hover/sub:w-[calc(100%-2rem)]">
                     </span>
                 </li>
-            </ul>
-        </li>
-
-        <li class="cursor-pointer relative inline-block group">
-            Galeri
-            <span class="absolute left-0 bottom-0 h-0.5 w-0 bg-white transition-all duration-300 group-hover:w-full">
-            </span>
+            </ul> --}}
         </li>
 
         <li class="relative group flex items-center gap-x-1 cursor-pointer">
@@ -70,13 +58,31 @@
                     </span>
                 </li>
                 <li class="px-4 py-2 relative cursor-pointer group/sub opacity-50 hover:opacity-100 duration-200">
-                    Program Unggulan
+                    Daftar Workshop
                     <span
                         class="absolute left-4 bottom-1 h-0.5 w-0 bg-white transition-all duration-300 group-hover/sub:w-[calc(100%-2rem)]">
                     </span>
                 </li>
                 <li class="px-4 py-2 relative cursor-pointer group/sub opacity-50 hover:opacity-100 duration-200">
-                    Daftar Workshop
+                    Download E-Books
+                    <span
+                        class="absolute left-4 bottom-1 h-0.5 w-0 bg-white transition-all duration-300 group-hover/sub:w-[calc(100%-2rem)]">
+                    </span>
+                </li>
+                <li class="px-4 py-2 relative cursor-pointer group/sub opacity-50 hover:opacity-100 duration-200">
+                    Galeri
+                    <span
+                        class="absolute left-4 bottom-1 h-0.5 w-0 bg-white transition-all duration-300 group-hover/sub:w-[calc(100%-2rem)]">
+                    </span>
+                </li>
+                <li class="px-4 py-2 relative cursor-pointer group/sub opacity-50 hover:opacity-100 duration-200">
+                    Grafik Pengunjung
+                    <span
+                        class="absolute left-4 bottom-1 h-0.5 w-0 bg-white transition-all duration-300 group-hover/sub:w-[calc(100%-2rem)]">
+                    </span>
+                </li>
+                <li class="px-4 py-2 relative cursor-pointer group/sub opacity-50 hover:opacity-100 duration-200">
+                    Program Unggulan
                     <span
                         class="absolute left-4 bottom-1 h-0.5 w-0 bg-white transition-all duration-300 group-hover/sub:w-[calc(100%-2rem)]">
                     </span>
@@ -86,13 +92,7 @@
         </li>
 
         <li class="cursor-pointer relative inline-block group">
-            Download
-            <span class="absolute left-0 bottom-0 h-0.5 w-0 bg-white transition-all duration-300 group-hover:w-full">
-            </span>
-        </li>
-
-        <li class="cursor-pointer relative inline-block group">
-            Grafik
+            Kontak
             <span class="absolute left-0 bottom-0 h-0.5 w-0 bg-white transition-all duration-300 group-hover:w-full">
             </span>
         </li>

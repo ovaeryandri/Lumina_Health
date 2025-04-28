@@ -13,40 +13,13 @@
 
 <body class="bg-teal-50">
 
-    <main class="flex justify-between mx-20 pt-7 max-w-full h-20 bg-teal-50 mb-5 px-10">
-        <h1 class="text-teal-400 font-bold text-2xl">Lumina Health</h1>
-
-        <div class="flex items-center w-max h-max">
-            <div class="w-max h-max p-3 rounded-full bg-white">
-                <img src="/images/phone-call.png" alt="phone" class="w-6 h-6">
-            </div>
-            <div class="flex flex-col ml-3">
-                <p class="font-semibold">Nomor Telepon:</p>
-                <p class="text-teal-400 font-bold text-lg">+62 812-3456-789</p>
-            </div>
-        </div>
-
-        <div class="flex items-center w-max h-max">
-            <div class="w-max h-max p-3 rounded-full bg-white">
-                <img src="/images/email.png" alt="email" class="w-6 h-6">
-            </div>
-            <div class="flex flex-col ml-3">
-                <p class="font-semibold">Email:</p>
-                <p class="text-teal-400 font-bold text-lg">ngetes@gmail.com</p>
-            </div>
-        </div>
-
-        <button
-            class="w-max h-max px-7 py-2 rounded-full bg-teal-400 text-white font-semibold hover:bg-teal-600 duration-200 cursor-pointer">
-            Konsultasi
-        </button>
-    </main>
+    <x-header></x-header>
 
     <main class="w-full flex items-center justify-center -mt-1">
         <x-navbar></x-navbar>
-
     </main>
 
+    {{-- First Page --}}
     <main
         class="w-full h-screen text-white -mt-9 px-32 py-24 bg-gradient-to-r from-teal-400 via-teal-500 to-teal-400 rounded-b-[30%] flex justify-end">
 
@@ -73,25 +46,26 @@
             class="w-6xl h-64 left-16 gap-x-10 bg-gradient-to-b from-teal-300 to-teal-400 rounded-xl flex flex-row-reverse items-center absolute mt-96 p-10">
             <div class="flex flex-col justify-start items-start">
                 <img src="/images/service.png" alt="service" class="w-20 h-20 bg-white rounded-full p-3">
-                <h1 class="text-white font-bold text-2xl">24 Jam Layanan</h1>
-                <p>Layanan yang tersedia</p>
-                <p>untuk Anda selama 24 jam.</p>
+                <h1 class="text-white font-bold text-2xl">Pelayanan Cepat</h1>
+                <p>Pelayanan yang cepat</p>
+                <p>untuk Anda kapan pun.</p>
             </div>
 
             <div class="flex flex-col justify-start items-start">
                 <img src="/images/service.png" alt="service" class="w-20 h-20 bg-white rounded-full p-3">
-                <h1 class="text-white font-bold text-2xl">24 Jam Layanan</h1>
+                <h1 class="text-white font-bold text-2xl">24 Jam Layanan Darurat</h1>
                 <p>Layanan yang tersedia</p>
                 <p>untuk Anda selama 24 jam.</p>
             </div>
 
         </div>
 
-        <img src="/images/health.jpg" alt="healt"
-            class="rounded-b-[50%] rounded-t-[50%] w-lg h-max object-contain absolute left-40">
+        <img src="/images/doctor.jpeg" alt="healt"
+            class="rounded-b-[45%] rounded-t-[45%] w-md h-max object-contain absolute left-40">
 
     </main>
 
+    {{-- Konsultan --}}
     <main data-aos="fade-up" data-aos-offset="200" data-aos-delay="50" data-aos-duration="700"
         data-aos-easing="ease-in-out" data-aos-mirror="true" data-aos-once="false" data-aos-anchor-placement="top-start"
         class="w-full h-max flex flex-col items-center px-28 pt-60">
@@ -173,7 +147,7 @@
         </section>
     </main>
 
-
+    {{-- Program Unggulan --}}
     <main data-aos="fade-up" data-aos-offset="200" data-aos-delay="50" data-aos-duration="700"
         data-aos-easing="ease-in-out" data-aos-mirror="true" data-aos-once="false"
         data-aos-anchor-placement="top-start" class="w-full h-max flex flex-col px-28 mt-40 ">
@@ -406,6 +380,7 @@
 
     </main> --}}
 
+    {{-- Workshop --}}
     <main class="w-full h-max flex flex-col px-28 mt-20" data-aos="fade-up" data-aos-offset="200"
         data-aos-delay="50" data-aos-duration="700" data-aos-easing="ease-in-out" data-aos-mirror="true"
         data-aos-once="false" data-aos-anchor-placement="top-start">
@@ -442,99 +417,7 @@
 
     </main>
 
-    <main data-aos="fade-up" data-aos-offset="200" data-aos-delay="50" data-aos-duration="700"
-        data-aos-easing="ease-in-out" data-aos-mirror="true" data-aos-once="false"
-        data-aos-anchor-placement="top-start" class="w-full h-max flex flex-col items-center mt-20 pb-10 bg-teal-500">
-        <section class="w-full flex gap-x-20 items-center justify-center py-12 bg-teal-300">
-            <div class="flex items-center gap-x-4 ml-72">
-                <img src="/images/heart.png" alt="" class="w-24 h-24">
-                <div class="flex flex-col text-white">
-                    <h1 class="text-4xl font-bold mb-3">Ayo, Berlangganan</h1>
-                    <h1 class="text-lg font-semibold opacity-80">Untuk kesehatan terbaik Anda</h1>
-                </div>
-            </div>
-
-            <button
-                class="w-max h-max rounded-full px-7 py-4 cursor-pointer text-white border border-white bg-teal-500 hover:bg-teal-700 duration-200">
-                Langganan Sekarang
-            </button>
-        </section>
-
-        <section class="px-24 flex gap-x-20 w-full">
-            <div class="w-80 h-max ml-5 -mt-20 py-10 px-5 rounded-4xl bg-slate-100 flex flex-col items-center">
-                <div class="w-full h-max py-2 rounded-full bg-white flex items-center justify-center">
-                    <span class="text-teal-400 font-semibold text-lg">Jam Buka</span>
-                </div>
-                <div class="w-64 flex justify-center items-center my-5 text-sm text-teal-400 opacity-50 font-bold">
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi totam aperiam labore quas vel
-                    minus suscipit dolores architecto animi beatae!
-                </div>
-                <div class="flex flex-col gap-y-2 items-center text-teal-400 font-bold">
-                    <h1>Senin - Jumat: 08.00 - 22.00</h1>
-                    <div class="w-full h-0.5 bg-teal-400 opacity-30"></div>
-                    <h1>Sabtu - Minggu: 07.00 - 20.00</h1>
-                    <div class="w-full h-0.5 bg-teal-400 opacity-30"></div>
-                    <h1>24 Jam Terbuka Layanan Darurat</h1>
-                </div>
-            </div>
-
-            <div class="flex flex-col gap-y-3 mt-20">
-                <h1 class="mb-5 text-white font-bold text-xl">Workshop Kami</h1>
-                <div class="flex gap-x-20 text-lg text-white font-semibold">
-                    <p class="cursor-pointer hover:text-teal-300 duration-200">
-                        ➜ Pangkalpinang, Bangka Belitung
-                    </p>
-                    <p class="cursor-pointer hover:text-teal-300 duration-200">
-                        ➜ Pangkalpinang, Bangka Belitung
-                    </p>
-                </div>
-                <div class="flex gap-x-20 text-lg text-white font-semibold">
-                    <p class="cursor-pointer hover:text-teal-300 duration-200">
-                        ➜ Pangkalpinang, Bangka Belitung
-                    </p>
-                    <p class="cursor-pointer hover:text-teal-300 duration-200">
-                        ➜ Pangkalpinang, Bangka Belitung
-                    </p>
-                </div>
-                <div class="flex gap-x-20 text-lg text-white font-semibold">
-                    <p class="cursor-pointer hover:text-teal-300 duration-200">
-                        ➜ Pangkalpinang, Bangka Belitung
-                    </p>
-                    <p class="cursor-pointer hover:text-teal-300 duration-200">
-                        ➜ Pangkalpinang, Bangka Belitung
-                    </p>
-                </div>
-
-            </div>
-
-            <div class="flex flex-col mt-20">
-                <h1 class="mb-5 text-white font-bold text-xl">Informasi Kontak</h1>
-                <div class="flex flex-col text-white font-semibold mb-5">
-                    <p>Jika ada kendala mengenain layanan kami</p>
-                    <p>bisa hubungin di bawah ini.</p>
-                </div>
-
-                <div class="flex flex-col gap-y-2 text-lg text-white font-semibold">
-                    <p>Lokasi: Pangkalpinang, Bangka Belitung</p>
-                    <p>Email: ngetes@gmail.com</p>
-                    <p>Telepon: +62 812-3456-7890</p>
-                </div>
-            </div>
-        </section>
-
-        <div class="w-full px-24 h-0.5 rounded-full bg-white opacity-50 mt-10"></div>
-
-        <div class="flex w-full px-24 items-center mt-10">
-            <div class="w-full flex justify-start items-center">
-                <h1 class="text-white font-bold text-2xl">Lumina Health</h1>
-            </div>
-            <div class="flex w-full justify-end items-center">
-                <h1 class="text-white font-semibold text-lg">
-                    Copyright © 2024 Lumina Health. All right reserved.
-                </h1>
-            </div>
-        </div>
-    </main>
+    <x-footer></x-footer>
 
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
     <script>
