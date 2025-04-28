@@ -21,6 +21,9 @@ Route::get('/', [homeprogramController::class, 'show']);
 Route::get('/admin', function () {
     return view('admin.layout');
 });
+Route::get('/', [HomeProgramController::class, 'show'])->name('home');
+Route::get('/login', [userController::class, 'login'])->name('login.layout');
+Route::get('/register', [userController::class, 'register'])->name('register.layout');
 
 Route::resource('aboutstaff', aboutstaffController::class);
 Route::resource('admin', adminController::class);

@@ -103,10 +103,10 @@
             class="w-max h-max p-3 rounded-full border border-white text-white font-semibold hover:bg-teal-600 duration-200 cursor-pointer">
             <img src="/images/search.png" alt="cari" class="w-5 h-5">
         </button>
-        <button
-            class="px-9 py-1 rounded-full border border-white text-white font-semibold hover:bg-teal-600 duration-200 cursor-pointer">
+        <a href="{{ route('login.layout') }}"
+            class="flex items-center px-9 py-1 rounded-full border border-white text-white font-semibold hover:bg-teal-600 duration-200 cursor-pointer">
             Login
-        </button>
+        </a>
     </div>
 </nav>
 
