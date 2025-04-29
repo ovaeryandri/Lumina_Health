@@ -3,7 +3,7 @@
   <div class="w-full p-6 bg-gray-100 ">
     <div class="w-full bg-white rounded-lg shadow-md overflow-hidden">
       <div class="bg-teal-300 p-4">
-        <h2 class="text-xl font-bold text-teal-800">Data Program</h2>
+        <h2 class="text-xl font-bold text-teal-800">Data Workshop</h2>
       </div>
 
       <form method="POST" action="" enctype="multipart/form-data" class="p-6">

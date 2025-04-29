@@ -5,7 +5,20 @@
       <div class="bg-teal-300 p-4">
         <h2 class="text-xl font-bold text-teal-800">Ubah Workshop</h2>
       </div>
-
+      @if (session('success'))
+        <div class="text-green-500">
+          {{ session('success') }}
+        </div>
+      @endif
+      @if ($errors->any())
+        <div class="text-red-500">
+          <ul>
+            @foreach ($errors->all() as $error)
+              <li>{{ $error }}</li>
+            @endforeach
+          </ul>
+        </div>
+      @endif
       <form method="POST" action="{{ route('homeworkshop.update', $workshop->id) }}" enctype="multipart/form-data"
         class="p-6">
         @method('PUT')
@@ -32,7 +45,7 @@
         </div>
 
         <div class="mb-4">
-          <label for="deskripsi" class="block text-gray-700 font-medium mb-2">Lokasi</label>
+          <label for="loakasi" class="block text-gray-700 font-medium mb-2">Lokasi</label>
           <input type="text" name="lokasi" id="lokasi"
             class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-teal-300"
             value="{{ $workshop->lokasi }}">

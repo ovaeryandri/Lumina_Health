@@ -84,7 +84,7 @@ class homeworkshopController extends Controller
             'deskripsi' => 'required|min:5|string',
             'lokasi' => 'required|string',
             'kapasitas' => 'required|string',
-            'gambar' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048',
+            'gambar' => 'image|mimes:jpeg,png,jpg,gif|max:2048',
             'tgl_mulai' => 'required|date',
             'tgl_selesai' => 'required|date|after_or_equal:tgl_mulai',
         ]);
