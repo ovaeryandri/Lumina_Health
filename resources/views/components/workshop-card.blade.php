@@ -14,5 +14,7 @@
             <span>•</span>
             <span>{{ $date }}</span>
         </div>
+        <p class="w-full flex flex-wrap mt-2">{{ $deskripsi }}</p>
     </div>
+
 </div>

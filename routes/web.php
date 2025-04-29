@@ -12,6 +12,7 @@ use App\Http\Controllers\galerydokumentasiController;
 use App\Http\Controllers\galerytestimonivideoController;
 use App\Http\Controllers\homeprogramController;
 use App\Http\Controllers\homeworkshopController;
+use App\Http\Controllers\PageController;
 use App\Http\Controllers\userController;
 use App\Models\center_history;
 use Illuminate\Support\Facades\Route;
@@ -24,6 +25,8 @@ Route::get('/admin', function () {
 Route::get('/', [HomeProgramController::class, 'show'])->name('home');
 Route::get('/login', [userController::class, 'login'])->name('login.layout');
 Route::get('/register', [userController::class, 'register'])->name('register.layout');
+Route::get('/contact', [PageController::class, 'contact'])->name('page.contact');
+Route::get('/workshop', [PageController::class, 'workshop'])->name('page.workshop');
 
 Route::resource('aboutstaff', aboutstaffController::class);
 Route::resource('admin', adminController::class);

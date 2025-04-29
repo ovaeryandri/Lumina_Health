@@ -12,7 +12,7 @@
 <body class="bg-teal-50 flex items-center justify-center my-5 overflow-hidden">
 
     <main class="w-9/12 max-h-screen rounded-2xl flex shadow-2xl">
-        <section class="w-full h-full bg-green-500 rounded-l-2xl px-5 py-8 pb-12 flex flex-col items-center">
+        <section class="w-full h-full bg-teal-500 rounded-l-2xl px-5 py-8 pb-12 flex flex-col items-center">
             <h1 class="text-white font-bold text-3xl">Daftar Sekarang</h1>
             <div class="flex flex-col w-full items-center text-white font-semibold text-sm mt-5">
                 <p>Buat akun baru dan</p>
@@ -109,7 +109,7 @@
             </div>
 
             <button
-                class="w-full bg-green-500 py-2 rounded-xl text-white font-bold mt-5 cursor-pointer hover:bg-green-600 duration-150">
+                class="w-full bg-teal-500 py-2 rounded-xl text-white font-bold mt-5 cursor-pointer hover:bg-green-600 duration-150">
                 Daftar
             </button>
 

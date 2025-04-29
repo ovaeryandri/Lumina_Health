@@ -189,7 +189,8 @@
                         <x-slot:judul class="line-clamp-1">
                             <div class="flex items-center justify-between gap-3">
                                 <h1 class="text-teal-700 text-2xl mt-5 font-semibold">{{ $programs->judul }}</h1>
-                                <span class="bg-teal-300 text-white px-2 py-2 rounded-es-xl absolute z-[9999] -mt-14 ml-[167px]">
+                                <span
+                                    class="bg-teal-300 text-white px-2 py-2 rounded-es-xl absolute z-[9999] -mt-14 ml-[167px]">
                                     @php
                                         $daysLeft = $today->diffInDays($tgl_selesai);
                                     @endphp
@@ -217,190 +218,6 @@
 
     </main>
 
-    {{-- <main data-aos="fade-up" data-aos-offset="200" data-aos-delay="50" data-aos-duration="700"
-        data-aos-easing="ease-in-out" data-aos-mirror="true" data-aos-once="false"
-        data-aos-anchor-placement="top-start" class="w-full h-max flex flex-col items-center px-28 pt-60">
-        <section
-            class="flex justify-center items-center gap-x-2 px-4 py-1 mb-10 rounded-full border border-teal-400  w-max h-max">
-            <img src="/images/consultant.png" alt="heart" class="w-5 h-5">
-            <P class="font-semibold text-teal-400">Konsultan</P>
-        </section>
-
-        <section class="flex flex-col items-center">
-            <h1 class="text-5xl text-teal-500 font-bold">Kami Adalah Konsultan Terbaik</h1>
-            <h1 class="text-5xl text-teal-700 font-bold">Di Lumina Health</h1>
-        </section>
-
-        <section class="flex w-full mt-16">
-
-            <img src="/images/consultation-2.jpg" alt="Konsultasi" class="w-80 rounded-3xl">
-
-            <div class="flex flex-col ml-14">
-                <div class=" w-96 h-max flex flex-wrap">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi repudiandae quisquam, voluptas
-                    aliquid
-                    odio error eos quos laudantium sit eaque?
-                </div>
-
-                <div class="rounded-md space-y-2 mt-5 text-teal-600">
-                    <div class="flex items-start gap-x-2">
-                        <svg class="w-4 h-4 mt-1" fill="currentColor" viewBox="0 0 20 20">
-                            <path fill-rule="evenodd"
-                                d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.707a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414L9 13.414l4.707-4.707z"
-                                clip-rule="evenodd" />
-                        </svg>
-                        <p>Dolor necessitatibus faucibus wisi.</p>
-                    </div>
-                    <div class="flex items-start gap-x-2">
-                        <svg class="w-4 h-4 mt-1" fill="currentColor" viewBox="0 0 20 20">
-                            <path fill-rule="evenodd"
-                                d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.707a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414L9 13.414l4.707-4.707z"
-                                clip-rule="evenodd" />
-                        </svg>
-                        <p>Quibusdam ab ex pulvinar fugit.</p>
-                    </div>
-                    <div class="flex items-start gap-x-2">
-                        <svg class="w-4 h-4 mt-1" fill="currentColor" viewBox="0 0 20 20">
-                            <path fill-rule="evenodd"
-                                d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.707a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414L9 13.414l4.707-4.707z"
-                                clip-rule="evenodd" />
-                        </svg>
-                        <p>Itaque illo eiusmod pede ornare.</p>
-                    </div>
-                    <div class="flex items-start gap-x-2">
-                        <svg class="w-4 h-4 mt-1" fill="currentColor" viewBox="0 0 20 20">
-                            <path fill-rule="evenodd"
-                                d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.707a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414L9 13.414l4.707-4.707z"
-                                clip-rule="evenodd" />
-                        </svg>
-                        <p>Sequi rem iaculis posuere pede viera.</p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="w-80 h-max ml-5 p-9 rounded-4xl bg-teal-500 flex flex-col items-center">
-                <div class="w-full h-max py-2 rounded-full bg-white flex items-center justify-center">
-                    <span class="text-teal-400 font-semibold text-lg">Jam Buka</span>
-                </div>
-                <p class="my-5 text-white font-bold text-lg">Jadwal dan jam buka kami.</p>
-                <div class="flex flex-col gap-y-2 items-center text-white font-bold">
-                    <h1>Senin - Jumat: 08.00 - 22.00</h1>
-                    <div class="w-full h-0.5 bg-white opacity-30"></div>
-                    <h1>Sabtu - Minggu: 07.00 - 20.00</h1>
-                    <div class="w-full h-0.5 bg-white opacity-30"></div>
-                    <h1>24 Jam Terbuka Layanan Darurat</h1>
-                </div>
-            </div>
-
-            <img src="/images/consultation-1.jpg" alt="Konsultasi"
-                class="absolute -z-50 right-28 rounded-2xl w-3xl h-96 mt-64">
-
-        </section>
-    </main> --}}
-
-
-    {{-- <main data-aos="fade-up" data-aos-offset="200" data-aos-delay="50" data-aos-duration="700"
-        data-aos-easing="ease-in-out" data-aos-mirror="true" data-aos-once="false"
-        data-aos-anchor-placement="top-start" class="w-full h-max flex flex-col px-28 mt-40 ">
-
-        <section
-            class="flex justify-center items-center gap-x-2 px-4 py-1 mb-10 rounded-full border border-teal-400  w-max h-max">
-            <img src="/images/superior.png" alt="heart" class="w-5 h-5">
-            <P class="font-semibold text-teal-400">Program Unggulan</P>
-        </section>
-
-        <section class="flex w-full justify-between">
-            <div class="flex flex-col">
-                <h1 class="text-4xl text-teal-500 font-bold">Program Unggulan</h1>
-                <h1 class="text-4xl text-teal-700 font-bold">Kami</h1>
-            </div>
-
-            <div class="flex flex-col text-teal-600">
-                <p>Program terbaik yang kami sediakan untuk</p>
-                <p>Anda yang ingin mencapai kesehatan maksimal</p>
-                <p>Dengan mudah dan nyaman untuk Anda.</p>
-            </div>
-
-            <button
-                class="w-max h-max px-7 py-2 mt-5 rounded-full bg-teal-500 text-white text-lg font-semibold hover:bg-teal-700 duration-200 cursor-pointer">
-                Program Unggulan
-            </button>
-        </section>
-
-        <section class="flex flex-wrap w-full gap-x-5 gap-y-5 mt-16">
-
-            <x-card nomor="01">
-                <x-slot:judul>
-                    <h1 class="text-teal-700 text-2xl font-semibold leading-4">Konsultasi</h1>
-                    <h1 class="text-teal-700 text-2xl font-semibold">Kesehatan</h1>
-                </x-slot:judul>
-
-                <x-slot:logo>
-                    <img src="/images/consultation.png" alt="Konsultasi" class="w-28 h-28">
-                </x-slot:logo>
-
-                <x-slot:deskripsi>
-                    <p>Layanan konsultasi mengenai</p>
-                    <p>kesehatan atau saran</p>
-                    <p>kesehatan lainnya.</p>
-                </x-slot:deskripsi>
-            </x-card>
-
-            <x-card nomor="01">
-                <x-slot:judul>
-                    <h1 class="text-teal-700 text-2xl font-semibold leading-4">Konsultasi</h1>
-                    <h1 class="text-teal-700 text-2xl font-semibold">Kesehatan</h1>
-                </x-slot:judul>
-
-                <x-slot:logo>
-                    <img src="/images/consultation.png" alt="Konsultasi" class="w-28 h-28">
-                </x-slot:logo>
-
-                <x-slot:deskripsi>
-                    <p>Layanan konsultasi mengenai</p>
-                    <p>kesehatan atau saran</p>
-                    <p>kesehatan lainnya.</p>
-                </x-slot:deskripsi>
-            </x-card>
-
-            <x-card nomor="01">
-                <x-slot:judul>
-                    <h1 class="text-teal-700 text-2xl font-semibold leading-4">Konsultasi</h1>
-                    <h1 class="text-teal-700 text-2xl font-semibold">Kesehatan</h1>
-                </x-slot:judul>
-
-                <x-slot:logo>
-                    <img src="/images/consultation.png" alt="Konsultasi" class="w-28 h-28">
-                </x-slot:logo>
-
-                <x-slot:deskripsi>
-                    <p>Layanan konsultasi mengenai</p>
-                    <p>kesehatan atau saran</p>
-                    <p>kesehatan lainnya.</p>
-                </x-slot:deskripsi>
-            </x-card>
-
-            <x-card nomor="01">
-                <x-slot:judul>
-                    <h1 class="text-teal-700 text-2xl font-semibold leading-4">Konsultasi</h1>
-                    <h1 class="text-teal-700 text-2xl font-semibold">Kesehatan</h1>
-                </x-slot:judul>
-
-                <x-slot:logo>
-                    <img src="/images/consultation.png" alt="Konsultasi" class="w-28 h-28">
-                </x-slot:logo>
-
-                <x-slot:deskripsi>
-                    <p>Layanan konsultasi mengenai</p>
-                    <p>kesehatan atau saran</p>
-                    <p>kesehatan lainnya.</p>
-                </x-slot:deskripsi>
-            </x-card>
-
-        </section>
-
-    </main> --}}
-
     {{-- Workshop --}}
     <main class="w-full h-max flex flex-col px-28 mt-20" data-aos="fade-up" data-aos-offset="200"
         data-aos-delay="50" data-aos-duration="700" data-aos-easing="ease-in-out" data-aos-mirror="true"
@@ -423,15 +240,16 @@
             <div class="grid md:grid-cols-3 gap-5">
 
                 <x-workshop-card image="/images/consultation-1.jpg" location="Pangkalpinang, Bangka Belitung"
-                    title="Medical Care Need To Be Trustworthy" quota="50 orang" date="28 April s/d 10 Mei 2025" />
+                    title="Medical Care Need To Be Trustworthy" quota="50 orang" date="28 April s/d 10 Mei 2025"
+                    deskripsi="sadhajkdhajkhd" />
 
                 <x-workshop-card image="/images/consultation-1.jpg" location="Pangkalpinang, Bangka Belitung"
                     title="Must Read Safety Guide For Swine Flu Season" quota="50 orang"
-                    date="28 April s/d 10 Mei 2025" />
+                    date="28 April s/d 10 Mei 2025" deskripsi="sadhajkdhajkhd" />
 
                 <x-workshop-card image="/images/consultation-1.jpg" location="Pangkalpinang, Bangka Belitung"
-                    title="Best Gynecologists Surgeons In Hospital" quota="50 orang"
-                    date="28 April s/d 10 Mei 2025" />
+                    title="Best Gynecologists Surgeons In Hospital" quota="50 orang" date="28 April s/d 10 Mei 2025"
+                    deskripsi="sadhajkdhajkhd" />
 
             </div>
         </section>

@@ -1,7 +1,7 @@
 <nav id="navbar" class="transition-all duration-300 bg-teal-300 flex items-center w-10/12 h-max px-7 py-4 rounded-xl">
     <ul class="flex items-center w-full gap-x-10 text-white font-semibold text-lg relative">
         <li class="cursor-pointer relative inline-block group">
-            Beranda
+            <a href="{{ route('home') }}">Home</a>
             <span
                 class="absolute left-0 bottom-0 h-0.5 w-0 bg-white transition-all duration-300 group-hover:w-full"></span>
         </li>
@@ -58,7 +58,7 @@
                     </span>
                 </li>
                 <li class="px-4 py-2 relative cursor-pointer group/sub opacity-50 hover:opacity-100 duration-200">
-                    Daftar Workshop
+                    <a href="{{ route('page.workshop') }}">Daftar Workshop</a>
                     <span
                         class="absolute left-4 bottom-1 h-0.5 w-0 bg-white transition-all duration-300 group-hover/sub:w-[calc(100%-2rem)]">
                     </span>
@@ -82,6 +82,12 @@
                     </span>
                 </li>
                 <li class="px-4 py-2 relative cursor-pointer group/sub opacity-50 hover:opacity-100 duration-200">
+                    Profesional
+                    <span
+                        class="absolute left-4 bottom-1 h-0.5 w-0 bg-white transition-all duration-300 group-hover/sub:w-[calc(100%-2rem)]">
+                    </span>
+                </li>
+                <li class="px-4 py-2 relative cursor-pointer group/sub opacity-50 hover:opacity-100 duration-200">
                     Program Unggulan
                     <span
                         class="absolute left-4 bottom-1 h-0.5 w-0 bg-white transition-all duration-300 group-hover/sub:w-[calc(100%-2rem)]">
@@ -92,7 +98,7 @@
         </li>
 
         <li class="cursor-pointer relative inline-block group">
-            Kontak
+            <a href="{{ route('page.contact') }}">Kontak</a>
             <span class="absolute left-0 bottom-0 h-0.5 w-0 bg-white transition-all duration-300 group-hover:w-full">
             </span>
         </li>
