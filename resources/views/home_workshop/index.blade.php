@@ -47,11 +47,11 @@
                   </td>
 
                   <td class="p-3 border border-gray-200">
-                    {{ \Carbon\Carbon::parse($workshop->waktu_mulai)->format('d F Y | H:i') }}
+                    {{ \Carbon\Carbon::parse($workshop->waktu_mulai)->format('Y-m-d | H:i') }}
                   </td>
 
                   <td class="p-3 border border-gray-200">
-                    {{ \Carbon\Carbon::parse($workshop->waktu_selesai)->format('d F Y | H:i') }}
+                    {{ \Carbon\Carbon::parse($workshop->waktu_selesai)->format('Y-m-d | H:i') }}
                   </td>
 
                   <td class="p-3 border border-gray-200">

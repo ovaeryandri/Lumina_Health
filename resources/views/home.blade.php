@@ -187,9 +187,9 @@
                 @if ($today->lt($tgl_selesai))
                     <x-card nomor="{{ $loop->iteration }}">
                         <x-slot:judul class="line-clamp-1">
-                            <div class="flex items-center justify-between gap-5">
-                                <h1 class="text-teal-700 text-2xl font-semibold">{{ $programs->judul }}</h1>
-                                <span class="bg-teal-300 text-white px-2 py-2 rounded-full">
+                            <div class="flex items-center justify-between gap-3">
+                                <h1 class="text-teal-700 text-2xl mt-5 font-semibold">{{ $programs->judul }}</h1>
+                                <span class="bg-teal-300 text-white px-2 py-2 rounded-es-xl absolute z-[9999] -mt-14 ml-[167px]">
                                     @php
                                         $daysLeft = $today->diffInDays($tgl_selesai);
                                     @endphp
