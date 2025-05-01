@@ -25,8 +25,10 @@ Route::get('/admin', function () {
 Route::get('/', [HomeProgramController::class, 'show'])->name('home');
 Route::get('/login', [userController::class, 'login'])->name('login.layout');
 Route::get('/register', [userController::class, 'register'])->name('register.layout');
-Route::get('/contact', [PageController::class, 'contact'])->name('page.contact');
+Route::get('/kontak', [PageController::class, 'contact'])->name('page.contact');
 Route::get('/workshop', [PageController::class, 'workshop'])->name('page.workshop');
+Route::get('/progam-unggulan', [PageController::class, 'program'])->name('page.program');
+Route::get('/tentang-kami', [PageController::class, 'aboutUs'])->name('page.aboutUs');
 
 Route::resource('aboutstaff', aboutstaffController::class);
 Route::resource('admin', adminController::class);

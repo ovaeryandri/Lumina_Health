@@ -7,7 +7,7 @@
         </li>
 
         <li class="relative group flex items-center gap-x-1 cursor-pointer">
-            Tentang Kami
+            <a href="{{ route('page.aboutUs') }}">Tentang Kami</a>
             <span
                 class="absolute left-0 bottom-0 h-0.5 w-0 bg-white transition-all duration-300 group-hover:w-full"></span>
             {{-- <ul
@@ -82,13 +82,7 @@
                     </span>
                 </li>
                 <li class="px-4 py-2 relative cursor-pointer group/sub opacity-50 hover:opacity-100 duration-200">
-                    Profesional
-                    <span
-                        class="absolute left-4 bottom-1 h-0.5 w-0 bg-white transition-all duration-300 group-hover/sub:w-[calc(100%-2rem)]">
-                    </span>
-                </li>
-                <li class="px-4 py-2 relative cursor-pointer group/sub opacity-50 hover:opacity-100 duration-200">
-                    Program Unggulan
+                    <a href="{{ route('page.program') }}">Program Unggulan</a>
                     <span
                         class="absolute left-4 bottom-1 h-0.5 w-0 bg-white transition-all duration-300 group-hover/sub:w-[calc(100%-2rem)]">
                     </span>

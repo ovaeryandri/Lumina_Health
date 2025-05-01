@@ -3,7 +3,7 @@
     class="w-full h-max flex flex-col items-center mt-20 pb-10 bg-teal-500">
     <section class="w-full flex gap-x-20 items-center justify-center py-12 bg-teal-300">
         <div class="flex items-center gap-x-4 ml-72">
-            <img src="/images/heart.png" alt="" class="w-24 h-24">
+            <img src="/images/heart.png" alt="Heart" class="w-24 h-24">
             <div class="flex flex-col text-white">
                 <h1 class="text-4xl font-bold mb-3">Ayo, Berlangganan</h1>
                 <h1 class="text-lg font-semibold opacity-80">Untuk kesehatan terbaik Anda</h1>
@@ -80,6 +80,7 @@
 
     <div class="flex w-full px-24 items-center mt-10">
         <div class="w-full flex justify-start items-center">
+            <img src="/images/heart.png" alt="Lumina" class="w-20 h-20">
             <h1 class="text-white font-bold text-2xl">Lumina Health</h1>
         </div>
         <div class="flex w-full justify-end items-center">

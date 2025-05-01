@@ -1,6 +1,6 @@
 <main class="flex justify-between mx-20 pt-7 max-w-full h-20 bg-teal-50 mb-5 px-10">
-    <div class="flex items-center gap-x-2">
-        <img src="/images/heart-rate.png" alt="heart" class="w-10 h-10">
+    <div class="flex items-center">
+        <img src="/images/heart-2.png" alt="heart" class="w-16 h-16">
         <h1 class="text-teal-400 font-bold text-2xl">Lumina Health</h1>
     </div>
 

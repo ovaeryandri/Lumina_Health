@@ -23,7 +23,7 @@
         <h1 class="text-6xl text-white font-bold">Workshop</h1>
     </main>
 
-    <main class="w-full h-max flex flex-col px-28 mt-20">
+    <main class="w-full h-max flex px-28 mt-20">
 
         <section class="flex flex-wrap w-full mt-16">
             <div class="grid md:grid-cols-3 gap-5">

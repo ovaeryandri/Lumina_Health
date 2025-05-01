@@ -71,7 +71,7 @@
         class="w-full h-max flex flex-col items-center px-28 pt-60">
         <section
             class="flex justify-center items-center gap-x-2 px-4 py-1 mb-10 rounded-full border border-teal-400  w-max h-max">
-            <img src="/images/consultant.png" alt="heart" class="w-5 h-5">
+            <img src="/images/heart-rate.png" alt="heart" class="w-5 h-5">
             <P class="font-semibold text-teal-400">Konsultan</P>
         </section>
 
@@ -154,7 +154,7 @@
 
         <section
             class="flex justify-center items-center gap-x-2 px-4 py-1 mb-10 rounded-full border border-teal-400  w-max h-max">
-            <img src="/images/superior.png" alt="heart" class="w-5 h-5">
+            <img src="/images/heart-rate.png" alt="heart" class="w-5 h-5">
             <P class="font-semibold text-teal-400">Program Unggulan</P>
         </section>
 
@@ -170,10 +170,10 @@
                 <p>Dengan mudah dan nyaman untuk Anda.</p>
             </div>
 
-            <button
+            <a href="{{ route('page.program') }}"
                 class="w-max h-max px-7 py-2 mt-5 rounded-full bg-teal-500 text-white text-lg font-semibold hover:bg-teal-700 duration-200 cursor-pointer">
                 Program Unggulan
-            </button>
+            </a>
         </section>
 
         <section class="grid grid-cols-3 gap-x-5 gap-y-5 mt-16">
@@ -190,7 +190,7 @@
                             <div class="flex items-center justify-between gap-3">
                                 <h1 class="text-teal-700 text-2xl mt-5 font-semibold">{{ $programs->judul }}</h1>
                                 <span
-                                    class="bg-teal-300 text-white px-2 py-2 rounded-es-xl absolute z-[9999] -mt-14 ml-[167px]">
+                                    class=" bg-teal-300 text-white px-2 py-2 rounded-es-xl rounded-tr-2xl absolute z-[0] -mt-11 ml-[230px]">
                                     @php
                                         $daysLeft = $today->diffInDays($tgl_selesai);
                                     @endphp
@@ -204,13 +204,25 @@
                             </div>
                         </x-slot:judul>
 
-                        <x-slot:logo>
-                            <img src="{{ Storage::url($programs->gambar) }}" class="w-52 h-52">
-                        </x-slot:logo>
+                        <x-slot:gambar>
+                            <img src="{{ Storage::url($programs->gambar) }}"
+                                class="w-full h-56 object-fill rounded-xl">
+                        </x-slot:gambar>
 
-                        <x-slot:deskripsi class="line-clamp-1">
+                        <x-slot:deskripsi>
                             <p class="line-clamp-1">{{ $programs->deskripsi }}</p>
                         </x-slot:deskripsi>
+
+                        <x-slot:detail>
+                            <div>
+                                <button
+                                    class="cursor-pointer text-teal-300 hover:text-teal-500 duration-200 font-semibold">
+                                    Lebih lanjut...
+                                </button>
+                            </div>
+                        </x-slot:detail>
+
+
                     </x-card>
                 @endif
             @endforeach
@@ -224,7 +236,7 @@
         data-aos-once="false" data-aos-anchor-placement="top-start">
         <section
             class="flex justify-center items-center gap-x-2 px-4 py-1 mb-10 rounded-full border border-teal-400  w-max h-max">
-            <img src="/images/superior.png" alt="heart" class="w-5 h-5">
+            <img src="/images/heart-rate.png" alt="heart" class="w-5 h-5">
             <P class="font-semibold text-teal-400">Workshop</P>
         </section>
 
