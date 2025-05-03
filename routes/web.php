@@ -14,6 +14,7 @@ use App\Http\Controllers\homeprogramController;
 use App\Http\Controllers\homeworkshopController;
 use App\Http\Controllers\PageController;
 use App\Http\Controllers\userController;
+use App\Http\Controllers\formworkshopController;
 use App\Models\center_history;
 use Illuminate\Support\Facades\Route;
 
@@ -28,6 +29,7 @@ Route::get('/workshop', [PageController::class, 'workshop'])->name('page.worksho
 Route::get('/progam-unggulan', [PageController::class, 'program'])->name('page.program');
 Route::get('/tentang-kami', [PageController::class, 'aboutUs'])->name('page.aboutUs');
 
+Route::resource('formworkshop', formworkshopController::class);
 Route::resource('aboutstaff', aboutstaffController::class);
 Route::resource('admin', adminController::class);
 Route::resource('blogcategory', blogcategoryController::class);
@@ -41,3 +43,4 @@ Route::resource('galerytestimonivideo', galerytestimonivideoController::class);
 Route::resource('homeprogram', homeprogramController::class);
 Route::resource('homeworkshop', homeworkshopController::class);
 Route::resource('user', userController::class);
+
