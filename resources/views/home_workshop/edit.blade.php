@@ -19,6 +19,10 @@
           </ul>
         </div>
       @endif
+      @php
+    use Carbon\Carbon;
+@endphp
+
       <form method="POST" action="{{ route('homeworkshop.update', $workshop->id) }}" enctype="multipart/form-data"
         class="p-6">
         @method('PUT')
@@ -56,23 +60,25 @@
 
         <div class="mb-4">
           <label for="tgl_mulai" class="block text-gray-700 font-medium mb-2">tanggal mulai Program</label>
-          <input type="datetime-local" name="tgl_mulai" id="tgl_mulai" value="{{ $workshop->waktu_mulai }}">
+          <input type="datetime-local" name="waktu_mulai" id="waktu_mulai" value="{{ Carbon::parse($workshop->waktu_mulai)->format('Y-m-d\TH:i') }}">
 
           <p class="text-red-500 text-sm mt-1"></p>
 
         </div>
 
         <div class="mb-4">
-          <label for="tgl_selesai" class="block text-gray-700 font-medium mb-2">Tanggal selesai Program</label>
-          <input type="datetime-local" name="tgl_selesai" id="tgl_selesai" value="{{ $workshop->waktu_selesai }}">
+          <label for="tgl_mulai" class="block text-gray-700 font-medium mb-2">tanggal Selesai Program</label>
+          <input type="datetime-local" name="waktu_selesai" id="waktu_selesai" value="{{ Carbon::parse($workshop->waktu_selesai)->format('Y-m-d\TH:i') }}">
 
           <p class="text-red-500 text-sm mt-1"></p>
 
         </div>
 
+
+
         <div class="mb-4">
-          <label for="kapasitas" class="block text-gray-700 font-medium mb-2">Kapasitas</label>
-          <input type="text" name="kapasitas" id="kapasitas"
+          <label for="maks_kapasitas" class="block text-gray-700 font-medium mb-2">Kapasitas</label>
+          <input type="text" name="maks_kapasitas" id="maks_kapasitas"
             class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-teal-300"
             value="{{ $workshop->maks_kapasitas }}">
 

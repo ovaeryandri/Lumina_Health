@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class form_workshops extends Model
 {
-    protected $table = 'form_workshops'; // nama tabel sesuai migration
+    protected $table = 'form_workshop'; // nama tabel sesuai migration
 
     protected $fillable = [
         'id_akun_user',

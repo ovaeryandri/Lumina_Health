@@ -8,6 +8,22 @@ use Illuminate\Http\Request;
 
 class formworkshopController extends Controller
 {
+
+    public function index(){
+        $workshop = form_workshops::all();
+        return view('form_workshop.index', compact('workshop'));
+    }
+
+    public function create(){
+        $workshop = form_workshops::all();
+        return view('form_workshop.create', compact('workshop'));
+    }
+
+    public function show(){
+        $workshop = form_workshops::all();
+        return view('home', compact('workshop'));
+    }
+
     public function store(Request $request, $id){
         $workshop = home_workshop::findOrFail($id);
 

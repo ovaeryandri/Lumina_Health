@@ -18,7 +18,8 @@ class akun_user extends Model
         'password',
     ];
 
-    public function home_workshop(){
-        return $this->hasMany(home_workshop::class, 'id_akun_user');
+    public function user()
+    {
+        return $this->hasMany(form_workshops::class, 'id_akun_user');
     }
 }

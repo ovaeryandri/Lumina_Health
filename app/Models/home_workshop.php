@@ -12,7 +12,6 @@ class home_workshop extends Model
 
     protected $fillable = [
         'judul',
-        'id_akun_user',
         'deskripsi',
         'lokasi',
         'waktu_mulai',

@@ -17,12 +17,10 @@ use App\Http\Controllers\userController;
 use App\Models\center_history;
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', [homeprogramController::class, 'show']);
-
 Route::get('/admin', function () {
     return view('admin.layout');
 });
-Route::get('/', [HomeProgramController::class, 'show'])->name('home');
+Route::get('/', [homeprogramController::class, 'show'])->name('home');
 Route::get('/login', [userController::class, 'login'])->name('login.layout');
 Route::get('/register', [userController::class, 'register'])->name('register.layout');
 Route::get('/kontak', [PageController::class, 'contact'])->name('page.contact');

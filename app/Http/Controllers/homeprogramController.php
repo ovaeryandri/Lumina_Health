@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\home_program;
+use App\Models\home_workshop;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 
@@ -17,7 +18,8 @@ class homeprogramController extends Controller
     public function show()
     {
         $program = home_program::all();
-        return view('home', compact('program'));
+        $workshop = home_workshop::all();
+        return view('home', compact('program', 'workshop'));
     }
 
     public function create()

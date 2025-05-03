@@ -42,13 +42,13 @@
 
 
         <div class="mb-4">
-          <label for="tgl_mulai" class="block text-gray-700 font-medium mb-2">tanggal mulai Program</label>
-          <input type="datetime-local" name="tgl_mulai" id="tgl_mulai"
+          <label for="waktu_mulai" class="block text-gray-700 font-medium mb-2">Waktu mulai Program</label>
+          <input type="datetime-local" name="waktu_mulai" id="waktu_mulai"
             class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-teal-300"
-            value="{{ old('tgl_mulai') }}" required>
-          @if ($errors->has('tanggal_mulai'))
+            value="{{ old('waktu_mulai') }}" required>
+          @if ($errors->has('waktu_mulai'))
             <div class="text-red-500 text-sm mt-1">
-              {{ $errors->first('tanggal_mulai') }}
+              {{ $errors->first('waktu_mulai') }}
             </div>
           @endif
 
@@ -56,24 +56,24 @@
         </div>
 
         <div class="mb-4">
-          <label for="tgl_selesai" class="block text-gray-700 font-medium mb-2">Tanggal selesai Program</label>
-          <input type="datetime-local" name="tgl_selesai" id="tgl_selesai"
+          <label for="waktu_selesai" class="block text-gray-700 font-medium mb-2">waktu selesai Program</label>
+          <input type="datetime-local" name="waktu_selesai" id="waktu_selesai"
             class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-teal-300"
-            value="{{ old('tgl_selesai') }}" required>
+            value="{{ old('waktu_selesai') }}" required>
 
-          @if ($errors->has('tanggal_selesai'))
+          @if ($errors->has('waktu_selesai'))
             <div class="text-red-500 text-sm mt-1">
-              {{ $errors->first('tanggal_selesai') }}
+              {{ $errors->first('waktu_selesai') }}
             </div>
           @endif
 
         </div>
 
         <div class="mb-4">
-          <label for="deskripsi" class="block text-gray-700 font-medium mb-2">Kapasitas</label>
-          <input type="text" name="kapasitas" id="kapasitas"
+          <label for="maks_kapasitas" class="block text-gray-700 font-medium mb-2">Kapasitas</label>
+          <input type="text" name="maks_kapasitas" id="maks_kapasitas"
             class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-teal-300"
-            value="{{ old('kapasitas') }}" required>
+            value="{{ old('maks_kapasitas') }}" required>
 
           <p class="text-red-500 text-sm mt-1"></p>
 

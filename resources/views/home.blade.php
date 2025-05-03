@@ -239,7 +239,7 @@
         data-aos-once="false" data-aos-anchor-placement="top-start">
         <section
             class="flex justify-center items-center gap-x-2 px-4 py-1 mb-10 rounded-full border border-teal-400  w-max h-max">
-            <img src="/images/heart-rate.png" alt="heart" class="w-5 h-5">
+            <img src="/images/superior.png" alt="heart" class="w-5 h-5">
             <P class="font-semibold text-teal-400">Workshop</P>
         </section>
 
@@ -253,85 +253,37 @@
 
         <section class="flex flex-wrap w-full mt-16">
             <div class="grid md:grid-cols-3 gap-5">
+                @foreach ($workshop as $workshops)
 
                 <x-workshop-card>
-                    <x-slot:image>
-                        <img src="/images/consultation-1.jpg"
-                            class="w-full h-52 object-cover border-8 border-white rounded-t-2xl">
-                    </x-slot:image>
-                    <x-slot:location>
-                        Pangkalpinang, Bangka Belitung
-                    </x-slot:location>
-                    <x-slot:title>
-                        Medical Care Need To Be Trustworthy
-                    </x-slot:title>
-                    <x-slot:quota>
-                        50 Orang
-                    </x-slot:quota>
-                    <x-slot:date>
-                        28 April s/d 10 Mei 2025
-                    </x-slot:date>
-                    <x-slot:deskripsi>
-                        asjdkahdkajhdsjkahd
-                    </x-slot:deskripsi>
+
+                        <x-slot:image>
+                            <img src="{{ Storage::url($workshops->gambar) }}" class="w-52 h-52">
+                        </x-slot:image>
+
+                        <x-slot:location>
+                            <p>{{ $workshops->lokasi}}</p>
+                        </x-slot:location>
+
+                        <x-slot:title>
+                            <p>{{ $workshops->judul}}</p>
+                        </x-slot:title>
+
+                        <x-slot:quota>
+                            <p>{{ $workshops->maks_kapasitas}}</p>
+                        </x-slot:quota>
+
+                        <x-slot:date>
+                            <p>{{ $workshops->tgl_mulai}}</p>
+                        </x-slot:date>
+
+                        <x-slot:deskripsi>
+                            <p>{{ $workshops->deskripsi}}</p>
+                        </x-slot:deskripsi>
+
                 </x-workshop-card>
 
-                <x-workshop-card>
-                    <x-slot:image>
-                        <img src="/images/consultation-1.jpg"
-                            class="w-full h-52 object-cover border-8 border-white rounded-t-2xl">
-                    </x-slot:image>
-                    <x-slot:location>
-                        Pangkalpinang, Bangka Belitung
-                    </x-slot:location>
-                    <x-slot:title>
-                        Medical Care Need To Be Trustworthy
-                    </x-slot:title>
-                    <x-slot:quota>
-                        50 Orang
-                    </x-slot:quota>
-                    <x-slot:date>
-                        28 April s/d 10 Mei 2025
-                    </x-slot:date>
-                    <x-slot:deskripsi>
-                        asjdkahdkajhdsjkahd
-                    </x-slot:deskripsi>
-                </x-workshop-card>
-
-                <x-workshop-card>
-                    <x-slot:image>
-                        <img src="/images/consultation-1.jpg"
-                            class="w-full h-52 object-cover border-8 border-white rounded-t-2xl">
-                    </x-slot:image>
-                    <x-slot:location>
-                        Pangkalpinang, Bangka Belitung
-                    </x-slot:location>
-                    <x-slot:title>
-                        Medical Care Need To Be Trustworthy
-                    </x-slot:title>
-                    <x-slot:quota>
-                        50 Orang
-                    </x-slot:quota>
-                    <x-slot:date>
-                        28 April s/d 10 Mei 2025
-                    </x-slot:date>
-                    <x-slot:deskripsi>
-                        asjdkahdkajhdsjkahd
-                    </x-slot:deskripsi>
-                </x-workshop-card>
-
-                {{-- <x-workshop-card image="/images/consultation-1.jpg" location="Pangkalpinang, Bangka Belitung"
-                    title="Medical Care Need To Be Trustworthy" quota="50 orang" date="28 April s/d 10 Mei 2025"
-                    deskripsi="sadhajkdhajkhd" />
-
-                <x-workshop-card image="/images/consultation-1.jpg" location="Pangkalpinang, Bangka Belitung"
-                    title="Must Read Safety Guide For Swine Flu Season" quota="50 orang"
-                    date="28 April s/d 10 Mei 2025" deskripsi="sadhajkdhajkhd" />
-
-                <x-workshop-card image="/images/consultation-1.jpg" location="Pangkalpinang, Bangka Belitung"
-                    title="Best Gynecologists Surgeons In Hospital" quota="50 orang" date="28 April s/d 10 Mei 2025"
-                    deskripsi="sadhajkdhajkhd" /> --}}
-
+                @endforeach
             </div>
         </section>
 

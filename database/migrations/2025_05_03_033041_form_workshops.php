@@ -10,26 +10,27 @@ return new class extends Migration
      * Run the migrations.
      */
     public function up(): void
-    {
-        Schema::create('form_workshop', function (Blueprint $table) {
-            $table->id();
-            $table->unsignedBigInteger('id_akun_user')->constrained()->onDelete('cascade');
-            $table->unsignedBigInteger('id_home_workshops')->constrained()->onDelete('cascade');
-            $table->string('nama');
-            $table->string('alamat');
-            $table->string('no_hp');
-            $table->string('tujuan');
-            $table->timestamps();
-            $table->foreign('id_akun_user')->references('id')->on('akun_user')->onDelete('cascade');
-            $table->foreign('id_home_workshops')->references('id')->on('home_workshops')->onDelete('cascade');
-        });
-    }
+{
+    Schema::create('form_workshop', function (Blueprint $table) {
+        $table->id();
+        // foreign key dengan 'constrained()' otomatis
+        $table->foreignId('id_akun_user')->constrained('akun_user')->onDelete('cascade');
+        $table->foreignId('id_home_workshops')->constrained('home_workshops')->onDelete('cascade');
+
+        $table->string('nama');
+        $table->string('alamat');
+        $table->string('no_hp');
+        $table->string('tujuan');
+        $table->timestamps();
+
+    });
+}
 
     /**
      * Reverse the migrations.
      */
     public function down(): void
     {
-        //
+        Schema::dropIfExists('form_workshop');
     }
 };

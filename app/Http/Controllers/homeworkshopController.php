@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\home_workshop;
 use App\Models\akun_user;
+use Carbon\Carbon;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Session;
 
@@ -37,21 +38,23 @@ class homeworkshopController extends Controller
             'judul' => 'required|min:5|string',
             'deskripsi' => 'required|min:5|string',
             'lokasi' => 'required|string',
-            'kapasitas' => 'required|string',
+            'maks_kapasitas' => 'required|integer',
             'gambar' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048',
-            'tgl_mulai' => 'required|date',
-            'tgl_selesai' => 'required|date|after_or_equal:tgl_mulai',
+            'waktu_mulai' => 'required|date',
+            'waktu_selesai' => 'required|date|after_or_equal:waktu_mulai',
         ]);
         $filePath = $request->file('gambar')->store('program_files', 'public');
+        $waktu_mulai = Carbon::parse($request->waktu_mulai);
+        $waktu_selesai = Carbon::parse($request->waktu_selesai);
 
         home_workshop::create([
             "judul" => $request->judul,
             "deskripsi" => $request->deskripsi,
             "lokasi" => $request->lokasi,
-            "maks_kapasitas" => $request->kapasitas,
+            "maks_kapasitas" => $request->maks_kapasitas,
             "gambar" => $filePath,
-            "waktu_mulai" => $request->tgl_mulai,
-            "waktu_selesai" => $request->tgl_selesai,
+            "waktu_mulai" => $waktu_mulai,
+            "waktu_selesai" => $waktu_selesai,
 
         ]);
         return redirect()->route('homeworkshop.index')->with('success', 'Workshop Berhasil Ditambah');
@@ -78,40 +81,40 @@ class homeworkshopController extends Controller
      * Update the specified resource in storage.
      */
     public function update(Request $request, $id)
-    {
-        $workshop = home_workshop::findOrFail($id);
+{
+    $workshop = home_workshop::findOrFail($id);
 
-        $request->validate([
-            'judul' => 'required|min:5|string',
-            'deskripsi' => 'required|min:5|string',
-            'lokasi' => 'required|string',
-            'kapasitas' => 'required|string',
-            'gambar' => 'image|mimes:jpeg,png,jpg,gif|max:2048',
-            'tgl_mulai' => 'required|date',
-            'tgl_selesai' => 'required|date|after_or_equal:tgl_mulai',
-        ]);
+    $request->validate([
+        'judul' => 'min:5|string',
+        'deskripsi' => 'min:5|string',
+        'lokasi' => 'string',
+        'maks_kapasitas' => 'integer',
+        'gambar' => 'image|mimes:jpeg,png,jpg,gif|max:2048',
+        'waktu_mulai' => 'date',
+        'waktu_selesai' => 'date|after_or_equal:waktu_mulai',
+    ]);
 
-        $data = [
-            "judul" => $request->judul,
-            "deskripsi" => $request->deskripsi,
-            "lokasi" => $request->lokasi,
-            "waktu_mulai" => $request->tgl_mulai,
-            "waktu_selesai" => $request->tgl_selesai,
-            "maks_kapasitas" => $request->kapasitas,
-        ];
+    $data = [
+        "judul" => $request->judul,
+        "deskripsi" => $request->deskripsi,
+        "lokasi" => $request->lokasi,
+        "waktu_mulai" => Carbon::parse($request->waktu_mulai),
+        "waktu_selesai" => Carbon::parse($request->waktu_selesai),
+        "maks_kapasitas" => $request->maks_kapasitas,
+    ];
 
-        if ($request->hasFile('gambar')) {
-            if ($workshop->gambar) {
-                Storage::disk('public')->delete($workshop->gambar);
-            }
-            $filePath = $request->file('gambar')->store('program_files', 'public');
-            $data['gambar'] = $filePath;
+    if ($request->hasFile('gambar')) {
+        if ($workshop->gambar) {
+            Storage::disk('public')->delete($workshop->gambar);
         }
-
-        $workshop->update($data);
-
-        return redirect()->route('homeworkshop.index')->with('success', 'Workshop Berhasil Diubah');
+        $filePath = $request->file('gambar')->store('program_files', 'public');
+        $data['gambar'] = $filePath;
     }
+
+    $workshop->update($data);
+
+    return redirect()->route('homeworkshop.index')->with('success', 'Workshop Berhasil Diubah');
+}
 
     /**
      * Remove the specified resource from storage.
@@ -129,4 +132,5 @@ class homeworkshopController extends Controller
 
         return redirect()->route('homeworkshop.index')->with('success', 'Workshop berhasil dihapus.');
     }
+
 }
