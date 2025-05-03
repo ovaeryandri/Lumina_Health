@@ -23,7 +23,9 @@
         <h1 class="text-6xl text-white font-bold">Tentang Kami</h1>
     </main>
 
-    <main class="w-full h-max flex flex-col px-28 mt-20">
+    <main data-aos="fade-up" data-aos-offset="200" data-aos-delay="50" data-aos-duration="700"
+        data-aos-easing="ease-in-out" data-aos-mirror="true" data-aos-once="false" data-aos-anchor-placement="top-start"
+        class="w-full h-max flex flex-col px-28 mt-20">
         <section class="w-full h-max flex">
             <img src="/images/we.jpeg" alt="Lumina Health" class="w-md rounded-2xl">
             <div class="flex flex-col ml-10">
@@ -63,7 +65,9 @@
         </section>
     </main>
 
-    <main class="w-full h-max flex flex-col items-center px-28 mt-20">
+    <main data-aos="fade-up" data-aos-offset="200" data-aos-delay="50" data-aos-duration="700"
+        data-aos-easing="ease-in-out" data-aos-mirror="true" data-aos-once="false" data-aos-anchor-placement="top-start"
+        class="w-full h-max flex flex-col items-center px-28 mt-20">
         <section
             class="flex justify-center items-center gap-x-2 px-4 py-1 mb-10 rounded-full border border-teal-400  w-max h-max">
             <img src="/images/heart-rate.png" alt="heart" class="w-5 h-5">
@@ -86,12 +90,12 @@
             </div>
 
             <div class="bg-white rounded-2xl overflow-hidden shadow-lg w-max flex flex-col items-center">
-                <img src="/images/consultation-2.jpg" alt="konsultasi"
+                <img src="/images/health-program.jpeg" alt="konsultasi"
                     class="w-80 h-44 object-cover border-8 border-white rounded-t-2xl">
 
                 <div
                     class="w-max h-max p-3 border-2 border-teal-500 rounded-full bg-white flex justify-center items-center -mt-20">
-                    <img src="/images/talk.png" alt="Konsultasi" class="p-2 w-24 h-24">
+                    <img src="/images/health-program.png" alt="Konsultasi" class="p-2 w-24 h-24">
                 </div>
 
                 <h1 class="text-2xl font-bold mb-5 mt-3 text-teal-600 hover:text-teal-500 duration-150">
@@ -100,12 +104,12 @@
             </div>
 
             <div class="bg-white rounded-2xl overflow-hidden shadow-lg w-max flex flex-col items-center">
-                <img src="/images/consultation-2.jpg" alt="konsultasi"
+                <img src="/images/health-workshop.jpeg" alt="konsultasi"
                     class="w-80 h-44 object-cover border-8 border-white rounded-t-2xl">
 
                 <div
                     class="w-max h-max p-3 border-2 border-teal-500 rounded-full bg-white flex justify-center items-center -mt-20">
-                    <img src="/images/talk.png" alt="Konsultasi" class="p-2 w-24 h-24">
+                    <img src="/images/round-table.png" alt="Konsultasi" class="p-2 w-24 h-24">
                 </div>
 
                 <h1 class="text-2xl font-bold mb-5 mt-3 text-teal-600 hover:text-teal-500 duration-150">
@@ -113,12 +117,12 @@
                 </h1>
             </div>
 
-
-
         </section>
     </main>
 
-    <main class="w-full h-max flex flex-col px-28 mt-20">
+    <main data-aos="fade-up" data-aos-offset="200" data-aos-delay="50" data-aos-duration="700"
+        data-aos-easing="ease-in-out" data-aos-mirror="true" data-aos-once="false" data-aos-anchor-placement="top-start"
+        class="w-full h-max flex flex-col px-28 mt-20">
 
         <section
             class="flex justify-center items-center gap-x-2 px-4 py-1 mb-10 rounded-full border border-teal-400  w-max h-max">
@@ -144,7 +148,7 @@
                 class="flex flex-col items-center p-8 bg-white rounded-3xl hover:shadow-2xl hover:shadow-teal-200 duration-300 hover:-translate-y-3 relative">
                 <div class="flex w-full justify-between items-center">
                     <div class="flex flex-col">
-                        <h1 class="text-2xl text-teal-600 font-bold">Dr. Rafi</h1>
+                        <h1 class="text-2xl text-teal-600 font-bold">Rafi</h1>
                         <p class="text-sm font-semibold text-emerald-400">Spesialis Gizi</p>
                     </div>
                     <img src="/images/heart-2.png" alt="heart" class="w-12 h-12">
@@ -165,7 +169,7 @@
                 <div class="flex w-full justify-between items-center">
                     <div class="flex flex-col">
                         <h1 class="text-2xl text-teal-600 font-bold">Dr. Rafi</h1>
-                        <p class="text-sm font-semibold text-emerald-400">Spesialis Gizi</p>
+                        <p class="text-sm font-semibold text-emerald-400">Spesialis Kebugaran & Olahraga</p>
                     </div>
                     <img src="/images/heart-2.png" alt="heart" class="w-12 h-12">
                 </div>
@@ -174,10 +178,6 @@
                     class="w-max h-max mt-5 flex items-center justify-center rounded-full bg-white p-2 border-2 border-teal-600">
                     <img src="/images/doctor-3.png" alt="doctor" class="object-fill rounded-full w-64 h-64">
                 </div>
-
-                {{-- <div class="flex w-full items-center mt-5">
-                    <p class="text-lg text-teal-600 font-semibold">5 tahun <br> pengalaman</p>
-                </div> --}}
 
             </div>
 
@@ -186,7 +186,7 @@
                 <div class="flex w-full justify-between items-center">
                     <div class="flex flex-col">
                         <h1 class="text-2xl text-teal-600 font-bold">Dr. Rafi</h1>
-                        <p class="text-sm font-semibold text-emerald-400">Spesialis Gizi</p>
+                        <p class="text-sm font-semibold text-emerald-400">Spesialis Kesehetan</p>
                     </div>
                     <img src="/images/heart-2.png" alt="heart" class="w-12 h-12">
                 </div>
@@ -195,10 +195,6 @@
                     class="w-max h-max mt-5 flex items-center justify-center rounded-full bg-white p-2 border-2 border-teal-600">
                     <img src="/images/doctor-3.png" alt="doctor" class="object-fill rounded-full w-64 h-64">
                 </div>
-
-                {{-- <div class="flex w-full items-center mt-5">
-                    <p class="text-lg text-teal-600 font-semibold">5 tahun <br> pengalaman</p>
-                </div> --}}
             </div>
 
             <div
@@ -206,7 +202,7 @@
                 <div class="flex w-full justify-between items-center">
                     <div class="flex flex-col">
                         <h1 class="text-2xl text-teal-600 font-bold">Dr. Rafi</h1>
-                        <p class="text-sm font-semibold text-emerald-400">Spesialis Gizi</p>
+                        <p class="text-sm font-semibold text-emerald-400">Spesialis Psikologi</p>
                     </div>
                     <img src="/images/heart-2.png" alt="heart" class="w-12 h-12">
                 </div>
@@ -215,31 +211,6 @@
                     class="w-max h-max mt-5 flex items-center justify-center rounded-full bg-white p-2 border-2 border-teal-600">
                     <img src="/images/doctor-3.png" alt="doctor" class="object-fill rounded-full w-64 h-64">
                 </div>
-
-                {{-- <div class="flex w-full items-center mt-5">
-                    <p class="text-lg text-teal-600 font-semibold">5 tahun <br> pengalaman</p>
-                </div> --}}
-
-            </div>
-
-            <div
-                class="flex flex-col items-center p-8 bg-white rounded-3xl hover:shadow-2xl hover:shadow-teal-200 duration-300 hover:-translate-y-3 relative">
-                <div class="flex w-full justify-between items-center">
-                    <div class="flex flex-col">
-                        <h1 class="text-2xl text-teal-600 font-bold">Dr. Rafi</h1>
-                        <p class="text-sm font-semibold text-emerald-400">Spesialis Gizi</p>
-                    </div>
-                    <img src="/images/heart-2.png" alt="heart" class="w-12 h-12">
-                </div>
-
-                <div
-                    class="w-max h-max mt-5 flex items-center justify-center rounded-full bg-white p-2 border-2 border-teal-600">
-                    <img src="/images/doctor-3.png" alt="doctor" class="object-fill rounded-full w-64 h-64">
-                </div>
-
-                {{-- <div class="flex w-full items-center mt-5">
-                    <p class="text-lg text-teal-600 font-semibold">5 tahun <br> pengalaman</p>
-                </div> --}}
 
             </div>
 

@@ -42,4 +42,9 @@ class PageController extends Controller
     {
         return view('page.ebook');
     }
+
+    function grafik()
+    {
+        return view('page.grafik');
+    }
 }

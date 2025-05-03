@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Lumina Health | E-Books</title>
+    <title>Lumina Health | Grafik</title>
     @vite(['resources/css/app.css', 'resources/js/app.js'])
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
 </head>
@@ -20,7 +20,7 @@
     <main
         class="w-full h-max text-white -mt-9 px-32 py-28 bg-gradient-to-r from-teal-400 via-teal-500 to-teal-400 flex justify-center items-center">
 
-        <h1 class="text-6xl text-white font-bold">E-Books</h1>
+        <h1 class="text-6xl text-white font-bold">Grafik</h1>
     </main>
 
 

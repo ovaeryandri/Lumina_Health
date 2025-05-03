@@ -5,7 +5,7 @@
     </div>
 
     <div class="flex items-center w-max h-max">
-        <div class="w-max h-max p-3 rounded-full bg-white">
+        <div class="w-max h-max p-3 rounded-full bg-white border border-teal-500">
             <img src="/images/phone-call.png" alt="phone" class="w-6 h-6">
         </div>
         <div class="flex flex-col ml-3">
@@ -15,7 +15,7 @@
     </div>
 
     <div class="flex items-center w-max h-max">
-        <div class="w-max h-max p-3 rounded-full bg-white">
+        <div class="w-max h-max p-3 rounded-full bg-white border border-teal-500">
             <img src="/images/email.png" alt="email" class="w-6 h-6">
         </div>
         <div class="flex flex-col ml-3">

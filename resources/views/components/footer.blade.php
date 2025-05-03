@@ -63,15 +63,24 @@
 
         <div class="flex flex-col mt-20">
             <h1 class="mb-8 text-white font-bold text-xl">Informasi Kontak</h1>
-            <div class="flex flex-col text-white font-semibold mb-5">
+            <div class="flex flex-col text-white font-semibold mb-3">
                 <p>Jika ada kendala mengenain layanan kami</p>
                 <p>bisa hubungin di bawah ini.</p>
             </div>
 
             <div class="flex flex-col gap-y-2 text-lg text-white font-semibold">
-                <p>Lokasi: Pangkalpinang, Bangka Belitung</p>
-                <p>Email: ngetes@gmail.com</p>
-                <p>Telepon: +62 812-3456-7890</p>
+                <div class="flex items-center gap-2">
+                    <img src="/images/lokasi-white.png" alt="lokasi" class="w-7 h-7">
+                    <p>Lokasi: Pangkalpinang, Bangka Belitung</p>
+                </div>
+                <div class="flex items-center gap-2">
+                    <img src="/images/email-white.png" alt="email" class="w-7 h-7">
+                    <p>Email: ngetes@gmail.com</p>
+                </div>
+                <div class="flex items-center gap-2">
+                    <img src="/images/phone-white.png" alt="telepon" class="w-7 h-7">
+                    <p>Telepon: +62 812-3456-7890</p>
+                </div>
             </div>
         </div>
     </section>

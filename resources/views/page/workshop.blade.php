@@ -27,18 +27,71 @@
 
         <section class="flex flex-wrap w-full mt-16">
             <div class="grid md:grid-cols-3 gap-5">
-                <x-workshop-card image="/images/consultation-1.jpg" location="Pangkalpinang, Bangka Belitung"
-                    title="Medical Care Need To Be Trustworthy" quota="50 orang" date="28 April s/d 10 Mei 2025"
-                    deskripsi="sadhajkdhajkhd" />
+                <x-workshop-card>
+                    <x-slot:image>
+                        <img src="/images/consultation-1.jpg"
+                            class="w-full h-52 object-cover border-8 border-white rounded-t-2xl">
+                    </x-slot:image>
+                    <x-slot:location>
+                        Pangkalpinang, Bangka Belitung
+                    </x-slot:location>
+                    <x-slot:title>
+                        Medical Care Need To Be Trustworthy
+                    </x-slot:title>
+                    <x-slot:quota>
+                        50 Orang
+                    </x-slot:quota>
+                    <x-slot:date>
+                        28 April s/d 10 Mei 2025
+                    </x-slot:date>
+                    <x-slot:deskripsi>
+                        asjdkahdkajhdsjkahd
+                    </x-slot:deskripsi>
+                </x-workshop-card>
 
-                <x-workshop-card image="/images/consultation-1.jpg" location="Pangkalpinang, Bangka Belitung"
-                    title="Must Read Safety Guide For Swine Flu Season" quota="50 orang" date="28 April s/d 10 Mei 2025"
-                    deskripsi="sadhajkdhajkhd" />
+                <x-workshop-card>
+                    <x-slot:image>
+                        <img src="/images/consultation-1.jpg"
+                            class="w-full h-52 object-cover border-8 border-white rounded-t-2xl">
+                    </x-slot:image>
+                    <x-slot:location>
+                        Pangkalpinang, Bangka Belitung
+                    </x-slot:location>
+                    <x-slot:title>
+                        Medical Care Need To Be Trustworthy
+                    </x-slot:title>
+                    <x-slot:quota>
+                        50 Orang
+                    </x-slot:quota>
+                    <x-slot:date>
+                        28 April s/d 10 Mei 2025
+                    </x-slot:date>
+                    <x-slot:deskripsi>
+                        asjdkahdkajhdsjkahd
+                    </x-slot:deskripsi>
+                </x-workshop-card>
 
-                <x-workshop-card image="/images/consultation-1.jpg" location="Pangkalpinang, Bangka Belitung"
-                    title="Best Gynecologists Surgeons In Hospital" quota="50 orang" date="28 April s/d 10 Mei 2025"
-                    deskripsi="sadhajkdhajkhd" />
-
+                <x-workshop-card>
+                    <x-slot:image>
+                        <img src="/images/consultation-1.jpg"
+                            class="w-full h-52 object-cover border-8 border-white rounded-t-2xl">
+                    </x-slot:image>
+                    <x-slot:location>
+                        Pangkalpinang, Bangka Belitung
+                    </x-slot:location>
+                    <x-slot:title>
+                        Medical Care Need To Be Trustworthy
+                    </x-slot:title>
+                    <x-slot:quota>
+                        50 Orang
+                    </x-slot:quota>
+                    <x-slot:date>
+                        28 April s/d 10 Mei 2025
+                    </x-slot:date>
+                    <x-slot:deskripsi>
+                        asjdkahdkajhdsjkahd
+                    </x-slot:deskripsi>
+                </x-workshop-card>
             </div>
         </section>
 

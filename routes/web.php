@@ -27,9 +27,6 @@ Route::get('/kontak', [PageController::class, 'contact'])->name('page.contact');
 Route::get('/workshop', [PageController::class, 'workshop'])->name('page.workshop');
 Route::get('/progam-unggulan', [PageController::class, 'program'])->name('page.program');
 Route::get('/tentang-kami', [PageController::class, 'aboutUs'])->name('page.aboutUs');
-Route::get('/galeri', [PageController::class, 'galeri'])->name('page.galeri');
-Route::get('/blog', [PageController::class, 'blog'])->name('page.blog');
-Route::get('/E-Books', [PageController::class, 'ebook'])->name('page.ebook');
 
 Route::resource('aboutstaff', aboutstaffController::class);
 Route::resource('admin', adminController::class);
