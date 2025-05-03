@@ -27,4 +27,19 @@ class PageController extends Controller
     {
         return view('page.aboutUs');
     }
+
+    function galeri()
+    {
+        return view('page.galeri');
+    }
+
+    function blog()
+    {
+        return view('page.blog');
+    }
+
+    function ebook()
+    {
+        return view('page.ebook');
+    }
 }

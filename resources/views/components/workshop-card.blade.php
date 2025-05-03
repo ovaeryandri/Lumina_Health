@@ -1,6 +1,7 @@
 <div class="relative bg-white rounded-2xl overflow-hidden shadow-lg">
-    <img src="{{ $image }}" alt="{{ $title }}"
-        class="w-full h-52 object-cover border-8 border-white rounded-t-2xl">
+    <div>
+        {{ $image }}
+    </div>
     <div class="p-5">
         <span
             class="absolute top-40 left-5 bg-teal-500 border-2 border-white text-white text-xs font-semibold px-3 py-1">

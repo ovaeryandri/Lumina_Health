@@ -24,6 +24,101 @@
     </main>
 
     <main class="w-full h-max flex flex-col px-28 mt-20">
+        <section class="w-full h-max flex">
+            <img src="/images/we.jpeg" alt="Lumina Health" class="w-md rounded-2xl">
+            <div class="flex flex-col ml-10">
+                <section
+                    class="flex justify-center items-center gap-x-2 px-4 py-1 mb-5 rounded-full border border-teal-400  w-max h-max">
+                    <img src="/images/heart-rate.png" alt="heart" class="w-5 h-5">
+                    <P class="font-semibold text-teal-400">Tentang Kami</P>
+                </section>
+
+                <h1 class="text-5xl font-bold text-teal-400">Sejarah Kami</h1>
+
+                <p class="w-xl flex flex-wrap mt-5 text-sm text-teal-600 font-semibold text-justify">
+                    Lumina Health hadir sejak tahun 2025 dengan semangat untuk menjadi pusat informasi dan layanan
+                    kesehatan yang mudah diakses oleh semua orang. Tidak hanya menyediakan artikel kesehatan yang akurat
+                    dan terpercaya, kami juga menghadirkan layanan konsultasi daring, program kesehatan yang
+                    terstruktur, serta workshop edukatif bagi masyarakat. Dengan dukungan tenaga medis profesional dan
+                    edukator berpengalaman, kami berkomitmen untuk membantu setiap individu hidup lebih sehat, sadar,
+                    dan teredukasi.
+                </p>
+
+            </div>
+        </section>
+
+        <section class="flex w-full mt-7">
+            <div class="flex flex-col">
+                <h1 class="text-5xl font-bold text-teal-400">Visi & Misi</h1>
+
+                <p class="w-md flex flex-wrap mt-5 text-sm text-teal-600 font-semibold text-justify">
+                    Kami memiliki visi untuk menjadi platform kesehatan digital terpercaya yang mendorong masyarakat
+                    hidup lebih sehat, sadar, dan berkualitas. Untuk mencapainya, kami berkomitmen menyediakan informasi
+                    kesehatan yang akurat dan mudah dipahami, memberikan layanan konsultasi dengan tenaga profesional,
+                    mengembangkan program kesehatan yang sesuai kebutuhan, serta menyelenggarakan workshop untuk
+                    meningkatkan kesadaran dan pengetahuan masyarakat akan pentingnya menjaga kesehatan.
+                </p>
+            </div>
+            <img src="/images/visi-misi.jpeg" alt="visimisi" class="w-xl h-60 rounded-2xl ml-10 -mt-20">
+        </section>
+    </main>
+
+    <main class="w-full h-max flex flex-col items-center px-28 mt-20">
+        <section
+            class="flex justify-center items-center gap-x-2 px-4 py-1 mb-10 rounded-full border border-teal-400  w-max h-max">
+            <img src="/images/heart-rate.png" alt="heart" class="w-5 h-5">
+            <P class="font-semibold text-teal-400">Fasilitas</P>
+        </section>
+
+        <section class="w-full flex flex-wrap justify-center gap-5">
+            <div class="bg-white rounded-2xl overflow-hidden shadow-lg w-max flex flex-col items-center">
+                <img src="/images/consultation-2.jpg" alt="konsultasi"
+                    class="w-80 h-44 object-cover border-8 border-white rounded-t-2xl">
+
+                <div
+                    class="w-max h-max p-3 border-2 border-teal-500 rounded-full bg-white flex justify-center items-center -mt-20">
+                    <img src="/images/talk.png" alt="Konsultasi" class="p-2 w-24 h-24">
+                </div>
+
+                <h1 class="text-2xl font-bold mb-5 mt-3 text-teal-600 hover:text-teal-500 duration-150">
+                    Konsultasi
+                </h1>
+            </div>
+
+            <div class="bg-white rounded-2xl overflow-hidden shadow-lg w-max flex flex-col items-center">
+                <img src="/images/consultation-2.jpg" alt="konsultasi"
+                    class="w-80 h-44 object-cover border-8 border-white rounded-t-2xl">
+
+                <div
+                    class="w-max h-max p-3 border-2 border-teal-500 rounded-full bg-white flex justify-center items-center -mt-20">
+                    <img src="/images/talk.png" alt="Konsultasi" class="p-2 w-24 h-24">
+                </div>
+
+                <h1 class="text-2xl font-bold mb-5 mt-3 text-teal-600 hover:text-teal-500 duration-150">
+                    Program Kesehatan
+                </h1>
+            </div>
+
+            <div class="bg-white rounded-2xl overflow-hidden shadow-lg w-max flex flex-col items-center">
+                <img src="/images/consultation-2.jpg" alt="konsultasi"
+                    class="w-80 h-44 object-cover border-8 border-white rounded-t-2xl">
+
+                <div
+                    class="w-max h-max p-3 border-2 border-teal-500 rounded-full bg-white flex justify-center items-center -mt-20">
+                    <img src="/images/talk.png" alt="Konsultasi" class="p-2 w-24 h-24">
+                </div>
+
+                <h1 class="text-2xl font-bold mb-5 mt-3 text-teal-600 hover:text-teal-500 duration-150">
+                    Workshop Kesehatan
+                </h1>
+            </div>
+
+
+
+        </section>
+    </main>
+
+    <main class="w-full h-max flex flex-col px-28 mt-20">
 
         <section
             class="flex justify-center items-center gap-x-2 px-4 py-1 mb-10 rounded-full border border-teal-400  w-max h-max">
@@ -38,9 +133,9 @@
             </div>
 
             <div class="flex flex-col text-teal-600">
-                <p>Program terbaik yang kami sediakan untuk</p>
+                <p>Spesialis terbaik yang kami sediakan untuk</p>
                 <p>Anda yang ingin mencapai kesehatan maksimal</p>
-                <p>Dengan mudah dan nyaman untuk Anda.</p>
+                <p>Dengan mudah dan nyaman.</p>
             </div>
         </section>
 

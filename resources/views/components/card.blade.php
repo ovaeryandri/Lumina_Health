@@ -23,4 +23,10 @@
             {{ $detail }}
         </a>
     </div>
+
+    <div>
+        <button>
+            {{ $slot }}
+        </button>
+    </div>
 </div>

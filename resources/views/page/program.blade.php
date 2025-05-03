@@ -20,7 +20,7 @@
     <main
         class="w-full h-max text-white -mt-9 px-32 py-28 bg-gradient-to-r from-teal-400 via-teal-500 to-teal-400 flex justify-center items-center">
 
-        <h1 class="text-6xl text-white font-bold">Program Unggulan</h1>
+        <h1 class="text-6xl text-white font-bold">Program Kesehatan</h1>
     </main>
 
     <main class="w-full h-max flex flex-col px-28 mt-20">
@@ -68,6 +68,13 @@
                                 </a>
                             </div>
                         </x-slot:detail>
+                        <x-slot:slot>
+                            <button
+                                class="w-full py-2 rounded-full border border-teal-500 text-teal-300 hover:text-white hover:bg-teal-500 duration-200 font-semibold cursor-pointer">
+                                Ikuti Program
+                            </button>
+                        </x-slot:slot>
+                        {{-- <button>Ikuti Program</button> --}}
                     </x-card>
                 @endif
             @endforeach
