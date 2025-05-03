@@ -14,7 +14,6 @@ return new class extends Migration
         Schema::create('about_staffs', function (Blueprint $table) {
             $table->id();
             $table->string('nama');
-            $table->string('judul');
             $table->string('spesialisasi');
             $table->string('bio');
             $table->string('tahun_pengalaman');

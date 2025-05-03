@@ -19,14 +19,6 @@
             </div>
 
             <div class="mb-4">
-                <label for="judul" class="block text-gray-700 font-medium mb-2">Judul</label>
-                <input type="text" name="judul" id="judul" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-teal-300" value="{{ old('judul') }}" required>
-
-                    <p class="text-red-500 text-sm mt-1"></p>
-
-            </div>
-
-            <div class="mb-4">
                 <label for="spesialisasi" class="block text-gray-700 font-medium mb-2">Spesialis</label>
                 <input type="text" name="spesialisasi" id="spesialisasi" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-teal-300" value="{{ old('spesialisasi') }}" required>
 
@@ -44,7 +36,7 @@
 
             <div class="mb-4">
                 <label for="tahun_pengalaman" class="block text-gray-700 font-medium mb-2">Tahun Pengalaman</label>
-                <input type="text" name="tahun_pengalaman" id="tahun_pengalaman" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-teal-300" value="{{ old('tahun_pengalaman') }}" required>
+                <input type="number" name="tahun_pengalaman" id="tahun_pengalaman" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-teal-300" value="{{ old('tahun_pengalaman') }}" required>
 
                     <p class="text-red-500 text-sm mt-1"></p>
 
@@ -52,7 +44,7 @@
 
             <div class="mb-4">
                 <label for="email" class="block text-gray-700 font-medium mb-2">Email</label>
-                <input type="text name="email" id="email" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-teal-300" value="{{ old('email') }}" required>
+                <input type="email" name="email" id="email" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-teal-300" value="{{ old('email') }}" required>
 
                     <p class="text-red-500 text-sm mt-1"></p>
 
@@ -60,7 +52,7 @@
 
             <div class="mb-4">
                 <label for="no_hp" class="block text-gray-700 font-medium mb-2">No HP</label>
-                <input type="text" name="no_hp" id="no_hp" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-teal-300" value="{{ old('no_hp') }}" required>
+                <input type="number" name="no_hp" id="no_hp" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-teal-300" value="{{ old('no_hp') }}" required>
 
                     <p class="text-red-500 text-sm mt-1"></p>
 

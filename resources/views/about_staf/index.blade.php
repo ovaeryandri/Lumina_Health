@@ -14,7 +14,6 @@
                         <tr class="bg-teal-300">
                             <th class="p-3 text-left text-teal-800 border border-teal-400">No</th>
                             <th class="p-3 text-left text-teal-800 border border-teal-400">Nama</th>
-                            <th class="p-3 text-left text-teal-800 border border-teal-400">Judul</th>
                             <th class="p-3 text-left text-teal-800 border border-teal-400">Spesialis</th>
                             <th class="p-3 text-left text-teal-800 border border-teal-400">Bio</th>
                             <th class="p-3 text-left text-teal-800 border border-teal-400">Tahun Pengalaman</th>
@@ -25,33 +24,63 @@
                         </tr>
                     </thead>
                     <tbody>
+                        @php
+                            $no = 1;
+                        @endphp
                         <!-- Loop data dari controller Laravel -->
+                        @foreach ($staf as $staff)
 
                         <tr class="hover:bg-gray-50">
                             <td class="p-3 border border-gray-200">
+                                {{$no++}}
+                            </td>
+
+                            <td class="p-3 border border-gray-200">
+                                {{ $staff->nama }}
+                            </td>
+
+                            <td class="p-3 border border-gray-200">
+                                {{ $staff->spesialisasi }}
+                            </td>
+
+                            <td class="p-3 border border-gray-200">
+                                {{ $staff->bio }}
+                            </td>
+
+                            <td class="p-3 border border-gray-200">
+                                {{ $staff->tahun_pengalaman }} Tahun
+                            </td>
+
+                            <td class="p-3 border border-gray-200">
+                                {{ $staff->email }}
+                            </td>
+
+                            <td class="p-3 border border-gray-200">
+                                {{ $staff->no_hp }}
+                            </td>
+
+                            <td class="p-3 border border-gray-200">
+
+
+                                <a href="{{ Storage::url($staff->foto_profil) }}" target="_blank" class="px-6 py-2 bg-teal-300 hover:bg-teal-400 text-teal-800 font-medium rounded-lg">
+                                    Lihat File
+                                </a>
 
                             </td>
 
-                            <td class="p-3 border border-gray-200"></td>
-                            <td class="p-3 border border-gray-200"></td>
-                            <td class="p-3 border border-gray-200"></td>
-                            <td class="p-3 border border-gray-200"></td>
-                            <td class="p-3 border border-gray-200"></td>
-                            <td class="p-3 border border-gray-200"></td>
-                            <td class="p-3 border border-gray-200"></td>
-                            <td class="p-3 border border-gray-200"></td>
+                            <td class="p-3 border border-gray-200">
+                                <div class="flex space-x-2">
+                                    <a href="{{ route('aboutstaff.edit', $staff->id) }}" class="px-3 py-1 bg-teal-300 hover:bg-teal-400 text-teal-800 rounded">Edit</a>
 
-                                <td class="p-3 border border-gray-200">
-                                    <div class="flex space-x-2">
-                                        <a href="" class="px-3 py-1 bg-teal-300 hover:bg-teal-400 text-teal-800 rounded">Edit</a>
-
-                           <form action="" method="POST">
-                                            @csrf
+                                    <form action="{{ route('aboutstaff.destroy', $staff->id) }}" method="POST">
+                                        @csrf
+                                        @method('DELETE')
                                         <button type="submit" class="px-3 py-1 bg-red-300 hover:bg-red-400 text-red-800 rounded">Hapus</button>
                                     </form>
-                                    </div>
-                                </td>
+                                </div>
+                            </td>
                         </tr>
+                        @endforeach
 
 
                     </tbody>

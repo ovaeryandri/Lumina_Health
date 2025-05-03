@@ -11,13 +11,15 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('akun_user', function (Blueprint $table) {
+        Schema::create('home_workshops', function (Blueprint $table) {
             $table->id();
-            $table->string('nama');
-            $table->string('umur');
-            $table->enum('status', ['male', 'female']);
-            $table->string('email');
-            $table->string('password');
+            $table->string('judul');
+            $table->string('deskripsi');
+            $table->string('lokasi');
+            $table->dateTime('waktu_mulai');
+            $table->dateTime('waktu_selesai');
+            $table->unsignedInteger('maks_kapasitas');
+            $table->string('gambar');
             $table->timestamps();
         });
     }
@@ -27,6 +29,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('akun_user');
+        Schema::dropIfExists('home_workshops');
     }
 };

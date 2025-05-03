@@ -12,6 +12,7 @@ class home_workshop extends Model
 
     protected $fillable = [
         'judul',
+        'id_akun_user',
         'deskripsi',
         'lokasi',
         'waktu_mulai',
@@ -19,4 +20,15 @@ class home_workshop extends Model
         'maks_kapasitas',
         'gambar',
     ];
+
+    public function pendaftar()
+    {
+        return $this->hasMany(form_workshops::class, 'id_home_workshops');
+    }
+
+    public function isFull()
+    {
+        return $this->pendaftar()->count() >= $this->maks_kapasitas;
+    }
+
 }

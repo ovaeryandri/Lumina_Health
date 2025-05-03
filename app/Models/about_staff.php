@@ -12,7 +12,6 @@ class about_staff extends Model
 
     protected $fillable = [
         'nama',
-        'judul',
         'spesialisasi',
         'bio',
         'tahun_pengalaman',
