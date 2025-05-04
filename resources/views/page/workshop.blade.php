@@ -25,7 +25,7 @@
 
     <main class="w-full h-max flex px-28 mt-20">
 
-        <section class="flex flex-wrap w-full mt-16">
+        <section class="flex flex-wrap w-full">
             <div class="grid md:grid-cols-3 gap-5">
                 <x-workshop-card>
                     <x-slot:image>

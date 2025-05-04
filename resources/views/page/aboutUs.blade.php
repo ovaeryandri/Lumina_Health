@@ -71,7 +71,13 @@
         <section
             class="flex justify-center items-center gap-x-2 px-4 py-1 mb-10 rounded-full border border-teal-400  w-max h-max">
             <img src="/images/heart-rate.png" alt="heart" class="w-5 h-5">
-            <P class="font-semibold text-teal-400">Fasilitas</P>
+            <P class="font-semibold text-teal-400">Program Unggulan</P>
+        </section>
+
+        <section class="flex flex-col items-center text-teal-600 mb-10">
+            <p>Program terbaik yang kami sediakan untuk</p>
+            <p>Anda yang ingin mencapai kesehatan maksimal</p>
+            <p>Dengan mudah dan nyaman.</p>
         </section>
 
         <section class="w-full flex flex-wrap justify-center gap-5">
@@ -81,7 +87,7 @@
 
                 <div
                     class="w-max h-max p-3 border-2 border-teal-500 rounded-full bg-white flex justify-center items-center -mt-20">
-                    <img src="/images/talk.png" alt="Konsultasi" class="p-2 w-24 h-24">
+                    <img src="/images/heart-2.png" alt="Konsultasi" class="p-2 w-24 h-24">
                 </div>
 
                 <h1 class="text-2xl font-bold mb-5 mt-3 text-teal-600 hover:text-teal-500 duration-150">
@@ -89,7 +95,7 @@
                 </h1>
             </div>
 
-            <div class="bg-white rounded-2xl overflow-hidden shadow-lg w-max flex flex-col items-center">
+            {{-- <div class="bg-white rounded-2xl overflow-hidden shadow-lg w-max flex flex-col items-center">
                 <img src="/images/health-program.jpeg" alt="konsultasi"
                     class="w-80 h-44 object-cover border-8 border-white rounded-t-2xl">
 
@@ -101,7 +107,7 @@
                 <h1 class="text-2xl font-bold mb-5 mt-3 text-teal-600 hover:text-teal-500 duration-150">
                     Program Kesehatan
                 </h1>
-            </div>
+            </div> --}}
 
             <div class="bg-white rounded-2xl overflow-hidden shadow-lg w-max flex flex-col items-center">
                 <img src="/images/health-workshop.jpeg" alt="konsultasi"
@@ -109,7 +115,7 @@
 
                 <div
                     class="w-max h-max p-3 border-2 border-teal-500 rounded-full bg-white flex justify-center items-center -mt-20">
-                    <img src="/images/round-table.png" alt="Konsultasi" class="p-2 w-24 h-24">
+                    <img src="/images/heart-2.png" alt="Konsultasi" class="p-2 w-24 h-24">
                 </div>
 
                 <h1 class="text-2xl font-bold mb-5 mt-3 text-teal-600 hover:text-teal-500 duration-150">
@@ -159,9 +165,9 @@
                     <img src="/images/doctor-3.png" alt="doctor" class="object-fill rounded-full w-64 h-64">
                 </div>
 
-                {{-- <div class="flex w-full items-center mt-5">
-                    <p class="text-lg text-teal-600 font-semibold">5 tahun <br> pengalaman</p>
-                </div> --}}
+                <button
+                    class="w-full py-3 mt-3 rounded-full bg-white text-sm font-bold text-teal-500 border border-teal-500 hover:text-white hover:bg-teal-500 duration-200">Konsultasi</button>
+
             </div>
 
             <div
@@ -179,6 +185,9 @@
                     <img src="/images/doctor-3.png" alt="doctor" class="object-fill rounded-full w-64 h-64">
                 </div>
 
+                <button
+                    class="w-full py-3 mt-3 rounded-full bg-white text-sm font-bold text-teal-500 border border-teal-500 hover:text-white hover:bg-teal-500 duration-200">Konsultasi</button>
+
             </div>
 
             <div
@@ -195,6 +204,9 @@
                     class="w-max h-max mt-5 flex items-center justify-center rounded-full bg-white p-2 border-2 border-teal-600">
                     <img src="/images/doctor-3.png" alt="doctor" class="object-fill rounded-full w-64 h-64">
                 </div>
+
+                <button
+                    class="w-full py-3 mt-3 rounded-full bg-white text-sm font-bold text-teal-500 border border-teal-500 hover:text-white hover:bg-teal-500 duration-200">Konsultasi</button>
             </div>
 
             <div
@@ -212,6 +224,8 @@
                     <img src="/images/doctor-3.png" alt="doctor" class="object-fill rounded-full w-64 h-64">
                 </div>
 
+                <button
+                    class="w-full py-3 mt-3 rounded-full bg-white text-sm font-bold text-teal-500 border border-teal-500 hover:text-white hover:bg-teal-500 duration-200">Konsultasi</button>
             </div>
 
         </section>

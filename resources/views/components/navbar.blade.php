@@ -123,10 +123,23 @@
             </button>
         </form>
 
-        <button
-            class="w-max h-max p-3 rounded-full border border-white text-white font-semibold hover:bg-teal-600 duration-200 cursor-pointer">
-            <img src="/images/notification.png" alt="cari" class="w-5 h-5">
-        </button>
+        <div class="relative">
+            <button id="notificationToggle"
+                class="w-max h-max p-3 rounded-full border border-white text-white font-semibold hover:bg-teal-600 duration-200 cursor-pointer">
+                <img src="/images/notification.png" alt="notifikasi" class="w-5 h-5">
+            </button>
+
+            <!-- Dropdown notifikasi -->
+            <div id="notificationDropdown"
+                class="hidden absolute right-0 mt-2 w-80 max-h-96 overflow-y-auto bg-white text-teal-800 rounded-xl shadow-lg border border-teal-200 z-50">
+                <div class="p-4 font-semibold border-b border-teal-100">Notifikasi</div>
+                <ul class="divide-y divide-teal-100 text-sm">
+                    <li class="p-4 hover:bg-teal-50 cursor-pointer">🔔 Workshop baru akan segera dimulai!</li>
+                    <li class="p-4 hover:bg-teal-50 cursor-pointer">📢 Artikel kesehatan terbaru tersedia.</li>
+                    <li class="p-4 hover:bg-teal-50 cursor-pointer">📧 Anda mendapat pesan dari admin.</li>
+                </ul>
+            </div>
+        </div>
 
         <a href="{{ route('login.layout') }}"
             class="flex items-center px-9 py-1 rounded-full border border-white text-white font-semibold hover:bg-teal-600 duration-200 cursor-pointer">
@@ -168,6 +181,19 @@
         } else {
             searchForm.classList.add('opacity-0', 'scale-0');
             searchForm.classList.remove('opacity-100', 'scale-100');
+        }
+    });
+
+    const notificationToggle = document.getElementById('notificationToggle');
+    const notificationDropdown = document.getElementById('notificationDropdown');
+
+    notificationToggle.addEventListener('click', () => {
+        notificationDropdown.classList.toggle('hidden');
+    });
+
+    document.addEventListener('click', function(e) {
+        if (!notificationToggle.contains(e.target) && !notificationDropdown.contains(e.target)) {
+            notificationDropdown.classList.add('hidden');
         }
     });
 </script>
