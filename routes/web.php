@@ -23,7 +23,10 @@ Route::get('/admin', function () {
 });
 Route::get('/', [homeprogramController::class, 'show'])->name('home');
 Route::get('/login', [userController::class, 'login'])->name('login.layout');
+Route::post('/proseslogin', [userController::class, 'proseslogin'])->name('proseslogin');
 Route::get('/register', [userController::class, 'register'])->name('register.layout');
+Route::post('/prosesregister', [userController::class, 'daftar'])->name('prosesregister');
+Route::get('/logout', [userController::class, 'logout'])->name('logoutuser');
 Route::get('/kontak', [PageController::class, 'contact'])->name('page.contact');
 Route::get('/workshop', [PageController::class, 'workshop'])->name('page.workshop');
 Route::get('/progam-unggulan', [PageController::class, 'program'])->name('page.program');
