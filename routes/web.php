@@ -23,8 +23,14 @@ Route::get('/admin', function () {
 });
 Route::get('/', [homeprogramController::class, 'show'])->name('home');
 Route::get('/login', [userController::class, 'login'])->name('login.layout');
+<<<<<<< HEAD
 Route::post('/login', [UserController::class, 'showLoginForm'])->name('login');
+=======
+Route::post('/proseslogin', [userController::class, 'proseslogin'])->name('proseslogin');
+>>>>>>> 6e5fc5015a2f49c4e3007040d96d7dbc3a0864f1
 Route::get('/register', [userController::class, 'register'])->name('register.layout');
+Route::post('/prosesregister', [userController::class, 'daftar'])->name('prosesregister');
+Route::get('/logout', [userController::class, 'logout'])->name('logoutuser');
 Route::get('/kontak', [PageController::class, 'contact'])->name('page.contact');
 Route::get('/workshop', [PageController::class, 'workshop'])->name('page.workshop');
 Route::get('/progam-unggulan', [PageController::class, 'program'])->name('page.program');
