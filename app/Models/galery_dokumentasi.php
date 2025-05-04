@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class galery_dokumentasi extends Model
 {
     use HasFactory;
-    protected $table = 'galery_dokumentasi';
+    protected $table = 'galery_dokumentasis';
 
     protected $fillable = [
         'nama',
