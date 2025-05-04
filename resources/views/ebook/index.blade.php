@@ -13,8 +13,8 @@
                     <thead>
                         <tr class="bg-teal-300">
                             <th class="p-3 text-left text-teal-800 border border-teal-400">No</th>
-                            <th class="p-3 text-left text-teal-800 border border-teal-400">Nama Ebook</th>
                             <th class="p-3 text-left text-teal-800 border border-teal-400">Gambar</th>
+                            <th class="p-3 text-left text-teal-800 border border-teal-400">Nama Ebook</th>
                             <th class="p-3 text-left text-teal-800 border border-teal-400">Deskripsi</th>
                             <th class="p-3 text-left text-teal-800 border border-teal-400">Download</th>
                             <th class="p-3 text-left text-teal-800 border border-teal-400">Aksi</th>
@@ -33,21 +33,24 @@
                             </td>
 
                             <td class="p-3 border border-gray-200">
-                                {{ $ebooks->nama }}
-                            </td>
-
-                            <td class="p-3 border border-gray-200">
                                 <a href="{{ Storage::url($ebooks->gambar) }}" target="_blank" class="px-6 py-2 bg-teal-300 hover:bg-teal-400 text-teal-800 font-medium rounded-lg">
                                     Lihat File
                                 </a>
                             </td>
 
                             <td class="p-3 border border-gray-200">
+                                {{ $ebooks->nama }}
+                            </td>
+
+
+                            <td class="p-3 border border-gray-200">
                                 {{ $ebooks->deskripsi }}
                             </td>
 
                             <td class="p-3 border border-gray-200">
-                                {{ $ebooks->download }}
+                                <a href="{{ Storage::url($ebooks->download) }}" target="_blank" class="px-6 py-2 bg-teal-300 hover:bg-teal-400 text-teal-800 font-medium rounded-lg">
+                                    Lihat File
+                                </a>
                             </td>
 
                             <td class="p-3 border border-gray-200">

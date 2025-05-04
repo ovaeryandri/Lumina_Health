@@ -19,11 +19,6 @@ class formworkshopController extends Controller
         return view('form_workshop.create', compact('workshop'));
     }
 
-    public function show(){
-        $workshop = form_workshops::all();
-        return view('home', compact('workshop'));
-    }
-
     public function store(Request $request, $id){
         $workshop = home_workshop::findOrFail($id);
 

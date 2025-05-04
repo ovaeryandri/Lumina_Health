@@ -11,16 +11,16 @@
             @csrf
 
             <div class="mb-4">
-                <label for="nama" class="block text-gray-700 font-medium mb-2">Nama Ebook</label>
-                <input type="text" name="nama" id="nama" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-teal-300" value="{{ old('nama') }}" required>
+                <label for="gambar" class="block text-gray-700 font-medium mb-2">Gambar (Bentuk File) Jpg|Png</label>
+                <input type="file" name="gambar" id="gambar" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-teal-300" value="{{ old('gambar') }}" required>
 
                     <p class="text-red-500 text-sm mt-1"></p>
 
             </div>
 
             <div class="mb-4">
-                <label for="gambar" class="block text-gray-700 font-medium mb-2">Gambar</label>
-                <input type="file" name="gambar" id="gambar" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-teal-300" value="{{ old('gambar') }}" required>
+                <label for="nama" class="block text-gray-700 font-medium mb-2">Nama Ebook</label>
+                <input type="text" name="nama" id="nama" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-teal-300" value="{{ old('nama') }}" required>
 
                     <p class="text-red-500 text-sm mt-1"></p>
 
@@ -35,8 +35,8 @@
             </div>
 
             <div class="mb-4">
-                <label for="download" class="block text-gray-700 font-medium mb-2">Download</label>
-                <input type="text" name="download" id="download" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-teal-300" value="{{ old('download') }}" required>
+                <label for="download" class="block text-gray-700 font-medium mb-2">Download (Bentuk File) Pdf|Word</label>
+                <input type="file" name="download" id="download" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-teal-300" value="{{ old('download') }}" required>
 
                     <p class="text-red-500 text-sm mt-1"></p>
 

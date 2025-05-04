@@ -19,18 +19,20 @@ class downloadebookController extends Controller
 
     public function store(Request $request){
         $request->validate([
-            'nama' => 'required|min:5|string',
             'gambar' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048',
+            'nama' => 'required|min:5|string',
             'deskripsi' => 'required|min:5|string',
-            'download' => 'required|min:5|string',
+            'download' => 'required|file|mimes:pdf,doc,docx|max:2048',
         ]);
-        $filePath = $request->file('gambar')->store('program_files','public');
+        $gambarPath = $request->file('gambar')->store('program_files','public');
+
+        $filePath = $request->file('download')->store('program_files','public');
 
         download_ebook::create([
+            "gambar" => $gambarPath,
             "nama" => $request->nama,
-            "gambar" => $filePath,
             "deskripsi" => $request->deskripsi,
-            "download" => $request->download,
+            "download" => $filePath,
         ]);
         return redirect()->route('downloadebook.index')->with('success', 'Ebook Berhasil Ditambah');
 }
@@ -44,31 +46,40 @@ public function update(Request $request, $id){
     $ebook = download_ebook::findOrFail($id);
 
     $request->validate([
-        'nama' => 'min:5|string',
-        'gambar' => 'image|mimes:jpeg,png,jpg,gif|max:2048',
-        'deskripsi' => 'min:5|string',
-        'download' => 'min:5|string',
+        'gambar' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
+        'nama' => 'required|min:5|string',
+        'deskripsi' => 'required|min:5|string',
+        'download' => 'nullable|file|mimes:pdf,doc,docx|max:2048',
     ]);
-
 
     $data = [
         "nama" => $request->nama,
         "deskripsi" => $request->deskripsi,
-        "download" => $request->download,
     ];
 
-    if($request->hasFile('gambar')){
+    // Jika user upload gambar baru
+    if($request->hasFile('gambar')) {
         if($ebook->gambar){
             Storage::disk('public')->delete($ebook->gambar);
-            $filePath = $request->file('gambar')->store('program_files','public');
-            $data['gambar'] = $filePath;
         }
-
-        $ebook->update($data);
-
-        return redirect()->route('downloadebook.index')->with('success', 'Ebook Berhasil Diubah');
+        $gambarPath = $request->file('gambar')->store('program_files','public');
+        $data['gambar'] = $gambarPath;
     }
+
+    if($request->hasFile('download')) {
+        if($ebook->download){
+            Storage::disk('public')->delete($ebook->download);
+        }
+        $filePath = $request->file('download')->store('program_files','public');
+        $data['download'] = $filePath;
+    }
+
+    // Selalu update data meskipun tanpa gambar baru
+    $ebook->update($data);
+
+    return redirect()->route('downloadebook.index')->with('success', 'Ebook Berhasil Diubah');
 }
+
 
 public function destroy($id)
 {
@@ -77,6 +88,10 @@ public function destroy($id)
 
     if ($ebook->gambar) {
         Storage::disk('public')->delete($ebook->gambar);
+    }
+
+    if ($ebook->download) {
+        Storage::disk('public')->delete($ebook->download);
     }
 
     $ebook->delete();

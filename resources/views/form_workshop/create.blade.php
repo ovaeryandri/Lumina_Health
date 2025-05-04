@@ -19,7 +19,7 @@
                 <div class="bg-red-100 text-red-700 p-3 rounded mb-4">{{ session('error') }}</div>
             @endif
 
-            <form action="{{ route('formworkshop.create', $workshop->id) }}" method="POST" class="space-y-5">
+            <form action="{{ route('formworkshop.store', $workshop->id) }}" method="POST" class="space-y-5">
                 @csrf
 
                 <div>

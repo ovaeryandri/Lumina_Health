@@ -23,6 +23,7 @@ Route::get('/admin', function () {
 });
 Route::get('/', [homeprogramController::class, 'show'])->name('home');
 Route::get('/login', [userController::class, 'login'])->name('login.layout');
+Route::post('/login', [UserController::class, 'showLoginForm'])->name('login');
 Route::get('/register', [userController::class, 'register'])->name('register.layout');
 Route::get('/kontak', [PageController::class, 'contact'])->name('page.contact');
 Route::get('/workshop', [PageController::class, 'workshop'])->name('page.workshop');
@@ -33,7 +34,11 @@ Route::get('/blog', [PageController::class, 'blog'])->name('page.blog');
 Route::get('/e-books', [PageController::class, 'ebook'])->name('page.ebook');
 Route::get('/grafik', [PageController::class, 'grafik'])->name('page.grafik');
 
-Route::resource('formworkshop', formworkshopController::class);
+Route::middleware(['auth'])->group(function (){
+
+    Route::resource('formworkshop', formworkshopController::class);
+});
+
 Route::resource('aboutstaff', aboutstaffController::class);
 Route::resource('admin', adminController::class);
 Route::resource('blogcategory', blogcategoryController::class);

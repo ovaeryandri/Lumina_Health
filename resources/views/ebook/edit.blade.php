@@ -6,20 +6,24 @@
         <div class="bg-teal-300 p-4">
             <h2 class="text-xl font-bold text-teal-800">Ubah Ebook</h2>
         </div>
+        @if (session('success'))
+        <div class="text-green-500">
+          {{ session('success') }}
+        </div>
+      @endif
+      @if ($errors->any())
+        <div class="text-red-500">
+          <ul>
+            @foreach ($errors->all() as $error)
+              <li>{{ $error }}</li>
+            @endforeach
+          </ul>
+        </div>
+      @endif
 
         <form method="POST" action="{{ route('downloadebook.update',$ebook->id) }}" enctype="multipart/form-data" class="p-6" >
             @method('PUT')
             @csrf
-            <div class="mb-4">
-                <label for="nama" class="block text-gray-700 font-medium mb-2">Nama Ebook</label>
-                <input type="text" name="nama" id="nama" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-teal-300" value="{{ $ebook->nama }}">
-
-                @error('nama')
-                <p class="text-red-500 text-sm mt-1">{{ $message }}</p>
-             @enderror
-
-
-            </div>
 
             <div class="mb-4">
                 <label for="gambar" class="block text-gray-700 font-medium mb-2">Gambar</label>
@@ -40,6 +44,19 @@
                     @enderror
 
             </div>
+
+            <div class="mb-4">
+                <label for="nama" class="block text-gray-700 font-medium mb-2">Nama Ebook</label>
+                <input type="text" name="nama" id="nama" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-teal-300" value="{{ $ebook->nama }}">
+
+                @error('nama')
+                <p class="text-red-500 text-sm mt-1">{{ $message }}</p>
+             @enderror
+
+
+            </div>
+
+
 
             <div class="mb-4">
                 <label for="deskripsi" class="block text-gray-700 font-medium mb-2">Deskripsi</label>

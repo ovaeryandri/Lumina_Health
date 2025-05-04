@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\download_ebook;
 use Illuminate\Http\Request;
 use App\Models\home_program;
 
@@ -40,7 +41,8 @@ class PageController extends Controller
 
     function ebook()
     {
-        return view('page.ebook');
+        $ebook = download_ebook::all();
+        return view('page.ebook', compact('ebook'));
     }
 
     function grafik()
