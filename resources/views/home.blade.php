@@ -254,35 +254,35 @@
         <section class="flex flex-wrap w-full mt-16">
             <div class="grid md:grid-cols-3 gap-5">
                 @foreach ($workshop as $workshops)
-
-                <x-workshop-card>
+                    <x-workshop-card>
 
                         <x-slot:image>
-                            <img src="{{ Storage::url($workshops->gambar) }}" class="w-52 h-52">
+                            <img src="{{ Storage::url($workshops->gambar) }}"
+                                class="w-full h-52 object-cover border-8 border-white rounded-t-2xl">
                         </x-slot:image>
 
                         <x-slot:location>
-                            <p>{{ $workshops->lokasi}}</p>
+                            <p>{{ $workshops->lokasi }}</p>
                         </x-slot:location>
 
                         <x-slot:title>
-                            <p>{{ $workshops->judul}}</p>
+                            <p>{{ $workshops->judul }}</p>
                         </x-slot:title>
 
                         <x-slot:quota>
-                            <p>{{ $workshops->maks_kapasitas}}</p>
+                            <p>{{ $workshops->maks_kapasitas }} Orang</p>
                         </x-slot:quota>
 
-                        <x-slot:date>
-                            <p>{{ $workshops->tgl_mulai}}</p>
+                        <x-slot:date class="flex items-center">
+                            <p>{{ $workshops->waktu_mulai }} <span class="text-teal-500">s/d</span> </p>
+                            <p>{{ $workshops->waktu_selesai }}</p>
                         </x-slot:date>
 
                         <x-slot:deskripsi>
-                            <p>{{ $workshops->deskripsi}}</p>
+                            <p>{{ $workshops->deskripsi }}</p>
                         </x-slot:deskripsi>
 
-                </x-workshop-card>
-
+                    </x-workshop-card>
                 @endforeach
             </div>
         </section>

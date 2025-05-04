@@ -10,8 +10,8 @@
         <a href="#" class="block text-xl font-bold mb-3 text-teal-600 hover:text-teal-500 duration-150">
             {{ $title }}
         </a>
-        <div class="flex items-center mt-3 text-sm text-gray-500 space-x-2">
-            <span>kuota <span class="text-teal-600 font-semibold">{{ $quota }}</span></span>
+        <div class="flex items-center mt-3 text-sm text-gray-500 justify-between">
+            <span>Kuota <span class="text-teal-600 font-semibold">{{ $quota }}</span></span>
             <span>•</span>
             <span>{{ $date }}</span>
         </div>

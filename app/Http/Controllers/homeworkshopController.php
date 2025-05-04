@@ -81,40 +81,40 @@ class homeworkshopController extends Controller
      * Update the specified resource in storage.
      */
     public function update(Request $request, $id)
-{
-    $workshop = home_workshop::findOrFail($id);
+    {
+        $workshop = home_workshop::findOrFail($id);
 
-    $request->validate([
-        'judul' => 'min:5|string',
-        'deskripsi' => 'min:5|string',
-        'lokasi' => 'string',
-        'maks_kapasitas' => 'integer',
-        'gambar' => 'image|mimes:jpeg,png,jpg,gif|max:2048',
-        'waktu_mulai' => 'date',
-        'waktu_selesai' => 'date|after_or_equal:waktu_mulai',
-    ]);
+        $request->validate([
+            'judul' => 'min:5|string',
+            'deskripsi' => 'min:5|string',
+            'lokasi' => 'string',
+            'maks_kapasitas' => 'integer',
+            'gambar' => 'image|mimes:jpeg,png,jpg,gif|max:2048',
+            'waktu_mulai' => 'date',
+            'waktu_selesai' => 'date|after_or_equal:waktu_mulai',
+        ]);
 
-    $data = [
-        "judul" => $request->judul,
-        "deskripsi" => $request->deskripsi,
-        "lokasi" => $request->lokasi,
-        "waktu_mulai" => Carbon::parse($request->waktu_mulai),
-        "waktu_selesai" => Carbon::parse($request->waktu_selesai),
-        "maks_kapasitas" => $request->maks_kapasitas,
-    ];
+        $data = [
+            "judul" => $request->judul,
+            "deskripsi" => $request->deskripsi,
+            "lokasi" => $request->lokasi,
+            "waktu_mulai" => Carbon::parse($request->waktu_mulai),
+            "waktu_selesai" => Carbon::parse($request->waktu_selesai),
+            "maks_kapasitas" => $request->maks_kapasitas,
+        ];
 
-    if ($request->hasFile('gambar')) {
-        if ($workshop->gambar) {
-            Storage::disk('public')->delete($workshop->gambar);
+        if ($request->hasFile('gambar')) {
+            if ($workshop->gambar) {
+                Storage::disk('public')->delete($workshop->gambar);
+            }
+            $filePath = $request->file('gambar')->store('program_files', 'public');
+            $data['gambar'] = $filePath;
         }
-        $filePath = $request->file('gambar')->store('program_files', 'public');
-        $data['gambar'] = $filePath;
+
+        $workshop->update($data);
+
+        return redirect()->route('homeworkshop.index')->with('success', 'Workshop Berhasil Diubah');
     }
-
-    $workshop->update($data);
-
-    return redirect()->route('homeworkshop.index')->with('success', 'Workshop Berhasil Diubah');
-}
 
     /**
      * Remove the specified resource from storage.
@@ -132,5 +132,4 @@ class homeworkshopController extends Controller
 
         return redirect()->route('homeworkshop.index')->with('success', 'Workshop berhasil dihapus.');
     }
-
 }

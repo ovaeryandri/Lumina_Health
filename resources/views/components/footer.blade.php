@@ -36,7 +36,7 @@
 
         <div class="flex flex-col gap-y-3 mt-20 ml-5">
             <h1 class="mb-5 text-white font-bold text-xl">Workshop Kami</h1>
-            <div class="flex flex-wrap w-md gap-x-7 gap-y-3 text-lg text-white font-semibold">
+            <div class="flex flex-wrap w-md gap-x-7 gap-y-3 text-sm text-white font-semibold">
                 <p class="w-48 cursor-pointer hover:text-teal-300 duration-200">
                     ➜ Pangkalpinang, Bangka Belitung
                 </p>
@@ -63,22 +63,22 @@
 
         <div class="flex flex-col mt-20">
             <h1 class="mb-8 text-white font-bold text-xl">Informasi Kontak</h1>
-            <div class="flex flex-col text-white font-semibold mb-3">
+            <div class="flex flex-col text-white text-sm font-semibold mb-3">
                 <p>Jika ada kendala mengenain layanan kami</p>
                 <p>bisa hubungin di bawah ini.</p>
             </div>
 
-            <div class="flex flex-col gap-y-2 text-lg text-white font-semibold">
+            <div class="flex flex-col gap-y-2 text-sm text-white font-semibold">
                 <div class="flex items-center gap-2">
-                    <img src="/images/lokasi-white.png" alt="lokasi" class="w-7 h-7">
+                    <img src="/images/lokasi-white.png" alt="lokasi" class="w-5 h-5">
                     <p>Lokasi: Pangkalpinang, Bangka Belitung</p>
                 </div>
                 <div class="flex items-center gap-2">
-                    <img src="/images/email-white.png" alt="email" class="w-7 h-7">
+                    <img src="/images/email-white.png" alt="email" class="w-5 h-5">
                     <p>Email: ngetes@gmail.com</p>
                 </div>
                 <div class="flex items-center gap-2">
-                    <img src="/images/phone-white.png" alt="telepon" class="w-7 h-7">
+                    <img src="/images/phone-white.png" alt="telepon" class="w-5 h-5">
                     <p>Telepon: +62 812-3456-7890</p>
                 </div>
             </div>
