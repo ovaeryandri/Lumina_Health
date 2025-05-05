@@ -13,7 +13,6 @@ class blog_category extends Model
     protected $fillable = [
         'nama',
         'slug',
-        'deskripsi',
     ];
 
     public function blogPost(){

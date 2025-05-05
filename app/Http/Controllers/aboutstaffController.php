@@ -12,6 +12,7 @@ class aboutstaffController extends Controller
         return view('about_staf.index', compact('staf'));
     }
 
+
     public function create(){
         $staf = about_staff::all();
         return view('about_staf.create', compact('staf'));

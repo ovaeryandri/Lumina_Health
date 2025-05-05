@@ -24,8 +24,8 @@
     </main>
 
     <main class="w-full h-max flex px-28 mt-20">
-        <section class="w-max h-maxflex flex-col">
-            <div class="flex flex-col w-96 rounded-2xl bg-white p-7">
+        <section class="w-max h-max flex flex-col">
+            <div class="flex flex-col w-72 rounded-2xl bg-white p-7">
                 <div
                     class="w-full rounded-full py-3 bg-white border border-teal-500 text-teal-500 font-bold flex justify-center items-center">
                     Post Kategori
@@ -42,7 +42,7 @@
                 </ul>
             </div>
 
-            <div class="flex flex-col w-96 rounded-2xl bg-white p-7 mt-10">
+            <div class="flex flex-col w-72 rounded-2xl bg-white p-7 mt-10">
                 <div
                     class="w-full rounded-full py-3 bg-white border border-teal-500 text-teal-500 font-bold flex justify-center items-center">
                     Post Terbaru
@@ -76,8 +76,8 @@
             </div>
         </section>
 
-        <section class="ml-20 w-full h-maxflex flex-col">
-            <div class="flex flex-wrap gap-5">
+        <section class="ml-10 w-full h-max flex flex-col">
+            <div class="grid grid-cols-2 gap-5">
                 <div class="w-80 relative bg-white rounded-2xl overflow-hidden shadow-lg">
                     <img src="/images/consultation-1.jpg"
                         class="w-full h-60 object-cover border-8 border-white rounded-t-2xl">

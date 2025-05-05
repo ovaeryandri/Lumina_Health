@@ -2,12 +2,10 @@
 
 namespace App\Http\Controllers;
 
-<<<<<<< HEAD
+
 use Illuminate\Support\Facades\Auth;
-=======
 use App\Models\AkunUser;
 use App\Rules\LoginCheck;
->>>>>>> 6e5fc5015a2f49c4e3007040d96d7dbc3a0864f1
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Session;
