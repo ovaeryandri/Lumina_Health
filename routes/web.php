@@ -1,27 +1,28 @@
 <?php
 
-use App\Http\Controllers\aboutstaffController;
-use App\Http\Controllers\adminController;
-use App\Http\Controllers\blogcategoryController;
-use App\Http\Controllers\blognewsController;
-use App\Http\Controllers\blogpostController;
-use App\Http\Controllers\centerfasilitasController;
-use App\Http\Controllers\centerhistoryController;
-use App\Http\Controllers\downloadebookController;
-use App\Http\Controllers\galerydokumentasiController;
-use App\Http\Controllers\galerytestimonivideoController;
-use App\Http\Controllers\homeprogramController;
-use App\Http\Controllers\homeworkshopController;
-use App\Http\Controllers\PageController;
-use App\Http\Controllers\userController;
-use App\Http\Controllers\formworkshopController;
 use App\Models\center_history;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\HomeController;
+use App\Http\Controllers\PageController;
+use App\Http\Controllers\userController;
+use App\Http\Controllers\adminController;
+use App\Http\Controllers\blognewsController;
+use App\Http\Controllers\blogpostController;
+use App\Http\Controllers\aboutstaffController;
+use App\Http\Controllers\homeprogramController;
+use App\Http\Controllers\blogcategoryController;
+use App\Http\Controllers\formworkshopController;
+use App\Http\Controllers\homeworkshopController;
+use App\Http\Controllers\centerhistoryController;
+use App\Http\Controllers\downloadebookController;
+use App\Http\Controllers\centerfasilitasController;
+use App\Http\Controllers\galerydokumentasiController;
+use App\Http\Controllers\galerytestimonivideoController;
 
 Route::get('/admin', function () {
     return view('admin.layout');
 });
-Route::get('/', [homeprogramController::class, 'show'])->name('home');
+Route::get('/', [HomeController::class, 'index'])->name('home');
 Route::get('/login', [userController::class, 'login'])->name('login.layout');
 
 Route::post('/login', [UserController::class, 'showLoginForm'])->name('login');
@@ -39,7 +40,7 @@ Route::get('/blog', [PageController::class, 'blog'])->name('page.blog');
 Route::get('/e-books', [PageController::class, 'ebook'])->name('page.ebook');
 Route::get('/grafik', [PageController::class, 'grafik'])->name('page.grafik');
 
-Route::middleware(['auth'])->group(function (){
+Route::middleware(['auth'])->group(function () {
 
     Route::resource('formworkshop', formworkshopController::class);
 });
