@@ -12,7 +12,8 @@ use Illuminate\Support\Facades\Session;
 class userController extends Controller
 {
 
-    public function showLoginForm(){
+    public function showLoginForm()
+    {
         return view('login.layout');
     }
 
@@ -29,7 +30,7 @@ class userController extends Controller
     //     ]);
     // }
 
-   public function register()
+
 
     /**
      * Display a listing of the resource.
