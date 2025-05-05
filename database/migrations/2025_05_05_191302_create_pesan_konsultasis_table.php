@@ -1,3 +1,5 @@
+
+
 <?php
 
 use Illuminate\Database\Migrations\Migration;
@@ -11,8 +13,12 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('konsultasis', function (Blueprint $table) {
+        Schema::create('pesan_konsultasis', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('konsultasi_id')->constrained('konsultasis')->onDelete('cascade');
+            $table->string('pengirim_type'); // 'user' atau 'staff'
+            $table->unsignedBigInteger('pengirim_id');
+            $table->text('pesan');
             $table->timestamps();
         });
     }
@@ -22,6 +28,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('konsultasis');
+        Schema::dropIfExists('pesan_konsultasis');
     }
 };

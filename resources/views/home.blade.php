@@ -253,35 +253,38 @@
 
         <section class="flex flex-wrap w-full mt-16">
             <div class="grid md:grid-cols-3 gap-5">
-                @foreach ($workshop as $workshops)
-                    <x-workshop-card>
+                @foreach ($workshop as $item)
+                    <x-workshop-card :id="$item->id">
 
                         <x-slot:image>
-                            <img src="{{ Storage::url($workshops->gambar) }}"
+                            <img src="{{ Storage::url($item->gambar) }}"
                                 class="w-full h-52 object-cover border-8 border-white rounded-t-2xl">
                         </x-slot:image>
 
                         <x-slot:location>
-                            <p>{{ $workshops->lokasi }}</p>
+                            <p>{{ $item->lokasi }}</p>
                         </x-slot:location>
 
                         <x-slot:title>
-                            <p>{{ $workshops->judul }}</p>
+                            <p>{{ $item->judul }}</p>
                         </x-slot:title>
 
                         <x-slot:quota>
-                            <p>{{ $workshops->maks_kapasitas }} Orang</p>
+                            <p>{{ $item->maks_kapasitas }} Orang</p>
                         </x-slot:quota>
 
                         <x-slot:date class="flex items-center">
-                            <p>{{ $workshops->waktu_mulai }} <span class="text-teal-500">s/d</span> </p>
-                            <p>{{ $workshops->waktu_selesai }}</p>
+                            <p>{{ $item->waktu_mulai }} <span class="text-teal-500">s/d</span> </p>
+                            <p>{{ $item->waktu_selesai }}</p>
                         </x-slot:date>
 
                         <x-slot:deskripsi>
-                            <p>{{ $workshops->deskripsi }}</p>
+                            <p>{{ $item->deskripsi }}</p>
                         </x-slot:deskripsi>
 
+                        <x-slot:button>
+
+                        </x-slot:button>
                     </x-workshop-card>
                 @endforeach
             </div>

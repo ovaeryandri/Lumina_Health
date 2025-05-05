@@ -16,11 +16,14 @@
             <span>{{ $date }}</span>
         </div>
         <p class="w-full flex flex-wrap mt-2">{{ $deskripsi }}</p>
-        <a href="{{ route('formworkshop.create') }}">
-            <button class="px-3 py-1 mt-4 bg-teal-300 hover:bg-teal-500 text-white rounded-md cursor-pointer">
-                Ikuti Workshop Ini
-            </button>
-            </a>
+
+
+        <a href="{{ route('formworkshop.register', $id) }}">
+        <button class="px-3 py-1 mt-4 bg-teal-300 hover:bg-teal-500 text-white rounded-md cursor-pointer">
+             <span>Ikuti Workshop Ini {{ $button }}</span>
+        </button>
+
+    </a>
     </div>
 
 </div>

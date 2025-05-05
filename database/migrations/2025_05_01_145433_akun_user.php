@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('nama');
             $table->string('umur');
-            $table->enum('kelamin', ['Pria', 'Wanita']);
+            $table->enum('kelamin', ['Pria','Wanita']);
             $table->string('email')->unique();
             $table->string('password');
             $table->timestamps();

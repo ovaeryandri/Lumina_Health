@@ -2,12 +2,14 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Model;
+use Illuminate\Foundation\Auth\User as Authenticatable;
+use Illuminate\Notifications\Notifiable;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 
-class AkunUser extends Model
+class AkunUser extends Authenticatable
 {
-    use HasFactory;
+    use HasFactory, Notifiable;
+
     protected $table = 'akun_user';
 
     protected $fillable = [
@@ -18,8 +20,9 @@ class AkunUser extends Model
         'password',
     ];
 
-    public function user()
+    public function form_workshops()
     {
         return $this->hasMany(form_workshops::class, 'id_akun_user');
     }
 }
+

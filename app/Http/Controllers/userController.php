@@ -2,20 +2,17 @@
 
 namespace App\Http\Controllers;
 
-<<<<<<< HEAD
 use Illuminate\Support\Facades\Auth;
-=======
 use App\Models\AkunUser;
 use App\Rules\LoginCheck;
->>>>>>> 6e5fc5015a2f49c4e3007040d96d7dbc3a0864f1
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Session;
 
 class userController extends Controller
 {
-<<<<<<< HEAD
-    public function showLoginForm(){
+    public function showLoginForm()
+    {
         return view('login.layout');
     }
 
@@ -32,30 +29,31 @@ class userController extends Controller
         ]);
     }
 
-   public function register()
-=======
-    /**
-     * Display a listing of the resource.
-     */
     public function index()
     {
         $users = AkunUser::all();
         return view('user.index', compact('users'));
     }
-
-    function login()
-    {
-        return view('login.layout');
-    }
-
     function proseslogin(Request $request)
     {
         $request->validate([
             'email' => 'required|email',
-            'password' => ['required', new LoginCheck($request)],
+            'password' => 'required',
         ]);
-        return redirect()->route('home');
+
+        $credentials = $request->only('email', 'password');
+
+
+        if (Auth::attempt($credentials)) {
+            $request->session()->regenerate();
+            return redirect()->intended('/'); // atau ke halaman workshop
+        }
+
+        return back()->withErrors([
+            'email' => 'Email atau password salah.',
+        ]);
     }
+
 
     function logout()
     {
@@ -64,7 +62,6 @@ class userController extends Controller
     }
 
     function register()
->>>>>>> 6e5fc5015a2f49c4e3007040d96d7dbc3a0864f1
     {
         return view('register.layout');
     }
@@ -86,6 +83,7 @@ class userController extends Controller
             'email' => $request->email,
             'password' => Hash::make($request->password),
         ];
+
 
         AkunUser::create($dataInsert);
 
