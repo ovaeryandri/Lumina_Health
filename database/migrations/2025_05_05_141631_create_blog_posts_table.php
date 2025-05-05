@@ -11,14 +11,15 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('blog_news', function (Blueprint $table) {
+        Schema::create('blog_posts', function (Blueprint $table) {
             $table->id();
+            $table->unsignedBigInteger('id_blog_category');
             $table->string('judul');
             $table->string('slug');
             $table->string('content');
             $table->string('gambar');
             $table->dateTime('tanggal_upload');
-            $table->enum('tipe',['health_tip','new_program','general']);
+            $table->foreign('id_blog_category')->references('id')->on('blog_category')->onDelete('cascade');
             $table->timestamps();
         });
     }
@@ -28,6 +29,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('blog_news');
+        Schema::dropIfExists('blog_posts');
     }
 };

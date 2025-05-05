@@ -152,81 +152,30 @@
         <section class="flex flex-wrap justify-center w-full h-max gap-6 mt-10">
             <div
                 class="flex flex-col items-center p-8 bg-white rounded-3xl hover:shadow-2xl hover:shadow-teal-200 duration-300 hover:-translate-y-3 relative">
+                @foreach ($staf as $stafs)
+
                 <div class="flex w-full justify-between items-center">
+
                     <div class="flex flex-col">
-                        <h1 class="text-2xl text-teal-600 font-bold">Rafi</h1>
-                        <p class="text-sm font-semibold text-emerald-400">Spesialis Gizi</p>
+                        <h1 class="text-2xl text-teal-600 font-bold">{{ $stafs->nama }}</h1>
+                        <p class="text-sm font-semibold text-emerald-400">{{ $stafs->spesialisasi }}</p>
                     </div>
                     <img src="/images/heart-2.png" alt="heart" class="w-12 h-12">
                 </div>
 
                 <div
                     class="w-max h-max mt-5 flex items-center justify-center rounded-full bg-white p-2 border-2 border-teal-600">
-                    <img src="/images/doctor-3.png" alt="doctor" class="object-fill rounded-full w-64 h-64">
+                    <img src="{{ Storage::url($stafs->foto_profil) }}" alt="foto_profil" class="object-fill rounded-full w-64 h-64">
                 </div>
 
                 <button
                     class="w-full py-3 mt-3 rounded-full bg-white text-sm font-bold text-teal-500 border border-teal-500 hover:text-white hover:bg-teal-500 duration-200">Konsultasi</button>
+                    @endforeach
 
+                    <button
+                    class="w-1/2 py-3 mt-3 rounded-full bg-white text-sm font-bold text-teal-500 border border-teal-500 hover:text-white hover:bg-teal-500 duration-200">Info lengkap</button>
             </div>
 
-            <div
-                class="flex flex-col items-center p-8 bg-white rounded-3xl hover:shadow-2xl hover:shadow-teal-200 duration-300 hover:-translate-y-3 relative">
-                <div class="flex w-full justify-between items-center">
-                    <div class="flex flex-col">
-                        <h1 class="text-2xl text-teal-600 font-bold">Dr. Rafi</h1>
-                        <p class="text-sm font-semibold text-emerald-400">Spesialis Kebugaran & Olahraga</p>
-                    </div>
-                    <img src="/images/heart-2.png" alt="heart" class="w-12 h-12">
-                </div>
-
-                <div
-                    class="w-max h-max mt-5 flex items-center justify-center rounded-full bg-white p-2 border-2 border-teal-600">
-                    <img src="/images/doctor-3.png" alt="doctor" class="object-fill rounded-full w-64 h-64">
-                </div>
-
-                <button
-                    class="w-full py-3 mt-3 rounded-full bg-white text-sm font-bold text-teal-500 border border-teal-500 hover:text-white hover:bg-teal-500 duration-200">Konsultasi</button>
-
-            </div>
-
-            <div
-                class="flex flex-col items-center p-8 bg-white rounded-3xl hover:shadow-2xl hover:shadow-teal-200 duration-300 hover:-translate-y-3 relative">
-                <div class="flex w-full justify-between items-center">
-                    <div class="flex flex-col">
-                        <h1 class="text-2xl text-teal-600 font-bold">Dr. Rafi</h1>
-                        <p class="text-sm font-semibold text-emerald-400">Spesialis Kesehetan</p>
-                    </div>
-                    <img src="/images/heart-2.png" alt="heart" class="w-12 h-12">
-                </div>
-
-                <div
-                    class="w-max h-max mt-5 flex items-center justify-center rounded-full bg-white p-2 border-2 border-teal-600">
-                    <img src="/images/doctor-3.png" alt="doctor" class="object-fill rounded-full w-64 h-64">
-                </div>
-
-                <button
-                    class="w-full py-3 mt-3 rounded-full bg-white text-sm font-bold text-teal-500 border border-teal-500 hover:text-white hover:bg-teal-500 duration-200">Konsultasi</button>
-            </div>
-
-            <div
-                class="flex flex-col items-center p-8 bg-white rounded-3xl hover:shadow-2xl hover:shadow-teal-200 duration-300 hover:-translate-y-3 relative">
-                <div class="flex w-full justify-between items-center">
-                    <div class="flex flex-col">
-                        <h1 class="text-2xl text-teal-600 font-bold">Dr. Rafi</h1>
-                        <p class="text-sm font-semibold text-emerald-400">Spesialis Psikologi</p>
-                    </div>
-                    <img src="/images/heart-2.png" alt="heart" class="w-12 h-12">
-                </div>
-
-                <div
-                    class="w-max h-max mt-5 flex items-center justify-center rounded-full bg-white p-2 border-2 border-teal-600">
-                    <img src="/images/doctor-3.png" alt="doctor" class="object-fill rounded-full w-64 h-64">
-                </div>
-
-                <button
-                    class="w-full py-3 mt-3 rounded-full bg-white text-sm font-bold text-teal-500 border border-teal-500 hover:text-white hover:bg-teal-500 duration-200">Konsultasi</button>
-            </div>
 
         </section>
 

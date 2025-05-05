@@ -25,10 +25,16 @@ Route::get('/admin', function () {
     return view('admin.layout');
 });
 Route::get('/', [homeprogramController::class, 'show'])->name('home');
+<<<<<<< HEAD
 Route::get('/login', [userController::class, 'login'])->name('login');
 
 Route::get('/logindaftar', [UserController::class, 'showLoginForm'])->name('login.layout');
 
+=======
+Route::get('/login', [userController::class, 'login'])->name('login.layout');
+
+Route::post('/login', [UserController::class, 'showLoginForm'])->name('login');
+>>>>>>> 5fdb7e3bc32bb79db521415b749593e8a82ef125
 Route::post('/proseslogin', [userController::class, 'proseslogin'])->name('proseslogin');
 
 Route::get('/register', [userController::class, 'register'])->name('register.layout');

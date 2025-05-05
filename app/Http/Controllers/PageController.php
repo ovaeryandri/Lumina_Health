@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Models\download_ebook;
 use Illuminate\Http\Request;
 use App\Models\home_program;
+use App\Models\about_staff;
+
 
 class PageController extends Controller
 {
@@ -26,7 +28,8 @@ class PageController extends Controller
 
     function aboutUs()
     {
-        return view('page.aboutUs');
+        $staf = about_staff::all();
+        return view('page.aboutUs', compact('staf'));
     }
 
     function galeri()
