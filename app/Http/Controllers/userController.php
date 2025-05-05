@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers;
 
-
 use Illuminate\Support\Facades\Auth;
 use App\Models\AkunUser;
 use App\Rules\LoginCheck;
@@ -13,8 +12,7 @@ use Illuminate\Support\Facades\Session;
 class userController extends Controller
 {
 
-    public function showLoginForm()
-    {
+    public function showLoginForm(){
         return view('login.layout');
     }
 
@@ -31,6 +29,7 @@ class userController extends Controller
     //     ]);
     // }
 
+   public function register()
 
     /**
      * Display a listing of the resource.
@@ -40,20 +39,26 @@ class userController extends Controller
         $users = AkunUser::all();
         return view('user.index', compact('users'));
     }
-
-    function login()
-    {
-        return view('login.layout');
-    }
-
     function proseslogin(Request $request)
     {
         $request->validate([
             'email' => 'required|email',
-            'password' => ['required', new LoginCheck($request)],
+            'password' => 'required',
         ]);
-        return redirect()->route('home');
+
+        $credentials = $request->only('email', 'password');
+
+
+        if (Auth::attempt($credentials)) {
+            $request->session()->regenerate();
+            return redirect()->intended('/'); // atau ke halaman workshop
+        }
+
+        return back()->withErrors([
+            'email' => 'Email atau password salah.',
+        ]);
     }
+
 
     function logout()
     {
@@ -61,7 +66,8 @@ class userController extends Controller
         return redirect()->route('home');
     }
 
-    public function register()
+    function register()
+
     {
         return view('register.layout');
     }
@@ -83,6 +89,7 @@ class userController extends Controller
             'email' => $request->email,
             'password' => Hash::make($request->password),
         ];
+
 
         AkunUser::create($dataInsert);
 

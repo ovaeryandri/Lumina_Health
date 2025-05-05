@@ -5,11 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Pendaftaran Workshop</title>
+    <link href="{{ asset('css/style.css') }}" rel="stylesheet" />
 </head>
 <body>
     <div class="min-h-screen bg-gray-100 flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
         <div class="max-w-xl w-full bg-white p-10 rounded-2xl shadow-lg">
             <h2 class="text-3xl font-bold text-teal-600 mb-6 text-center">Pendaftaran Workshop</h2>
+
 
             @if(session('success'))
                 <div class="bg-green-100 text-green-700 p-3 rounded mb-4">{{ session('success') }}</div>
@@ -19,8 +21,9 @@
                 <div class="bg-red-100 text-red-700 p-3 rounded mb-4">{{ session('error') }}</div>
             @endif
 
-            <form action="{{ route('formworkshop.store', $workshop->id) }}" method="POST" class="space-y-5">
+            <form action="{{ route('formworkshop.store') }}" method="POST" class="space-y-5">
                 @csrf
+                <input type="hidden" name="id_home_workshops" value="{{ $workshop->id }}">
 
                 <div>
                     <label for="nama" class="block text-sm font-medium text-gray-700">Nama Lengkap</label>
@@ -67,6 +70,7 @@
             </form>
         </div>
     </div>
+    <script src="{{ asset('js/scripts.js') }}"></script>
 </body>
 </html>
 

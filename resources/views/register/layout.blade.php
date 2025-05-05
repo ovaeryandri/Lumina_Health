@@ -44,9 +44,9 @@
       </div>
 
       <div class="flex flex-col w-full relative mt-3">
-        <label for="jenis_kelamin" class="text-black font-semibold text-sm mb-1">Jenis Kelamin</label>
+        <label for="kelamin" class="text-black font-semibold text-sm mb-1">Jenis Kelamin</label>
         <img src="/images/gender.png" alt="" class="absolute left-3 top-8 flex items-center w-6 h-6">
-        <select name="kelamin" id="jenis_kelamin" required
+        <select name="kelamin" id="kelamin" required
           class="w-full h-max py-2 pl-11 pr-3 rounded-lg border border-slate-300 focus:outline-none focus:ring-2 focus:ring-teal-500 focus:border-transparent">
           <option value="" disabled selected>Pilih Jenis Kelamin</option>
           <option value="Pria">Pria</option>

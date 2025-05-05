@@ -42,6 +42,11 @@ class PageController extends Controller
         return view('page.blog');
     }
 
+    function konsultasi()
+    {
+        return view('page.konsultasi');
+    }
+
     function ebook()
     {
         $ebook = download_ebook::all();
