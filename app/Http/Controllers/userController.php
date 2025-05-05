@@ -12,26 +12,26 @@ use Illuminate\Support\Facades\Session;
 
 class userController extends Controller
 {
-<<<<<<< HEAD
-    public function showLoginForm(){
+
+    public function showLoginForm()
+    {
         return view('login.layout');
     }
 
-    public function login(Request $request)
-    {
-        $credentials = $request->only('email', 'password');
-        if (Auth::attempt($credentials)) {
-            $request->session()->regenerate();
-            return redirect()->intended('formworkshop');
-        }
+    // public function login(Request $request)
+    // {
+    //     $credentials = $request->only('email', 'password');
+    //     if (Auth::attempt($credentials)) {
+    //         $request->session()->regenerate();
+    //         return redirect()->intended('formworkshop');
+    //     }
 
-        return back()->withErrors([
-            'email' => 'Email atau Password Salah',
-        ]);
-    }
+    //     return back()->withErrors([
+    //         'email' => 'Email atau Password Salah',
+    //     ]);
+    // }
 
-   public function register()
-=======
+
     /**
      * Display a listing of the resource.
      */
@@ -61,8 +61,7 @@ class userController extends Controller
         return redirect()->route('home');
     }
 
-    function register()
->>>>>>> 6e5fc5015a2f49c4e3007040d96d7dbc3a0864f1
+    public function register()
     {
         return view('register.layout');
     }
