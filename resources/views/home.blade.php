@@ -228,6 +228,7 @@
         @endif
       @endforeach
     </section>
+    {{ $program->links() }}
 
   </main>
 

@@ -79,12 +79,7 @@
             class="absolute left-4 bottom-1 h-0.5 w-0 bg-white transition-all duration-300 group-hover/sub:w-[calc(100%-2rem)]">
           </span>
         </li>
-        <li class="px-4 py-2 relative cursor-pointer group/sub opacity-50 hover:opacity-100 duration-200">
-          <a href="{{ route('konsultasi.staff') }}" class="w-full flex">Konsultasi</a>
-          <span
-            class="absolute left-4 bottom-1 h-0.5 w-0 bg-white transition-all duration-300 group-hover/sub:w-[calc(100%-2rem)]">
-          </span>
-        </li>
+
         <li class="px-4 py-2 relative cursor-pointer group/sub opacity-50 hover:opacity-100 duration-200">
           <a href="{{ route('page.program') }}" class="w-full flex">Program Kesehatan</a>
           <span

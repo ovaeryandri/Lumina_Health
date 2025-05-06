@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\download_ebook;
 use Illuminate\Http\Request;
 use App\Models\home_program;
+use App\Models\home_workshop;
 use App\Models\about_staff;
 use App\Models\galery_dokumentasi;
 use App\Models\galery_testimonivideo;
@@ -18,12 +19,13 @@ class PageController extends Controller
 
     function workshop()
     {
-        return view('page.workshop');
+        $workshop = home_workshop::paginate(6);
+        return view('page.workshop', compact('workshop'));
     }
 
     function program()
     {
-        $program = home_program::all();
+        $program = home_program::paginate(6);
         return view('page.program', compact('program'));
     }
 

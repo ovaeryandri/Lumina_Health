@@ -83,7 +83,7 @@ class userController extends Controller
 
         AkunUser::create($dataInsert);
 
-        return redirect()->route('login.layout')->with('success', 'Pendaftaran Berhasil');
+        return redirect()->route('login')->with('success', 'Pendaftaran Berhasil');
     }
 
     /**

@@ -22,6 +22,16 @@
       <img src="/images/register.png" alt="" class="h-96 mt-10">
     </section>
 
+    @if ($errors->any())
+      <div class="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative">
+        <ul>
+          @foreach ($errors->all() as $error)
+            <li>{{ $error }}</li>
+          @endforeach
+        </ul>
+      </div>
+
+    @endif
     <form method="POST" action="{{ route('prosesregister') }}"
       class="w-full h-full rounded-r-2xl flex flex-col items-center px-20 py-8 pb-12">
       @csrf
@@ -109,7 +119,7 @@
 
       <div class="flex text-sm text-slate-600 font-semibold mt-5">
         <p class="mr-1">Sudah punya akun?</p>
-        <a href="{{ route('login.layout') }}" class="hover:underline text-teal-500"> Silahkan Masuk!</a>
+        <a href="{{ route('login') }}" class="hover:underline text-teal-500"> Silahkan Masuk!</a>
       </div>
 
     </form>
