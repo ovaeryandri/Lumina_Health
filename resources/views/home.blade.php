@@ -289,8 +289,8 @@
     </section>
 
   </main>
-  <div class="flex flex-col justify-center items-center">
-    <h2>Jumlah User Berdasarkan Umur</h2>
+  <div class="flex flex-col justify-center items-center gap-10 mt-20">
+    <h1 class="text-4xl text-teal-500 font-bold">Jumlah Member Berdasarkan Umur</h1>
 
     <div id="chart"></div>
   </div>
@@ -306,8 +306,8 @@
     var options = {
       chart: {
         type: 'bar',
-        height: 350,
-        width: 1000
+        height: 400,
+        width: 1050
       },
       series: [{
         name: 'Jumlah User',

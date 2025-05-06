@@ -473,6 +473,12 @@
           download ebook
         </a>
 
+        <a href="{{ route('logoutadmin') }}"
+          class="mb-3 capitalize font-medium text-sm hover:text-teal-600 transition ease-in-out duration-500">
+          <i class="fad fa-text text-xs mr-2"></i>
+          Log Out
+        </a>
+
       </div>
       <!-- end sidebar content -->
     </div>
