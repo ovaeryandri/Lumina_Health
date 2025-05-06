@@ -28,7 +28,7 @@ Route::get('/admin', function () {
 Route::get('/', [HomeController::class, 'index'])->name('home');
 // Route::get('/login', [userController::class, 'login'])->name('login.layout');
 
-Route::get('/login', [UserController::class, 'showLoginForm'])->name('login');
+Route::get('/login', [UserController::class, 'showLoginForm'])->name('login.layout');
 
 Route::post('/proseslogin', [userController::class, 'proseslogin'])->name('proseslogin');
 
