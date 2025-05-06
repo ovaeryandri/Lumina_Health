@@ -20,7 +20,7 @@ class galerytestimonivideoController extends Controller
     public function store(Request $request){
         $request->validate([
             'judul'=>'required|min:5|string',
-            'file_video' => 'required|file|mimetypes:video/mp4,video/avi,video/quicktime|max:51200',
+            'file_video' => 'required|file|mimetypes:video/mp4,video/avi,video/quicktime, video/mkv|max:51200',
             'deskripsi'=>'required|min:5|string',
         ]);
 

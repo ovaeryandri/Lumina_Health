@@ -6,7 +6,8 @@ use App\Models\download_ebook;
 use Illuminate\Http\Request;
 use App\Models\home_program;
 use App\Models\about_staff;
-
+use App\Models\galery_dokumentasi;
+use App\Models\galery_testimonivideo;
 
 class PageController extends Controller
 {
@@ -34,7 +35,8 @@ class PageController extends Controller
 
     function galeri()
     {
-        return view('page.galeri');
+        $galeri = galery_testimonivideo::all();
+        return view('page.galeri', compact('galeri'));
     }
 
     function blog()

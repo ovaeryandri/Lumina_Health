@@ -16,7 +16,7 @@
         </button>
     </section>
 
-    <section class="px-24 flex gap-x-10 w-full">
+    <section class="px-24 flex justify-between w-full">
         <div class="w-80 h-max ml-5 -mt-20 py-10 px-5 rounded-4xl bg-slate-100 flex flex-col items-center">
             <div class="w-full h-max py-2 rounded-full bg-white flex items-center justify-center">
                 <span class="text-teal-400 font-semibold text-lg">Jam Buka</span>
@@ -34,7 +34,7 @@
             </div>
         </div>
 
-        <div class="flex flex-col gap-y-3 mt-20 ml-5">
+        {{-- <div class="flex flex-col gap-y-3 mt-20 ml-5">
             <h1 class="mb-5 text-white font-bold text-xl">Workshop Kami</h1>
             <div class="flex flex-wrap w-md gap-x-7 gap-y-3 text-sm text-white font-semibold">
                 <p class="w-48 cursor-pointer hover:text-teal-300 duration-200">
@@ -59,7 +59,7 @@
                 </p>
             </div>
 
-        </div>
+        </div> --}}
 
         <div class="flex flex-col mt-20">
             <h1 class="mb-8 text-white font-bold text-xl">Informasi Kontak</h1>
