@@ -18,7 +18,7 @@
         <p class="w-full flex flex-wrap mt-2">{{ $deskripsi }}</p>
 
 
-        <a href="{{ route('formworkshop.register', $id) }}">
+        <a href="">
         <button class="px-3 py-1 mt-4 bg-teal-300 hover:bg-teal-500 text-white rounded-md cursor-pointer">
              <span>Ikuti Workshop Ini {{ $button }}</span>
         </button>
