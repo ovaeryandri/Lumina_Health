@@ -7,19 +7,20 @@ use App\Models\konsultasi;
 use App\Models\PesanKonsultasi;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+
 class KonsultasisController extends Controller
 {
     public function dashboard()
-{
-    $staffId = Auth::guard('staff')->id();
+    {
+        $staffId = Auth::guard('staff')->id();
 
-    $konsultasis = konsultasi::with('user') // eager loading biar efisien
-        ->where('about_staffs_id', $staffId)
-        ->where('status', 'aktif')
-        ->get();
+        $konsultasis = konsultasi::with('akun_user', 'about_staffs') // eager loading biar efisien
+            ->where('about_staffs_id', $staffId)
+            ->where('status', 'aktif')
+            ->get();
 
-    return view('staff.dashboard', compact('konsultasis'));
-}
+        return view('staff.dashboard', compact('konsultasis'));
+    }
 
 
     public function chat(Konsultasi $konsultasi)

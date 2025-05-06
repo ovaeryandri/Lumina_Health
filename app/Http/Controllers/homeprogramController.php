@@ -15,12 +15,7 @@ class homeprogramController extends Controller
         return view('home_program.index', compact('program'));
     }
 
-    public function show()
-    {
-        $program = home_program::all();
-        $workshop = home_workshop::all();
-        return view('home', compact('program', 'workshop'));
-    }
+
 
     public function create()
     {

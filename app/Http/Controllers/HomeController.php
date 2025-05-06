@@ -12,8 +12,8 @@ class HomeController extends Controller
 {
     public function index()
     {
-        $program = home_program::all();
-        $workshop = home_workshop::all();
+        $program = home_program::paginate(4);
+        $workshop = home_workshop::paginate(4);
         $data = AkunUser::select('umur', DB::raw('count(*) as total'))
             ->groupBy('umur')
             ->orderBy('umur')

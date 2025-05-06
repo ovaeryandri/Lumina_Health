@@ -287,6 +287,7 @@
         @endforeach
       </div>
     </section>
+    {{ $workshop->links() }}
 
   </main>
   <div class="flex flex-col justify-center items-center gap-10 mt-20">

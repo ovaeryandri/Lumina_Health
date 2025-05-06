@@ -132,16 +132,16 @@
     </button>
 
     @if (Session::has('ambilUser'))
-      <button
-        class="flex items-center px-9 py-1 rounded-full border border-white text-white font-semibold hover:bg-teal-600 duration-200 cursor-pointer">
+      <div
+        class="flex justify-center items-center px-9 py-1 rounded-full border border-white text-white font-semibold whitespace-nowrap">
         {{ Session::get('ambilUser')->nama }}
-      </button>
+      </div>
       <a href="{{ route('logoutuser') }}"
         class="flex items-center px-9 py-1 rounded-full border border-white text-white font-semibold hover:bg-teal-600 duration-200 cursor-pointer">
         Logout
       </a>
     @else
-      <a href="{{ route('login.layout') }}"
+      <a href="{{ route('login') }}"
         class="flex items-center px-9 py-1 rounded-full border border-white text-white font-semibold hover:bg-teal-600 duration-200 cursor-pointer">
         Login
       </a>

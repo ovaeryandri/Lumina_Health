@@ -44,20 +44,9 @@ class userController extends Controller
     {
         $request->validate([
             'email' => 'required|email',
-            'password' => 'required',
+            'password' => ['required', new LoginCheck($request)],
         ]);
-
-        $credentials = $request->only('email', 'password');
-
-
-        if (Auth::attempt($credentials)) {
-            $request->session()->regenerate();
-            return redirect()->intended('/');
-        }
-
-        return back()->withErrors([
-            'email' => 'Email atau password salah.',
-        ]);
+        return redirect()->route('home');
     }
 
 
