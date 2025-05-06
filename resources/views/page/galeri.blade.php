@@ -23,7 +23,28 @@
         <h1 class="text-6xl text-white font-bold">Galeri</h1>
     </main>
 
+    <main class="w-full h-max flex px-28 mt-20 justify-center">
+        <div class="flex flex-col">
+            <h1 class="text-teal-600 text-2xl font-bold">Galeri Dokumentasi</h1>
+            <section class="grid grid-cols-3 gap-5 place-items-center">
+                @foreach ($galeri as $item)
+                    <div class="w-96 relative bg-white rounded-2xl overflow-hidden shadow-lg">
+                        <video class="w-full h-60 object-cover border-8 border-white rounded-t-2xl" controls>
+                            <source src="{{ asset('storage/' . $item->file_video) }}" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                        <div class="p-5">
+                            <a href="#" class="block text-xl font-bold mb-3 text-teal-600 hover:text-teal-500 duration-150">
+                                {{ $item->judul }}
+                            </a>
+                            <p class="text-sm text-gray-500 mt-3">{{ $item->deskripsi }}</p>
+                        </div>
+                    </div>
+                @endforeach
+            </section>
+        </div>
 
+    </main>
 
     <x-footer></x-footer>
 
@@ -34,3 +55,6 @@
 </body>
 
 </html>
+
+
+
