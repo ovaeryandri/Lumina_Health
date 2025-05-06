@@ -2,7 +2,7 @@
 
 @section('content')
 <div class="container">
-    <h3>Chat dengan {{ $konsultasi->user->nama }}</h3>
+    <h3>Chat dengan {{ $konsultasi->user->nama ?? 'Tidak Ditemukan' }}</h3>
 
     <div class="bg-gray-100 p-4 rounded h-64 overflow-y-scroll mb-4">
         @foreach ($pesans->reverse() as $pesan)

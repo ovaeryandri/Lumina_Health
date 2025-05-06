@@ -16,6 +16,9 @@ use App\Http\Controllers\homeworkshopController;
 use App\Http\Controllers\centerhistoryController;
 use App\Http\Controllers\downloadebookController;
 use App\Http\Controllers\centerfasilitasController;
+use App\Http\Controllers\Staff\LoginController;
+use App\Http\Controllers\Staff\KonsultasisController;
+use App\Http\Controllers\konsultasiController;
 use App\Http\Controllers\galerydokumentasiController;
 use App\Http\Controllers\galerytestimonivideoController;
 
@@ -23,9 +26,9 @@ Route::get('/admin', function () {
     return view('admin.layout');
 });
 Route::get('/', [HomeController::class, 'index'])->name('home');
-Route::get('/login', [userController::class, 'login'])->name('login.layout');
+// Route::get('/login', [userController::class, 'login'])->name('login.layout');
 
-Route::post('/login', [UserController::class, 'showLoginForm'])->name('login');
+Route::get('/login', [UserController::class, 'showLoginForm'])->name('login');
 
 Route::post('/proseslogin', [userController::class, 'proseslogin'])->name('proseslogin');
 
@@ -43,6 +46,21 @@ Route::get('/e-books', [PageController::class, 'ebook'])->name('page.ebook');
 Route::get('/grafik', [PageController::class, 'grafik'])->name('page.grafik');
 
 
+Route::get('/konsultasi/staff', [konsultasiController::class, 'daftarStaff'])->name('konsultasi.staff');
+    Route::get('/konsultasi/mulai/{staff_id}', [konsultasiController::class, 'mulai'])->name('konsultasi.mulai');
+    Route::get('/konsultasi/chat/{konsultasi}', [konsultasiController::class, 'chat'])->name('konsultasi.chat');
+    Route::post('/konsultasi/chat/{konsultasi}/kirim', [konsultasiController::class, 'kirimPesan'])->name('konsultasi.kirim');
+
+Route::prefix('staff')->name('staff.')->group(function () {
+    Route::get('/login', [LoginController::class, 'showLoginForm'])->name('login');
+    Route::post('/login', [LoginController::class, 'login']);
+
+    Route::middleware('auth:staff')->group(function () {
+        Route::get('/dashboard', [KonsultasisController::class, 'dashboard'])->name('dashboard');
+        Route::get('/konsultasi/{konsultasi}', [KonsultasisController::class, 'chat'])->name('konsultasi.chat');
+        Route::post('/konsultasi/{konsultasi}/kirim', [KonsultasisController::class, 'kirimPesan'])->name('konsultasi.kirim');
+    });
+});
 
 Route::resource('formworkshop', formworkshopController::class);
 

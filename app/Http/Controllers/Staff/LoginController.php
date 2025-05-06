@@ -19,11 +19,10 @@ class LoginController extends Controller
         'email' => 'required|email',
     ]);
 
-    // Cari staff berdasarkan email
     $staff = \App\Models\about_staff::where('email', $request->email)->first();
 
     if ($staff) {
-        // Login manual tanpa verifikasi password
+
         Auth::guard('staff')->login($staff);
         return redirect()->route('staff.dashboard');
     }

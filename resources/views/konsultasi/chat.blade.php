@@ -4,11 +4,16 @@
 <div class="container">
     <h3>Chat dengan {{ $konsultasi->staff->nama }}</h3>
 
-    <div class="bg-gray-100 p-4 rounded h-64 overflow-y-scroll mb-4">
-        @foreach ($pesans->reverse() as $pesan)
-            <div class="mb-2">
-                <strong>{{ $pesan->pengirim_type === 'user' ? 'staff' : $konsultasi->staff->nama }}:</strong>
-                {{ $pesan->pesan }}
+    <div class="bg-gray-100 p-4 rounded h-64 overflow-y-scroll mb-4 space-y-2">
+        @foreach ($pesans as $pesan)
+            <div class="flex {{ $pesan->pengirim_type === 'staff' ? 'justify-end' : 'justify-start' }}">
+                <div class="max-w-xs px-4 py-2 rounded shadow
+                    {{ $pesan->pengirim_type === 'staff' ? 'bg-blue-500 text-white' : 'bg-white text-gray-800' }}">
+                    <strong>
+                        {{ $pesan->pengirim_type === 'staff' ? $konsultasi->staff->nama : $konsultasi->user->nama }}
+                    </strong>
+                    <div>{{ $pesan->pesan }}</div>
+                </div>
             </div>
         @endforeach
     </div>
