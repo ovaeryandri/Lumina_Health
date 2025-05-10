@@ -7,6 +7,9 @@ use Illuminate\Http\Request;
 use App\Models\home_program;
 use App\Models\home_workshop;
 use App\Models\about_staff;
+use App\Models\blogCategory;
+use App\Models\blogNews;
+use App\Models\blogPost;
 use App\Models\galery_dokumentasi;
 use App\Models\galery_testimonivideo;
 
@@ -43,7 +46,14 @@ class PageController extends Controller
 
     function blog()
     {
-        return view('page.blog');
+        $categories = blogCategory::all();
+        $blogNews = blogNews::latest()->take(3)->get();
+        $blogPost = blogPost::latest()->take(3)->get();
+
+        $newsPaginate = blogNews::with('category')->latest()->paginate(2);
+        $postPaginate = blogPost::with('category')->latest()->paginate(2);
+
+        return view('page.blog', compact('categories', 'blogNews', 'blogPost', 'newsPaginate', 'postPaginate'));
     }
 
     function konsultasi()

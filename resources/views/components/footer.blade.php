@@ -21,9 +21,10 @@
             <div class="w-full h-max py-2 rounded-full bg-white flex items-center justify-center">
                 <span class="text-teal-400 font-semibold text-lg">Jam Buka</span>
             </div>
-            <div class="w-64 flex justify-center items-center my-5 text-sm text-teal-400 opacity-50 font-bold">
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi totam aperiam labore quas vel
-                minus suscipit dolores architecto animi beatae!
+            <div
+                class="w-64 flex justify-center items-center my-5 text-sm text-center text-teal-400 opacity-50 font-bold">
+                Kami siap melayani Anda setiap hari sesuai jadwal operasional kami. Dapatkan layanan kesehatan terbaik
+                kapan pun Anda membutuhkannya.
             </div>
             <div class="flex flex-col gap-y-2 items-center text-teal-400 font-bold">
                 <h1>Senin - Jumat: 08.00 - 22.00</h1>

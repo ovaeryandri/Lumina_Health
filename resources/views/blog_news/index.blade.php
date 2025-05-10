@@ -3,7 +3,7 @@
     <div class="w-full p-6 bg-gray-100 ">
         <div class="w-full bg-white rounded-lg shadow-md overflow-hidden">
             <div class="bg-teal-300 p-4">
-                <h2 class="text-xl font-bold text-teal-800">Data Blog Kategori</h2>
+                <h2 class="text-xl font-bold text-teal-800">Data Program</h2>
             </div>
 
             <form method="POST" action="" enctype="multipart/form-data" class="p-6">
@@ -14,6 +14,10 @@
                             <tr class="bg-teal-300">
                                 <th class="p-3 text-left text-teal-800 border border-teal-400">No</th>
                                 <th class="p-3 text-left text-teal-800 border border-teal-400">Nama Kategori</th>
+                                <th class="p-3 text-left text-teal-800 border border-teal-400">Judul Blog Berita</th>
+                                <th class="p-3 text-left text-teal-800 border border-teal-400">Konten</th>
+                                <th class="p-3 text-left text-teal-800 border border-teal-400">Gambar</th>
+                                <th class="p-3 text-left text-teal-800 border border-teal-400">Tanggal Upload</th>
                                 <th class="p-3 text-left text-teal-800 border border-teal-400">Aksi</th>
                             </tr>
                         </thead>
@@ -22,25 +26,42 @@
                             <?php
                             $no = 1;
                             ?>
-                            @foreach ($category as $categories)
+                            @foreach ($news as $berita)
                                 <tr class="hover:bg-gray-50">
                                     <td class="p-3 border border-gray-200">
                                         {{ $no++ }}
                                     </td>
 
                                     <td class="p-3 border border-gray-200">
-                                        {{ $categories->nama }}
+                                        {{ $berita->category->nama }}
                                     </td>
 
+                                    <td class="p-3 border border-gray-200">
+                                        {{ $berita->judul }}
+                                    </td>
 
+                                    <td class="p-3 border border-gray-200 max-w-xs text-wrap truncate"
+                                        title="{{ $berita->judul }}">
+                                        {{ $berita->content }}
+                                    </td>
+
+                                    <td class="p-3 border border-gray-200">
+                                        <a href="{{ Storage::url($berita->gambar) }}" target="_blank"
+                                            class="px-6 py-2 w-max bg-teal-300 hover:bg-teal-400 text-teal-800 font-medium rounded-lg">
+                                            Lihat File
+                                        </a>
+                                    </td>
+
+                                    <td class="p-3 border border-gray-200">
+                                        {{ \Carbon\Carbon::parse($berita->tanggal_upload)->format('d F Y') }}
+                                    </td>
 
                                     <td class="p-3 border border-gray-200">
                                         <div class="flex space-x-2">
-                                            <a href="{{ route('blogcategory.edit', $categories->slug) }}"
+                                            <a href="{{ route('blognews.edit', $berita->slug) }}"
                                                 class="px-3 py-1 bg-teal-300 hover:bg-teal-400 text-teal-800 rounded">Edit</a>
 
-                                            <form action="{{ route('blogcategory.destroy', $categories->slug) }}"
-                                                method="POST">
+                                            <form action="{{ route('blognews.destroy', $berita->slug) }}" method="POST">
                                                 @csrf
                                                 @method('DELETE')
                                                 <button type="submit"
@@ -56,7 +77,7 @@
                 </div>
 
                 <div class="mt-6">
-                    <a href="{{ route('blogcategory.create') }}"
+                    <a href="{{ route('blognews.create') }}"
                         class="px-4 py-2 bg-teal-300 hover:bg-teal-400 text-teal-800 rounded">Tambah Data</a>
                 </div>
             </form>

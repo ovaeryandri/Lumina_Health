@@ -2,68 +2,78 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\blogPost;
 use Illuminate\Support\Str;
+use App\Models\blogCategory;
+use App\Models\blogNews;
 use Illuminate\Http\Request;
-use App\Models\blog_category;
 
 class blogcategoryController extends Controller
 {
-    function index()  {
-        $category = blog_category::all();
+    public function index()
+    {
+        $category = blogCategory::all();
         return view('blog_category.index', compact('category'));
+    }
+
+    public function show($slug)
+    {
+        $category = BlogCategory::where('slug', $slug)->firstOrFail();
+        $blogNews = BlogNews::where('id_blog_category', $category->id)->get();
+        $blogPost = blogPost::where('id_blog_category', $category->id)->get();
+
+        return view('blog_category.show', compact('category', 'blogNews', 'blogPost'));
     }
 
     public function create()
     {
-        $category = blog_category::all();
+        $category = blogCategory::all();
         return view('blog_category.create', compact('category'));
     }
 
-    function store(Request $request)  {
+    public function store(Request $request)
+    {
         $request->validate([
             'nama' => 'required|min:5|string',
         ]);
 
         $slug = Str::slug($request->nama);
 
-        blog_category::create([
+        blogCategory::create([
             "nama" => $request->nama,
             "slug" => $slug,
-
         ]);
+
         return redirect()->route('blogcategory.index')->with('success', 'Kategori Berhasil Ditambah');
     }
 
-    public function edit(string $id)
+    public function edit(string $slug)
     {
-        $category = blog_category::find($id);
+        $category = blogCategory::where('slug', $slug)->firstOrFail();
         return view('blog_category.edit', compact('category'));
     }
 
-    public function update(Request $request, $id)
+    public function update(Request $request, $slug)
     {
-        $category = blog_category::findOrFail($id);
+        $category = blogCategory::where('slug', $slug)->firstOrFail();
 
         $request->validate([
             'nama' => 'required|min:5|string',
         ]);
 
-        $slug = Str::slug($request->nama);
+        $newSlug = Str::slug($request->nama);
 
-        $data = [
+        $category->update([
             "nama" => $request->nama,
-            "slug" => $slug,
-        ];
-
-        $category->update($data);
+            "slug" => $newSlug,
+        ]);
 
         return redirect()->route('blogcategory.index')->with('success', 'Kategori Berhasil Diubah');
     }
 
-    public function destroy($id)
+    public function destroy($slug)
     {
-        $category = blog_category::findOrFail($id);
-
+        $category = blogCategory::where('slug', $slug)->firstOrFail();
         $category->delete();
 
         return redirect()->route('blogcategory.index')->with('success', 'Kategori berhasil dihapus.');
