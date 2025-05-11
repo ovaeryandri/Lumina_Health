@@ -22,8 +22,8 @@ class PageController extends Controller
 
     function workshop()
     {
-        $workshop = home_workshop::paginate(6);
-        return view('page.workshop', compact('workshop'));
+        $workshops = home_workshop::paginate(6);
+        return view('page.workshop', compact('workshops'));
     }
 
     function program()

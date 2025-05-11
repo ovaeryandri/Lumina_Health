@@ -30,7 +30,7 @@ Route::middleware(LoginCheckAdmin::class)->group(function () {
     Route::post('/prosesloginadmin', [DashboardAdmin::class, 'prosesloginadmin'])->name('prosesloginadmin');
 });
 
-Route::middleware(LoggedInAdmin::class)->group(function () {
+// Route::middleware(LoggedInAdmin::class)->group(function () {
     Route::resource('formworkshop', formworkshopController::class);
     Route::resource('aboutstaff', aboutstaffController::class);
     Route::resource('admin', adminController::class);
@@ -44,9 +44,11 @@ Route::middleware(LoggedInAdmin::class)->group(function () {
     Route::resource('homeworkshop', homeworkshopController::class);
     Route::resource('user', userController::class);
     Route::get('/logoutadmin', [DashboardAdmin::class, 'logoutadmin'])->name('logoutadmin');
-});
+// });
 
 Route::post('program/{program}/join', [homeprogramController::class, 'join'])->name('program.join')->middleware('auth:akun_user');
+
+Route::post('workshop/{workshop}/join', [homeworkshopController::class, 'join'])->name('workshop.join')->middleware('auth:akun_user');
 
 Route::get('/login', [UserController::class, 'showLoginForm'])->name('login');
 

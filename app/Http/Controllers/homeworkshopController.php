@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\home_workshop;
 use Carbon\Carbon;
 use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Facades\Auth;
 
 class homeworkshopController extends Controller
 {
@@ -90,6 +91,25 @@ class homeworkshopController extends Controller
         $workshop->update($data);
 
         return redirect()->route('homeworkshop.index')->with('success', 'Workshop Berhasil Diubah');
+    }
+
+    public function join(home_workshop $workshop )
+    {
+
+        if (!Auth::guard('akun_user')->check()) {
+            return redirect()->route('login')->with('alert', 'Silakan login terlebih dahulu');
+        }
+
+        /** @var \App\Models\AkunUser $user */
+        $user = Auth::guard('akun_user')->user();
+
+        if ($user->workshops()->where('home_workshop_id', $workshop->id)->exists()) {
+            return back()->with('alert', 'Anda sudah mengikuti program ini');
+        }
+
+        $user->workshops()->attach($workshop->id);
+
+        return back()->with('success', 'Selamat! Anda telah bergabung di program ini');
     }
 
 

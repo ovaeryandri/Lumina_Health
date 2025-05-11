@@ -285,7 +285,18 @@
             </x-slot:deskripsi>
 
             <x-slot:button>
+                @if (Auth::guard('akun_user')->check() && Auth::guard('akun_user')->user()->workshops->contains($item->id))
 
+                <div class="text-green-500 font-semibold">Selamat! Anda telah bergabung di program ini</div>
+                @else
+                <form action="{{ route('workshop.join', $item->id) }}" method="POST">
+                @csrf
+                          <button type="submit"
+                            class="w-full py-2 rounded-full border border-teal-500 text-teal-300 hover:text-white hover:bg-teal-500 duration-200 font-semibold cursor-pointer">
+                            Ikuti Workshop
+                          </button>
+                        </form>
+                        @endif
             </x-slot:button>
           </x-workshop-card>
         @endforeach

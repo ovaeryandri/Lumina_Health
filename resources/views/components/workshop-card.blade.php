@@ -15,7 +15,14 @@
       <span>{{ $date }}</span>
     </div>
     <p class="w-full flex flex-wrap mt-2">{{ $deskripsi }}</p>
+    <div class="mt-5">
 
+        <button class="text-teal-300 hover:text-teal-500 duration-200 font-semibold">
+
+            {{ $button }}
+        </button>
+
+</div>
 
 
   </div>

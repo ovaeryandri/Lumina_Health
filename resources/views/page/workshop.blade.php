@@ -42,7 +42,16 @@
 
     <section class="flex flex-wrap w-full mt-16">
       <div class="grid md:grid-cols-3 gap-5">
-        @foreach ($workshop as $item)
+        @foreach ($workshops as $item)
+        @php
+    $waktu_selesai = \Carbon\Carbon::parse($item->waktu_selesai);
+    $today = \Carbon\Carbon::today();
+    $isExpired = $today->gt($waktu_selesai); // true jika sudah lewat
+  @endphp
+
+      @if ($today->lte($waktu_selesai))
+
+
           <x-workshop-card :id="$item->id">
 
             <x-slot:image>
@@ -72,13 +81,25 @@
             </x-slot:deskripsi>
 
             <x-slot:button>
+                @if (Auth::guard('akun_user')->check() && Auth::guard('akun_user')->user()->workshops->contains($item->id))
 
+                <div class="text-green-500 font-semibold">Selamat! Anda telah bergabung di program ini</div>
+                @else
+                <form action="{{ route('workshop.join', $item->id) }}" method="POST">
+                @csrf
+                          <button type="submit"
+                            class="w-full py-2 rounded-full border border-teal-500 text-teal-300 hover:text-white hover:bg-teal-500 duration-200 font-semibold cursor-pointer">
+                            Ikuti Workshop
+                          </button>
+                        </form>
+                        @endif
             </x-slot:button>
           </x-workshop-card>
+          @endif
         @endforeach
       </div>
     </section>
-    {{ $workshop->links() }}
+    {{ $workshops->links() }}
 
   </main>
 

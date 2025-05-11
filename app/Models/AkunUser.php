@@ -26,5 +26,10 @@ class AkunUser extends Authenticatable
         return $this->belongsToMany(HomeProgram::class, 'program_user', 'akun_user_id', 'home_program_id');
     }
 
+    public function workshops()
+    {
+        return $this->belongsToMany(home_workshop::class, 'workshop_user', 'akun_user_id', 'home_workshop_id');
+    }
+
 }
 

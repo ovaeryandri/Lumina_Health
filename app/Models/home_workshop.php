@@ -20,14 +20,9 @@ class home_workshop extends Model
         'gambar',
     ];
 
-    public function pendaftar()
+    public function users()
     {
-        return $this->hasMany(form_workshops::class, 'id_home_workshops');
-    }
-
-    public function isFull()
-    {
-        return $this->pendaftar()->count() >= $this->maks_kapasitas;
+        return $this->belongsToMany(AkunUser::class, 'workshop_user', 'home_workshop_id', 'akun_user_id');
     }
 
 }
