@@ -4,34 +4,24 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\home_workshop;
-use App\Models\akun_user;
 use Carbon\Carbon;
 use Illuminate\Support\Facades\Storage;
-use Illuminate\Support\Facades\Session;
 
 class homeworkshopController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
+
     public function index()
     {
         $workshops = home_workshop::all();
         return view('home_workshop.index', compact('workshops'));
     }
 
-    /**
-     * Show the form for creating a new resource.
-     */
     public function create()
     {
         $workshops = home_workshop::all();
         return view('home_workshop.create', compact('workshops'));
     }
 
-    /**
-     * Store a newly created resource in storage.
-     */
     public function store(Request $request)
     {
         $request->validate([
@@ -60,26 +50,12 @@ class homeworkshopController extends Controller
         return redirect()->route('homeworkshop.index')->with('success', 'Workshop Berhasil Ditambah');
     }
 
-    /**
-     * Display the specified resource.
-     */
-    public function show(string $id)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     */
     public function edit(string $id)
     {
         $workshop = home_workshop::find($id);
         return view('home_workshop.edit', compact('workshop'));
     }
 
-    /**
-     * Update the specified resource in storage.
-     */
     public function update(Request $request, $id)
     {
         $workshop = home_workshop::findOrFail($id);
@@ -116,9 +92,7 @@ class homeworkshopController extends Controller
         return redirect()->route('homeworkshop.index')->with('success', 'Workshop Berhasil Diubah');
     }
 
-    /**
-     * Remove the specified resource from storage.
-     */
+
     public function destroy($id)
     {
         $workshop = home_workshop::findOrFail($id);

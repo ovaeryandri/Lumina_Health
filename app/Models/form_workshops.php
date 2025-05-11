@@ -19,7 +19,7 @@ class form_workshops extends Model
 
     public function user()
     {
-        return $this->belongsTo(akun_user::class, 'id_akun_user');
+        return $this->belongsTo(AkunUser::class, 'id_akun_user');
     }
 
     public function workshop()

@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 
 use App\Models\admin;
-use App\Rules\LoginCheckAdmin;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 

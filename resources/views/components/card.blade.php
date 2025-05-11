@@ -19,14 +19,13 @@
     </div>
 
     <div class="mt-5">
-        <a href="#" class="text-teal-300 hover:text-teal-500 duration-200 font-semibold">
-            {{ $detail }}
-        </a>
+
+            <button class="text-teal-300 hover:text-teal-500 duration-200 font-semibold">
+
+                {{ $detail }}
+            </button>
+
     </div>
 
-    <div>
-        <button>
-            {{ $slot }}
-        </button>
-    </div>
+
 </div>

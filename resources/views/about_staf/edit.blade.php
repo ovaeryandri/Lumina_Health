@@ -80,7 +80,6 @@
             <div class="mb-4">
                 <label for="foto_profil" class="block text-gray-700 font-medium mb-2"></label>
 
-                <!-- Tampilkan gambar lama -->
                 @if($staf->foto_profil)
                     <img src="{{ asset('storage/'.$staf->foto_profil) }}" class="w-32 h-32 object-cover mb-2" alt="foto_profil Program">
                 @endif

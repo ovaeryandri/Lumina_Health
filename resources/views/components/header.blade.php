@@ -24,8 +24,4 @@
         </div>
     </div>
 
-    <button
-        class="w-max h-max px-7 py-2 rounded-full bg-teal-400 text-white font-semibold hover:bg-teal-600 duration-200 cursor-pointer">
-        Konsultasi
-    </button>
 </main>

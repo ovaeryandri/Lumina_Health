@@ -14,7 +14,9 @@
                 <label for="nama" class="block text-gray-700 font-medium mb-2">Nama Lengkap</label>
                 <input type="text" name="nama" id="nama" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-teal-300" value="{{ old('nama') }}" required>
 
-                    <p class="text-red-500 text-sm mt-1"></p>
+                @error('nama')
+                <p class="text-red-500 text-sm mt-1">{{ $message }}</p>
+                @enderror
 
             </div>
 
@@ -22,7 +24,9 @@
                 <label for="spesialisasi" class="block text-gray-700 font-medium mb-2">Spesialis</label>
                 <input type="text" name="spesialisasi" id="spesialisasi" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-teal-300" value="{{ old('spesialisasi') }}" required>
 
-                    <p class="text-red-500 text-sm mt-1"></p>
+                @error('spesialisasi')
+                <p class="text-red-500 text-sm mt-1">{{ $message }}</p>
+            @enderror
 
             </div>
 
@@ -30,7 +34,9 @@
                 <label for="bio" class="block text-gray-700 font-medium mb-2">Bio</label>
                 <input type="text" name="bio" id="bio" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-teal-300" value="{{ old('bio') }}" required>
 
-                    <p class="text-red-500 text-sm mt-1"></p>
+                @error('bio')
+                <p class="text-red-500 text-sm mt-1">{{ $message }}</p>
+            @enderror
 
             </div>
 
@@ -38,7 +44,9 @@
                 <label for="tahun_pengalaman" class="block text-gray-700 font-medium mb-2">Tahun Pengalaman</label>
                 <input type="number" name="tahun_pengalaman" id="tahun_pengalaman" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-teal-300" value="{{ old('tahun_pengalaman') }}" required>
 
-                    <p class="text-red-500 text-sm mt-1"></p>
+                @error('tahun_pengalaman')
+                <p class="text-red-500 text-sm mt-1">{{ $message }}</p>
+            @enderror
 
             </div>
 
@@ -46,7 +54,9 @@
                 <label for="email" class="block text-gray-700 font-medium mb-2">Email</label>
                 <input type="email" name="email" id="email" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-teal-300" value="{{ old('email') }}" required>
 
-                    <p class="text-red-500 text-sm mt-1"></p>
+                @error('email')
+                <p class="text-red-500 text-sm mt-1">{{ $message }}</p>
+            @enderror
 
             </div>
 
@@ -54,7 +64,9 @@
                 <label for="no_hp" class="block text-gray-700 font-medium mb-2">No HP</label>
                 <input type="number" name="no_hp" id="no_hp" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-teal-300" value="{{ old('no_hp') }}" required>
 
-                    <p class="text-red-500 text-sm mt-1"></p>
+                @error('no_hp')
+                <p class="text-red-500 text-sm mt-1">{{ $message }}</p>
+            @enderror
 
             </div>
 
@@ -62,7 +74,9 @@
                 <label for="foto_profil" class="block text-gray-700 font-medium mb-2">Foto Profil</label>
                 <input type="file" name="foto_profil" id="foto_profil" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-teal-300" value="{{ old('foto_profil') }}" required>
 
-                    <p class="text-red-500 text-sm mt-1"></p>
+                @error('foto_profil')
+                <p class="text-red-500 text-sm mt-1">{{ $message }}</p>
+            @enderror
 
             </div>
 

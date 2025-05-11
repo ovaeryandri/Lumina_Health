@@ -27,7 +27,7 @@
                         @php
                             $no = 1;
                         @endphp
-                        <!-- Loop data dari controller Laravel -->
+
                         @foreach ($staf as $staff)
 
                         <tr class="hover:bg-gray-50">
@@ -94,6 +94,6 @@
     </div>
 </div>
 
-<!-- Script untuk konfirmasi delete -->
+
 
 @endsection

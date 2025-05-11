@@ -30,7 +30,6 @@
             <div class="mb-4">
                 <label for="gambar" class="block text-gray-700 font-medium mb-2">Gambar Program</label>
 
-                <!-- Tampilkan gambar lama -->
                 @if($program->gambar)
                     <img src="{{ asset('storage/'.$program->gambar) }}" class="w-32 h-32 object-cover mb-2" alt="Gambar Program">
                 @endif

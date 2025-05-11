@@ -44,9 +44,9 @@ return [
         'driver' => 'session',
         'provider' => 'staffs',
     ],
-    'user' => [
+    'akun_user' => [
         'driver' => 'session',
-        'provider' => 'users',
+        'provider' => 'akun_users',
     ],
 ],
 
@@ -68,7 +68,7 @@ return [
     */
 
     'providers' => [
-    'users' => [
+    'akun_users' => [
         'driver' => 'eloquent',
         'model' => App\Models\AkunUser::class,
     ],

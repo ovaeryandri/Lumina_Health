@@ -95,20 +95,6 @@
                 </h1>
             </div>
 
-            {{-- <div class="bg-white rounded-2xl overflow-hidden shadow-lg w-max flex flex-col items-center">
-                <img src="/images/health-program.jpeg" alt="konsultasi"
-                    class="w-80 h-44 object-cover border-8 border-white rounded-t-2xl">
-
-                <div
-                    class="w-max h-max p-3 border-2 border-teal-500 rounded-full bg-white flex justify-center items-center -mt-20">
-                    <img src="/images/health-program.png" alt="Konsultasi" class="p-2 w-24 h-24">
-                </div>
-
-                <h1 class="text-2xl font-bold mb-5 mt-3 text-teal-600 hover:text-teal-500 duration-150">
-                    Program Kesehatan
-                </h1>
-            </div> --}}
-
             <div class="bg-white rounded-2xl overflow-hidden shadow-lg w-max flex flex-col items-center">
                 <img src="/images/health-workshop.jpeg" alt="konsultasi"
                     class="w-80 h-44 object-cover border-8 border-white rounded-t-2xl">
@@ -168,12 +154,9 @@
                     <img src="{{ Storage::url($stafs->foto_profil) }}" alt="foto_profil" class="object-fill rounded-full w-64 h-64">
                 </div>
 
-                <button
-                    class="w-full py-3 mt-3 rounded-full bg-white text-sm font-bold text-teal-500 border border-teal-500 hover:text-white hover:bg-teal-500 duration-200">Konsultasi</button>
+
                     @endforeach
 
-                    <button
-                    class="w-1/2 py-3 mt-3 rounded-full bg-white text-sm font-bold text-teal-500 border border-teal-500 hover:text-white hover:bg-teal-500 duration-200">Info lengkap</button>
             </div>
 
 

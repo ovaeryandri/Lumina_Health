@@ -385,11 +385,6 @@
                     workshop
                 </a>
 
-                <a href="{{ route('formworkshop.index') }}"
-                    class="mb-3 capitalize font-medium text-sm hover:text-teal-600 transition ease-in-out duration-500">
-                    <i class="fad fa-comments text-xs mr-2"></i>
-                    Pendaftaran
-                </a>
                 <!-- end link -->
 
                 <p class="uppercase text-xs text-gray-600 mb-4 mt-4 tracking-wider">blogs</p>
@@ -428,19 +423,6 @@
                 <!-- end link -->
 
                 <!-- link -->
-                <a href="./alert.html"
-                    class="mb-3 capitalize font-medium text-sm hover:text-teal-600 transition ease-in-out duration-500">
-                    <i class="fad fa-whistle text-xs mr-2"></i>
-                    fasilitas
-                </a>
-                <!-- end link -->
-
-                <!-- link -->
-                <a href="./buttons.html"
-                    class="mb-3 capitalize font-medium text-sm hover:text-teal-600 transition ease-in-out duration-500">
-                    <i class="fad fa-cricket text-xs mr-2"></i>
-                    history
-                </a>
 
                 <p class="uppercase text-xs text-gray-600 mb-4 mt-4 tracking-wider">galery</p>
 
@@ -462,12 +444,6 @@
 
                 <p class="uppercase text-xs text-gray-600 mb-4 mt-4 tracking-wider">konsultasi</p>
 
-                <!-- link -->
-                <a href="./typography.html"
-                    class="mb-3 capitalize font-medium text-sm hover:text-teal-600 transition ease-in-out duration-500">
-                    <i class="fad fa-text text-xs mr-2"></i>
-                    konsultasi
-                </a>
                 <!-- end link -->
                 <p class="uppercase text-xs text-gray-600 mb-4 mt-4 tracking-wider">download</p>
 
@@ -478,6 +454,7 @@
                     download ebook
                 </a>
 
+                <p class="uppercase text-xs text-gray-600 mb-4 mt-4 tracking-wider">Logout</p>
                 <a href="{{ route('logoutadmin') }}"
                     class="mb-3 capitalize font-medium text-sm hover:text-teal-600 transition ease-in-out duration-500">
                     <i class="fad fa-text text-xs mr-2"></i>

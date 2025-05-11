@@ -24,7 +24,7 @@
                         @php
                             $no = 1;
                         @endphp
-                        <!-- Loop data dari controller Laravel -->
+
                         @foreach ($ebook as $ebooks)
 
                         <tr class="hover:bg-gray-50">
@@ -79,6 +79,5 @@
     </div>
 </div>
 
-<!-- Script untuk konfirmasi delete -->
 
 @endsection

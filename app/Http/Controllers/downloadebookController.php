@@ -57,7 +57,6 @@ public function update(Request $request, $id){
         "deskripsi" => $request->deskripsi,
     ];
 
-    // Jika user upload gambar baru
     if($request->hasFile('gambar')) {
         if($ebook->gambar){
             Storage::disk('public')->delete($ebook->gambar);
@@ -74,7 +73,6 @@ public function update(Request $request, $id){
         $data['download'] = $filePath;
     }
 
-    // Selalu update data meskipun tanpa gambar baru
     $ebook->update($data);
 
     return redirect()->route('downloadebook.index')->with('success', 'Ebook Berhasil Diubah');

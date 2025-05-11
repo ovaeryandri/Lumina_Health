@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 use App\Models\form_workshops;
 use App\Models\home_workshop;
 use Illuminate\Support\Facades\Session;
-use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 
 class formworkshopController extends Controller

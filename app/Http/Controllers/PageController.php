@@ -3,14 +3,14 @@
 namespace App\Http\Controllers;
 
 use App\Models\download_ebook;
-use Illuminate\Http\Request;
-use App\Models\home_program;
+use App\Models\AkunUser;
+use Illuminate\Support\Facades\DB;
+use App\Models\HomeProgram;
 use App\Models\home_workshop;
 use App\Models\about_staff;
 use App\Models\blogCategory;
 use App\Models\blogNews;
 use App\Models\blogPost;
-use App\Models\galery_dokumentasi;
 use App\Models\galery_testimonivideo;
 
 class PageController extends Controller
@@ -28,7 +28,7 @@ class PageController extends Controller
 
     function program()
     {
-        $program = home_program::paginate(6);
+        $program = HomeProgram::paginate(6);
         return view('page.program', compact('program'));
     }
 
@@ -69,6 +69,10 @@ class PageController extends Controller
 
     function grafik()
     {
-        return view('page.grafik');
+        $data = AkunUser::select('umur', DB::raw('count(*) as total'))
+            ->groupBy('umur')
+            ->orderBy('umur')
+            ->get();
+        return view('page.grafik', compact('data'));
     }
 }

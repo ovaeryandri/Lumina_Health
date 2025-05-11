@@ -20,9 +20,11 @@ class AkunUser extends Authenticatable
         'password',
     ];
 
-    public function form_workshops()
+
+    public function programs()
     {
-        return $this->hasMany(form_workshops::class, 'id_akun_user');
+        return $this->belongsToMany(HomeProgram::class, 'program_user', 'akun_user_id', 'home_program_id');
     }
+
 }
 

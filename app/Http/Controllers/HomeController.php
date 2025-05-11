@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\AkunUser;
-use App\Models\home_program;
+use App\Models\HomeProgram;
 use Illuminate\Http\Request;
 use App\Models\home_workshop;
 use Illuminate\Support\Facades\DB;
@@ -12,7 +12,7 @@ class HomeController extends Controller
 {
     public function index()
     {
-        $program = home_program::paginate(6);
+        $program = HomeProgram::paginate(6);
         $workshop = home_workshop::paginate(6);
         $data = AkunUser::select('umur', DB::raw('count(*) as total'))
             ->groupBy('umur')
@@ -21,4 +21,5 @@ class HomeController extends Controller
 
         return view('home', compact('program', 'workshop', 'data'));
     }
+    
 }

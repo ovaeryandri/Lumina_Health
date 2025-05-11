@@ -24,7 +24,7 @@
               </tr>
             </thead>
             <tbody>
-              <!-- Loop data dari controller Laravel -->
+
               <?php
               $no = 1;
               ?>
@@ -96,5 +96,4 @@
     </div>
   </div>
 
-  <!-- Script untuk konfirmasi delete -->
 @endsection

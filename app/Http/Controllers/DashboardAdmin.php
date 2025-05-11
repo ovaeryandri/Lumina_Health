@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\admin;
 use Illuminate\Http\Request;
 use App\Rules\LoginCheckAdmin;
 use Illuminate\Support\Facades\Session;

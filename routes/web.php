@@ -1,6 +1,6 @@
 <?php
 
-use App\Models\center_history;
+
 use Illuminate\Support\Facades\Route;
 use App\Http\Middleware\LoggedInAdmin;
 use App\Http\Controllers\DashboardAdmin;
@@ -13,27 +13,17 @@ use App\Http\Controllers\aboutstaffController;
 use App\Http\Controllers\blogcategoryController;
 use App\Http\Controllers\BlogNewsController;
 use App\Http\Controllers\BlogPostController;
-use App\Http\Controllers\konsultasiController;
 use App\Http\Controllers\homeprogramController;
-use App\Http\Controllers\Staff\LoginController;
 use App\Http\Controllers\formworkshopController;
 use App\Http\Controllers\homeworkshopController;
-use App\Http\Controllers\centerhistoryController;
 use App\Http\Controllers\downloadebookController;
-use App\Http\Controllers\centerfasilitasController;
 use App\Http\Controllers\galerydokumentasiController;
-use App\Http\Controllers\Staff\KonsultasisController;
 use App\Http\Controllers\galerytestimonivideoController;
 use App\Http\Controllers\SearchController;
 
-// Route::get('/admin', function () {
-//     return view('admin.layout');
-// })->name('admin');
-
-
 
 Route::get('/', [HomeController::class, 'index'])->name('home');
-// Route::get('/login', [userController::class, 'login'])->name('login.layout');
+Route::get('/grafik', [PageController::class, 'grafik'])->name('page.grafik');
 
 Route::middleware(LoginCheckAdmin::class)->group(function () {
     Route::get('/loginadmin', [DashboardAdmin::class, 'loginadmin'])->name('loginadmin');
@@ -47,8 +37,6 @@ Route::middleware(LoggedInAdmin::class)->group(function () {
     Route::resource('blogcategory', blogcategoryController::class);
     Route::resource('blognews', BlogNewsController::class);
     Route::resource('blogpost', BlogPostController::class);
-    Route::resource('centerfasilitas', centerfasilitasController::class);
-    Route::resource('centerhistory', centerhistoryController::class);
     Route::resource('downloadebook', downloadebookController::class);
     Route::resource('galerydokumentasi', galerydokumentasiController::class);
     Route::resource('galerytestimonivideo', galerytestimonivideoController::class);
@@ -58,6 +46,7 @@ Route::middleware(LoggedInAdmin::class)->group(function () {
     Route::get('/logoutadmin', [DashboardAdmin::class, 'logoutadmin'])->name('logoutadmin');
 });
 
+Route::post('program/{program}/join', [homeprogramController::class, 'join'])->name('program.join')->middleware('auth:akun_user');
 
 Route::get('/login', [UserController::class, 'showLoginForm'])->name('login');
 
@@ -74,23 +63,7 @@ Route::get('/tentang-kami', [PageController::class, 'aboutUs'])->name('page.abou
 Route::get('/galeri', [PageController::class, 'galeri'])->name('page.galeri');
 Route::get('/blog', [PageController::class, 'blog'])->name('page.blog');
 Route::get('/e-books', [PageController::class, 'ebook'])->name('page.ebook');
-Route::get('/grafik', [PageController::class, 'grafik'])->name('page.grafik');
+
 
 Route::get('/blogSearch', [SearchController::class, 'search'])->name('blog.search');
 
-
-Route::get('/konsultasi/staff', [konsultasiController::class, 'daftarStaff'])->name('konsultasi.staff');
-Route::get('/konsultasi/mulai/{staff_id}', [konsultasiController::class, 'mulai'])->name('konsultasi.mulai');
-Route::get('/konsultasi/chat/{konsultasi}', [konsultasiController::class, 'chat'])->name('konsultasi.chat');
-Route::post('/konsultasi/chat/{konsultasi}/kirim', [konsultasiController::class, 'kirimPesan'])->name('konsultasi.kirim');
-
-Route::prefix('staff')->name('staff.')->group(function () {
-    Route::get('/login', [LoginController::class, 'showLoginForm'])->name('login');
-    Route::post('/login', [LoginController::class, 'login']);
-
-    Route::middleware('auth:staff')->group(function () {
-        Route::get('/dashboard', [KonsultasisController::class, 'dashboard'])->name('dashboard');
-        Route::get('/konsultasi/{konsultasi}', [KonsultasisController::class, 'chat'])->name('konsultasi.chat');
-        Route::post('/konsultasi/{konsultasi}/kirim', [KonsultasisController::class, 'kirimPesan'])->name('konsultasi.kirim');
-    });
-});

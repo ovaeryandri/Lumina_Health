@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\home_program;
-use App\Models\home_workshop;
+use App\Models\HomeProgram;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 
@@ -11,15 +11,13 @@ class homeprogramController extends Controller
 {
     public function index()
     {
-        $program = home_program::all();
+        $program = HomeProgram::all();
         return view('home_program.index', compact('program'));
     }
 
-
-
     public function create()
     {
-        $program = home_program::all();
+        $program = HomeProgram::all();
         return view('home_program.create', compact('program'));
     }
 
@@ -34,7 +32,7 @@ class homeprogramController extends Controller
         ]);
         $filePath = $request->file('gambar')->store('program_files', 'public');
 
-        home_program::create([
+        HomeProgram::create([
             "judul" => $request->judul,
             "deskripsi" => $request->deskripsi,
             "gambar" => $filePath,
@@ -47,7 +45,7 @@ class homeprogramController extends Controller
 
     public function edit($id)
     {
-        $program = home_program::find($id);
+        $program = HomeProgram::find($id);
         $program->tgl_mulai = \Carbon\Carbon::parse($program->tgl_mulai)->format('Y-m-d');
         $program->tgl_selesai = \Carbon\Carbon::parse($program->tgl_selesai)->format('Y-m-d');
         return view('home_program.edit', compact('program'));
@@ -55,7 +53,7 @@ class homeprogramController extends Controller
 
     public function update(Request $request, $id)
     {
-        $program = home_program::findOrFail($id);
+        $program = HomeProgram::findOrFail($id);
 
         $request->validate([
             'judul' => 'required|min:5|string',
@@ -87,11 +85,30 @@ class homeprogramController extends Controller
         return redirect()->route('homeprogram.index')->with('success', 'Program Berhasil Diubah');
     }
 
+    public function join(HomeProgram $program)
+    {
+
+        if (!Auth::guard('akun_user')->check()) {
+            return redirect()->route('login')->with('alert', 'Silakan login terlebih dahulu');
+        }
+
+        /** @var \App\Models\AkunUser $user */
+        $user = Auth::guard('akun_user')->user();
+
+        if ($user->programs()->where('home_program_id', $program->id)->exists()) {
+            return back()->with('alert', 'Anda sudah mengikuti program ini');
+        }
+
+        $user->programs()->attach($program->id);
+
+        return back()->with('success', 'Selamat! Anda telah bergabung di program ini');
+    }
+
 
 
     public function destroy($id)
     {
-        $program = home_program::findOrFail($id);
+        $program = HomeProgram::findOrFail($id);
 
 
         if ($program->gambar) {

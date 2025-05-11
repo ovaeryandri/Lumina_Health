@@ -5,7 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class home_program extends Model
+class HomeProgram extends Model
 {
     use HasFactory;
     protected $table = 'home_programs';
@@ -17,5 +17,10 @@ class home_program extends Model
         'tgl_mulai',
         'tgl_selesai',
     ];
+
+    public function users()
+    {
+        return $this->belongsToMany(AkunUser::class, 'program_user', 'home_program_id', 'akun_user_id');
+    }
 
 }
