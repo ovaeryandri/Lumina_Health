@@ -19,7 +19,7 @@ class AkunUserFactory extends Factory
     {
         return [
             'nama' => fake()->name(),
-            'umur' => fake()->numberBetween(20, 30),
+            'umur' => fake()->numberBetween(10, 60),
             'kelamin' => fake()->randomElement(['Pria', 'Wanita']),
             'email' => fake()->unique()->safeEmail(),
             'password' => Hash::make('123456'),

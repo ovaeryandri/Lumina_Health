@@ -213,18 +213,17 @@
             </x-slot:deskripsi>
 
             <x-slot:detail>
-               @if (Auth::guard('akun_user')->check() && Auth::guard('akun_user')->user()->programs->contains($programs->id))
-
-    <div class="text-green-500 font-semibold">Selamat! Anda telah bergabung di program ini</div>
-    @else
-    <form action="{{ route('program.join', $programs->id) }}" method="POST">
-    @csrf
-              <button type="submit"
-                class="w-full py-2 rounded-full border border-teal-500 text-teal-300 hover:text-white hover:bg-teal-500 duration-200 font-semibold cursor-pointer">
-                Ikuti Program
-              </button>
-            </form>
-            @endif
+              @if (Auth::guard('akun_user')->check() && Auth::guard('akun_user')->user()->programs->contains($programs->id))
+                <div class="text-green-500 font-semibold">Selamat! Anda telah bergabung di program ini</div>
+              @else
+                <form action="{{ route('program.join', $programs->id) }}" method="POST">
+                  @csrf
+                  <button type="submit"
+                    class="w-full py-2 rounded-full border border-teal-500 text-teal-300 hover:text-white hover:bg-teal-500 duration-200 font-semibold cursor-pointer">
+                    Ikuti Program
+                  </button>
+                </form>
+              @endif
             </x-slot:detail>
 
           </x-card>
@@ -285,18 +284,17 @@
             </x-slot:deskripsi>
 
             <x-slot:button>
-                @if (Auth::guard('akun_user')->check() && Auth::guard('akun_user')->user()->workshops->contains($item->id))
-
+              @if (Auth::guard('akun_user')->check() && Auth::guard('akun_user')->user()->workshops->contains($item->id))
                 <div class="text-green-500 font-semibold">Selamat! Anda telah bergabung di program ini</div>
-                @else
+              @else
                 <form action="{{ route('workshop.join', $item->id) }}" method="POST">
-                @csrf
-                          <button type="submit"
-                            class="w-full py-2 rounded-full border border-teal-500 text-teal-300 hover:text-white hover:bg-teal-500 duration-200 font-semibold cursor-pointer">
-                            Ikuti Workshop
-                          </button>
-                        </form>
-                        @endif
+                  @csrf
+                  <button type="submit"
+                    class="w-full py-2 rounded-full border border-teal-500 text-teal-300 hover:text-white hover:bg-teal-500 duration-200 font-semibold cursor-pointer">
+                    Ikuti Workshop
+                  </button>
+                </form>
+              @endif
             </x-slot:button>
           </x-workshop-card>
         @endforeach
@@ -305,9 +303,9 @@
     {{ $workshop->links() }}
 
   </main>
-  <div class="flex flex-col justify-center items-center gap-10 mt-20">
-    <h1 class="text-4xl text-teal-500 font-bold">Jumlah Member Berdasarkan Umur</h1>
-
+  <div class="flex flex-col justify-center items-center gap-5 mt-20">
+    <h1 class="text-4xl text-teal-500 font-bold">Jumlah Member Komunitas</h1>
+    <h2 class="text-xl text-teal-400 font-medium">Jadilah Bagian Dari Komunitas Kami!</h2>
     <div id="chart"></div>
   </div>
   <x-footer></x-footer>
@@ -327,10 +325,10 @@
       },
       series: [{
         name: 'Jumlah User',
-        data: {!! json_encode($data->pluck('total')) !!}
+        data: {!! json_encode($finalData->pluck('total')) !!}
       }],
       xaxis: {
-        categories: {!! json_encode($data->pluck('umur')) !!},
+        categories: {!! json_encode($finalData->pluck('umur')->map(fn($u) => html_entity_decode($u))) !!},
         title: {
           text: 'Umur',
           style: {
@@ -341,7 +339,7 @@
       },
       yaxis: {
         title: {
-          text: 'Jumlah User',
+          text: 'Jumlah Member',
           style: {
             fontSize: '14px',
             fontWeight: 'bold'
